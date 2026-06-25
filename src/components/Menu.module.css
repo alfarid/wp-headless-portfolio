@@ -1,0 +1,188 @@
+.menuSection {
+  position: relative;
+  background-color: transparent;
+  padding: 100px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.taglinePill {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+/* Split Carousel Layout matching Cruip Open Pro */
+.splitLayout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.tabList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Custom Tab Button */
+.tabBtn {
+  background: rgba(21, 23, 25, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  padding: 24px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+}
+
+.tabBtn:focus {
+  outline: none;
+}
+
+/* Icon */
+.tabIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--gray-medium);
+  flex-shrink: 0;
+  margin-top: 3px;
+  transition: color 0.3s ease;
+}
+
+.tabIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tabTitle {
+  font-family: var(--font-heading);
+  font-size: 0.975rem;
+  font-weight: 600;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.tabDesc {
+  font-size: 0.9rem;
+  color: var(--gray-medium);
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+/* Active Tab Styles matching Open Pro */
+.activeTab {
+  background: rgba(21, 23, 25, 0.8);
+  border-color: var(--primary);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.1), 0 0 15px rgba(99, 102, 241, 0.05);
+}
+
+.activeTab .tabIcon {
+  color: var(--primary);
+}
+
+.activeTab .tabTitle {
+  color: #fff;
+}
+
+.activeTab .tabDesc {
+  color: var(--foreground);
+}
+
+/* Tab Badge/Tag */
+.projectCategory {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--accent);
+  margin-top: 4px;
+  align-self: flex-start;
+}
+
+/* Right Side Image Display matching Cruip Carousel */
+.imageContainer {
+  position: relative;
+  background: rgba(21, 23, 25, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  aspect-ratio: 1 / 1; /* Cruip Carousel is square/tall aspect ratio */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backlight {
+  position: absolute;
+  inset: -10%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 60%);
+  filter: blur(40px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.carouselImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+}
+
+/* Image change animations */
+.fadeAnim {
+  animation: fadeEffect 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0.4;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 991px) {
+  .splitLayout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .imageContainer {
+    aspect-ratio: 16 / 10;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .menuSection {
+    padding: 60px 0;
+  }
+  
+  .tabBtn {
+    padding: 20px;
+  }
+}

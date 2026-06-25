@@ -1,0 +1,136 @@
+.servicesSection {
+  position: relative;
+  background-color: transparent;
+  padding: 100px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.glowBlob {
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(40px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Card layout matching Cruip Workflows */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Cruip alignment is left-aligned! */
+  padding: 40px 35px 35px;
+  text-align: left;
+  min-height: 320px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Top-right corner arrow matching Cruip */
+.arrowIcon {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease-in-out;
+  opacity: 0.7;
+}
+
+.card:hover .arrowIcon {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+.card:hover .arrowIcon svg path {
+  fill: #0c0e10;
+}
+
+/* Icon container */
+.iconWrapper {
+  width: 52px;
+  height: 52px;
+  background-color: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 4px; /* Matches Open Pro's vendor block style */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.card:hover .iconWrapper {
+  background-color: rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Badge mini pill matching Cruip Workflows */
+.categoryPill {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.cardName {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.cardDesc {
+  font-size: 0.95rem;
+  color: var(--gray-medium);
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+.taglinePill {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .servicesSection {
+    padding: 60px 0;
+  }
+  
+  .card {
+    padding: 30px 24px;
+    min-height: auto;
+  }
+}
