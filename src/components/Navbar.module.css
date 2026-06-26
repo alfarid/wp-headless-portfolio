@@ -10,7 +10,7 @@
   align-items: center;
   z-index: 1000;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background-color: rgba(255, 255, 255, 0.70);
+  background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -22,9 +22,11 @@
 .scrolled {
   top: 12px;
   height: 60px;
-  background-color: rgba(255, 255, 255, 0.90);
+  background-color: rgba(255, 255, 255, 0.9);
   border-color: rgba(120, 92, 255, 0.15);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 0 15px rgba(120, 92, 255, 0.02);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08),
+    0 0 15px rgba(120, 92, 255, 0.02);
 }
 
 .navContainer {
@@ -142,7 +144,9 @@
   -webkit-backdrop-filter: blur(25px);
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 0 15px rgba(120, 92, 255, 0.02);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 0 15px rgba(120, 92, 255, 0.02);
   display: flex;
   flex-direction: column;
   padding: 30px;
@@ -179,7 +183,7 @@
     height: 60px;
     padding: 0 20px;
   }
-  
+
   .scrolled {
     top: 10px;
     height: 54px;
@@ -188,7 +192,7 @@
   .navLinks {
     display: none;
   }
-  
+
   .navContainer {
     padding: 0 !important;
   }

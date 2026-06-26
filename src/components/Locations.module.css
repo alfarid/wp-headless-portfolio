@@ -11,7 +11,11 @@
   right: 5%;
   width: 350px;
   height: 350px;
-  background: radial-gradient(circle, rgba(120, 92, 255, 0.02) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(120, 92, 255, 0.02) 0%,
+    transparent 70%
+  );
   pointer-events: none;
   z-index: 1;
   filter: blur(40px);
@@ -128,7 +132,7 @@
   .servicesSection {
     padding: 60px 0;
   }
-  
+
   .card {
     padding: 30px 24px;
     min-height: auto;

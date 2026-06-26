@@ -1,4 +1,5 @@
-const WORDPRESS_API_URL = process.env.WORDPRESS_API_URL || 'http://portfolio-backend.local/graphql';
+const WORDPRESS_API_URL =
+  process.env.WORDPRESS_API_URL || "http://portfolio-backend.local/graphql";
 
 // Interface definitions
 export interface Project {
@@ -13,15 +14,19 @@ export interface Project {
 
 export interface Service {
   id: string | number;
+  slug: string;
   name: string;
   description: string;
+  content?: string;
   icon?: string;
 }
 
 export interface BlogPost {
   id: string | number;
+  slug: string;
   title: string;
   description: string;
+  content?: string;
   image: string;
   date: string;
 }
@@ -29,81 +34,109 @@ export interface BlogPost {
 // Fallback Mock Data
 export const MOCK_PROJECTS: Project[] = [
   {
-    id: 'mock-1',
-    name: 'Headless WooCommerce Store',
-    description: 'Toko online berkecepatan tinggi dengan Next.js App Router, WPGraphQL, dan integrasi Payment Gateway Midtrans.',
-    techStack: 'Next.js, Tailwind, WPGraphQL, Midtrans',
-    image: '/ecommerce_project_v2.png',
-    category: 'Headless'
+    id: "mock-1",
+    name: "Headless WooCommerce Store",
+    description:
+      "Toko online berkecepatan tinggi dengan Next.js App Router, WPGraphQL, dan integrasi Payment Gateway Midtrans.",
+    techStack: "Next.js, Tailwind, WPGraphQL, Midtrans",
+    image: "/ecommerce_project_v2.png",
+    category: "Headless",
   },
   {
-    id: 'mock-2',
-    name: 'Custom Gutenberg Block Theme',
-    description: 'Tema kustom WordPress interaktif dibangun menggunakan full-site editing (FSE) dan React Gutenberg custom blocks.',
-    techStack: 'React, PHP, Tailwind, Gutenberg API',
-    image: '/gutenberg_project_v2.png',
-    category: 'Custom Themes'
+    id: "mock-2",
+    name: "Custom Gutenberg Block Theme",
+    description:
+      "Tema kustom WordPress interaktif dibangun menggunakan full-site editing (FSE) dan React Gutenberg custom blocks.",
+    techStack: "React, PHP, Tailwind, Gutenberg API",
+    image: "/gutenberg_project_v2.png",
+    category: "Custom Themes",
   },
   {
-    id: 'mock-3',
-    name: 'Salesforce CRM Connector Plugin',
-    description: 'Plugin kustom WordPress aman untuk sinkronisasi data prospek formulir ke Salesforce CRM secara real-time via REST API.',
-    techStack: 'PHP, WordPress Plugin API, Salesforce API',
-    image: '/dev_workspace_v2.png',
-    category: 'Plugins'
+    id: "mock-3",
+    name: "Salesforce CRM Connector Plugin",
+    description:
+      "Plugin kustom WordPress aman untuk sinkronisasi data prospek formulir ke Salesforce CRM secara real-time via REST API.",
+    techStack: "PHP, WordPress Plugin API, Salesforce API",
+    image: "/dev_workspace_v2.png",
+    category: "Plugins",
   },
   {
-    id: 'mock-4',
-    name: 'High-Traffic News Portal',
-    description: 'Migrasi portal berita besar ke arsitektur headless dengan Incremental Static Regeneration (ISR) untuk menangani jutaan pageviews.',
-    techStack: 'Next.js, GraphQL, Redis, Node.js',
-    image: '/ecommerce_project_v2.png',
-    category: 'Headless'
-  }
+    id: "mock-4",
+    name: "High-Traffic News Portal",
+    description:
+      "Migrasi portal berita besar ke arsitektur headless dengan Incremental Static Regeneration (ISR) untuk menangani jutaan pageviews.",
+    techStack: "Next.js, GraphQL, Redis, Node.js",
+    image: "/ecommerce_project_v2.png",
+    category: "Headless",
+  },
 ];
 
 export const MOCK_SERVICES: Service[] = [
   {
-    id: 'service-1',
-    name: 'Headless WordPress & Next.js',
-    description: 'Memisahkan backend WP dengan frontend modern Next.js untuk kecepatan ekstrim, keamanan total, dan SEO sempurna.',
-    icon: '⚡'
+    id: "service-1",
+    slug: "headless-wordpress-nextjs",
+    name: "Headless WordPress & Next.js",
+    description:
+      "Memisahkan backend WP dengan frontend modern Next.js untuk kecepatan ekstrim, keamanan total, dan SEO sempurna.",
+    content:
+      "<h2>Solusi Decoupled WordPress Modern</h2><p>Arsitektur Headless WordPress memisahkan database dan CMS admin WordPress Anda dari sisi tampilan website. Kami membangun frontend dengan Next.js yang super cepat dan responsif, lalu menghubungkannya ke WordPress menggunakan API GraphQL yang dioptimalkan.</p><h3>Mengapa Harus Headless?</h3><ul><li><strong>Kecepatan Maksimal:</strong> Next.js melakukan Static Site Generation (SSG), menyajikan halaman instan tanpa query PHP yang lambat.</li><li><strong>Keamanan Kelas Dunia:</strong> Dashboard admin WordPress Anda tersembunyi sepenuhnya dari luar, mengurangi 99% celah peretasan tradisional.</li><li><strong>Kebebasan Desain:</strong> Desain antarmuka kustom tanpa batasan bawaan tema WordPress monolitik.</li></ul>",
+    icon: "⚡",
   },
   {
-    id: 'service-2',
-    name: 'Kustom Gutenberg Blocks',
-    description: 'Pembuatan custom block berbasis React untuk editor Gutenberg agar tim konten dapat mengedit layout dengan mudah tanpa merusak desain.',
-    icon: '🧩'
+    id: "service-2",
+    slug: "kustom-gutenberg-blocks",
+    name: "Kustom Gutenberg Blocks",
+    description:
+      "Pembuatan custom block berbasis React untuk editor Gutenberg agar tim konten dapat mengedit layout dengan mudah tanpa merusak desain.",
+    content:
+      "<h2>Blok React untuk Editor Gutenberg</h2><p>Kami merancang dan mengembangkan blok khusus (custom blocks) yang disesuaikan secara presisi dengan identitas brand Anda. Menggunakan React dan WordPress Blocks API, tim marketing Anda dapat dengan mudah menyusun tata letak halaman yang dinamis dan interaktif tanpa khawatir merusak konsistensi layout visual.</p><h3>Keunggulan Custom Blocks</h3><ul><li><strong>User Experience yang Ramah:</strong> Drag-and-drop elemen langsung di editor visual Gutenberg tanpa perlu menyentuh kode HTML/CSS.</li><li><strong>Bebas Bloatware:</strong> Tidak menggunakan page builder berat pihak ketiga (seperti Elementor atau WPBakery) yang melambatkan performa situs.</li><li><strong>Modular & Reusable:</strong> Blok dapat digunakan kembali di berbagai halaman dan post secara fleksibel.</li></ul>",
+    icon: "🧩",
   },
   {
-    id: 'service-3',
-    name: 'Custom Plugin Development',
-    description: 'Pengembangan plugin kustom dari nol untuk memenuhi kebutuhan logika bisnis spesifik, API pihak ketiga, dan keamanan tingkat tinggi.',
-    icon: '⚙️'
+    id: "service-3",
+    slug: "custom-plugin-development",
+    name: "Custom Plugin Development",
+    description:
+      "Pengembangan plugin kustom dari nol untuk memenuhi kebutuhan logika bisnis spesifik, API pihak ketiga, dan keamanan tingkat tinggi.",
+    content:
+      "<h2>Logika Bisnis Khusus Tanpa Batas</h2><p>Ketika plugin yang ada di repositori WordPress tidak mampu memenuhi kebutuhan spesifik bisnis Anda, pengembangan plugin kustom adalah solusinya. Kami membangun plugin yang ditulis dengan standar PHP modern dan WordPress Coding Standards untuk keamanan dan performa maksimal.</p><h3>Fokus Layanan Plugin Kami</h3><ul><li><strong>Integrasi REST API / GraphQL:</strong> Menghubungkan WordPress Anda secara real-time ke sistem internal (CRM Salesforce, HubSpot, Mailchimp, ERP, dll.).</li><li><strong>Otomatisasi Alur Kerja:</strong> Mengurangi input data manual dengan proses otomatisasi form submission dan sinkronisasi data.</li><li><strong>Keamanan & Proteksi Data:</strong> Mengamankan transaksi, input database, dan data sensitif pengguna.</li></ul>",
+    icon: "⚙️",
   },
   {
-    id: 'service-4',
-    name: 'Optimasi Speed & Core Web Vitals',
-    description: 'Memperbaiki performa WordPress monolithic yang lambat hingga mendapatkan nilai hijau 90+ di Google PageSpeed Insights.',
-    icon: '📈'
-  }
+    id: "service-4",
+    slug: "optimasi-speed-core-web-vitals",
+    name: "Optimasi Speed & Core Web Vitals",
+    description:
+      "Memperbaiki performa WordPress monolithic yang lambat hingga mendapatkan nilai hijau 90+ di Google PageSpeed Insights.",
+    content:
+      "<h2>Mencapai Nilai Hijau Google PageSpeed Insights</h2><p>Performa website lambat setara dengan kehilangan prospek bisnis. Kami mendiagnosis bottlenecks pada server, database, aset, dan skrip situs WordPress monolitik Anda untuk mendongkrak performa Core Web Vitals Anda hingga rentang nilai hijau (90+).</p><h3>Metode Optimasi Performa</h3><ul><li><strong>Server-side & Database Caching:</strong> Pengoptimalan query MySQL yang lambat dan konfigurasi object cache (Redis/Memcached).</li><li><strong>Optimasi Aset & Media:</strong> Kompresi gambar otomatis, load font lokal secara asinkron, dan minifikasi berkas CSS/JS.</li><li><strong>Analisis Kode:</strong> Menghilangkan plugin yang berat dan menggantinya dengan fungsi kustom yang lebih efisien.</li></ul>",
+    icon: "📈",
+  },
 ];
 
 export const MOCK_BLOG_POSTS: BlogPost[] = [
   {
-    id: 'blog-1',
-    title: 'Mengenal Headless WordPress: Mengapa Anda Harus Menggunakannya',
-    description: 'Analisis mendalam mengenai keunggulan arsitektur decoupled menggunakan WordPress sebagai API-driven CMS dan Next.js di frontend.',
-    image: '/dev_workspace_v2.png',
-    date: 'June 24, 2026'
+    id: "mock-b1",
+    slug: "mengenal-headless-wordpress",
+    title: "Mengenal Headless WordPress: Mengapa Anda Harus Menggunakannya",
+    description:
+      "Analisis mendalam mengenai keunggulan arsitektur decoupled menggunakan WordPress sebagai API-driven CMS dan Next.js di frontend.",
+    content:
+      "<p>Headless WordPress (atau decoupled WordPress) adalah salah satu tren paling populer dalam pengembangan web modern saat ini. Dengan menggunakan pendekatan ini, kita memisahkan backend WordPress yang tangguh sebagai Content Management System (CMS) dari tampilan frontend, dan menggunakan framework JavaScript seperti Next.js untuk menyajikan halaman ke pengguna.</p><p>Mengapa Anda harus mempertimbangkan pendekatan ini? Keunggulan utamanya ada pada performa, keamanan, dan kebebasan dalam mendesain antarmuka pengguna.</p><h2>1. Kecepatan Memuat Halaman yang Luar Biasa</h2><p>Dengan Next.js, semua halaman Anda dapat diproduksi secara statis (Static Site Generation). Ini berarti server CDN akan langsung menyajikan file HTML siap pakai ke browser pengunjung tanpa harus menunggu proses eksekusi PHP atau kueri database MySQL dari WordPress yang terkadang lambat.</p><h2>2. Keamanan yang Jauh Lebih Baik</h2><p>Karena website Next.js berjalan terpisah dan mandiri, database dan folder admin WordPress Anda (`/wp-admin`) sepenuhnya tersembunyi dari internet luar. Hacker tidak akan bisa menemukan celah keamanan WordPress Anda dari halaman depan website portfolio Anda.</p><blockquote>Masa depan web adalah tentang menyajikan konten dalam kecepatan milidetik dan mengamankan data pengguna dari ancaman siber.</blockquote><p>Kesimpulannya, Headless WordPress memberikan kombinasi terbaik: tim pembuat konten tetap bisa bekerja dengan mudah di dashboard WordPress, sedangkan tim pengembang bisa membangun antarmuka yang sangat responsif, cepat, dan aman dengan Next.js.</p>",
+    image: "/dev_workspace_v2.png",
+    date: "24 Juni 2026",
   },
   {
-    id: 'blog-2',
-    title: 'Panduan WPGraphQL untuk Pemula di Next.js App Router',
-    description: 'Langkah demi langkah mengambil data dari WordPress menggunakan GraphQL, menulis query, dan melakukan static generation.',
-    image: '/gutenberg_project.png',
-    date: 'June 15, 2026'
-  }
+    id: "mock-b2",
+    slug: "panduan-wpgraphql-pemula-nextjs",
+    title: "Panduan WPGraphQL untuk Pemula di Next.js App Router",
+    description:
+      "Langkah demi langkah mengambil data dari WordPress menggunakan GraphQL, menulis kueri, dan melakukan static generation.",
+    content:
+      "<p>GraphQL telah menjadi standar baru untuk bertukar data antara frontend modern dan backend CMS. Bagi para developer WordPress, plugin <strong>WPGraphQL</strong> adalah penyelamat yang mengubah database WordPress monolithic Anda menjadi server API GraphQL yang sangat cepat.</p><p>Panduan ini akan menunjukkan kepada Anda kueri dasar untuk mengambil data postingan blog di Next.js App Router.</p><h2>Langkah 1: Menulis Kueri GraphQL Pertama Anda</h2><p>Dengan GraphQL, Anda memiliki kendali penuh atas data apa saja yang ingin Anda ambil. Tidak seperti REST API yang mengembalikan seluruh payload data meskipun tidak Anda butuhkan, di GraphQL Anda hanya mendefinisikan kolom spesifik yang ingin ditampilkan:</p><pre><code>query GetBlogPosts {\n  posts(first: 10) {\n    nodes {\n      id\n      title\n      slug\n      excerpt\n    }\n  }\n}</code></pre><h2>Langkah 2: Menghubungkan Query di Next.js</h2><p>Di Next.js, Anda dapat melakukan pemanggilan API menggunakan standar `fetch` JavaScript di dalam Server Components. Hal ini sangat menguntungkan karena pengambilan data terjadi di sisi server, bukan di sisi browser pengunjung:</p><p>Dengan mengimplementasikan WPGraphQL dan Next.js, Anda telah membangun fondasi arsitektur web modern yang siap dikembangkan ke skala yang lebih besar.</p>",
+    image: "/gutenberg_project_v2.png",
+    date: "15 Juni 2026",
+  },
 ];
 
 let hasWarned = false;
@@ -112,9 +145,9 @@ let hasWarned = false;
 async function fetchGraphQL(query: string, variables = {}) {
   try {
     const res = await fetch(WORDPRESS_API_URL, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         query,
@@ -129,13 +162,15 @@ async function fetchGraphQL(query: string, variables = {}) {
 
     const json = await res.json();
     if (json.errors) {
-      console.error('GraphQL Errors:', json.errors);
-      throw new Error('Failed to fetch API due to GraphQL errors');
+      console.error("GraphQL Errors:", json.errors);
+      throw new Error("Failed to fetch API due to GraphQL errors");
     }
     return json.data;
   } catch (error) {
     if (!hasWarned) {
-      console.warn(`⚠️ [WP.dev] Backend WordPress (${WORDPRESS_API_URL}) offline. Menggunakan mock data untuk pengerjaan frontend.`);
+      console.warn(
+        `⚠️ [WP.dev] Backend WordPress (${WORDPRESS_API_URL}) offline. Menggunakan mock data untuk pengerjaan frontend.`,
+      );
       hasWarned = true;
     }
     return null;
@@ -176,22 +211,39 @@ export async function getProjects(): Promise<Project[]> {
   return data.posts.nodes.map((post: any) => {
     // Determine subcategory for filtering (excluding 'projects' itself)
     const categoryNodes = post.categories?.nodes || [];
-    const mainCat = categoryNodes.find((cat: any) => cat.slug !== 'projects');
-    const categoryName = mainCat ? mainCat.name : 'Headless';
+    const mainCat = categoryNodes.find((cat: any) => cat.slug !== "projects");
+    const categoryName = mainCat ? mainCat.name : "Headless";
 
     // Remove HTML tags from excerpt for tech stack
-    const techStack = post.excerpt ? post.excerpt.replace(/<[^>]*>/g, '').trim() : 'WordPress';
-    const description = post.content ? post.content.replace(/<[^>]*>/g, '').trim() : '';
+    const techStack = post.excerpt
+      ? post.excerpt.replace(/<[^>]*>/g, "").trim()
+      : "WordPress";
+    const description = post.content
+      ? post.content.replace(/<[^>]*>/g, "").trim()
+      : "";
 
     return {
       id: post.id,
       name: post.title,
       description: description,
       techStack: techStack,
-      image: post.featuredImage?.node?.sourceUrl || '/dev_workspace.png',
-      category: categoryName
+      image: post.featuredImage?.node?.sourceUrl || "/dev_workspace.png",
+      category: categoryName,
     };
   });
+}
+
+// Helper for Mapping Icons based on title keywords
+export function getServiceIcon(title: string) {
+  const t = title.toLowerCase();
+  if (t.includes("headless") || t.includes("next")) return "⚡";
+  if (t.includes("gutenberg") || t.includes("block") || t.includes("theme"))
+    return "🧩";
+  if (t.includes("plugin") || t.includes("custom") || t.includes("api"))
+    return "⚙️";
+  if (t.includes("speed") || t.includes("optim") || t.includes("performance"))
+    return "📈";
+  return "💼";
 }
 
 // Fetch Services from WordPress Category 'services'
@@ -201,6 +253,7 @@ export async function getServices(): Promise<Service[]> {
       posts(where: {categoryName: "services"}, first: 20) {
         nodes {
           id
+          slug
           title
           content
           excerpt
@@ -214,23 +267,19 @@ export async function getServices(): Promise<Service[]> {
     return MOCK_SERVICES;
   }
 
-  // Icons map based on some keywords
-  const getIcon = (title: string) => {
-    const t = title.toLowerCase();
-    if (t.includes('headless') || t.includes('next')) return '⚡';
-    if (t.includes('gutenberg') || t.includes('block') || t.includes('theme')) return '🧩';
-    if (t.includes('plugin') || t.includes('custom') || t.includes('api')) return '⚙️';
-    if (t.includes('speed') || t.includes('optim') || t.includes('performance')) return '📈';
-    return '💼';
-  };
-
   return data.posts.nodes.map((post: any) => {
-    const description = post.content ? post.content.replace(/<[^>]*>/g, '').trim() : (post.excerpt ? post.excerpt.replace(/<[^>]*>/g, '').trim() : '');
+    const description = post.excerpt
+      ? post.excerpt.replace(/<[^>]*>/g, "").trim()
+      : post.content
+        ? post.content.replace(/<[^>]*>/g, "").trim()
+        : "";
     return {
       id: post.id,
+      slug: post.slug || String(post.id),
       name: post.title,
       description: description,
-      icon: getIcon(post.title)
+      content: post.content || "",
+      icon: getServiceIcon(post.title),
     };
   });
 }
@@ -242,6 +291,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
       posts(where: {categoryName: "blog"}, first: 20) {
         nodes {
           id
+          slug
           title
           content
           excerpt
@@ -262,21 +312,124 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
   }
 
   return data.posts.nodes.map((post: any) => {
-    const description = post.excerpt ? post.excerpt.replace(/<[^>]*>/g, '').trim() : (post.content ? post.content.substring(0, 150).replace(/<[^>]*>/g, '').trim() + '...' : '');
-    
+    const description = post.excerpt
+      ? post.excerpt.replace(/<[^>]*>/g, "").trim()
+      : post.content
+        ? post.content
+            .substring(0, 150)
+            .replace(/<[^>]*>/g, "")
+            .trim() + "..."
+        : "";
+
     // Format date beautifully
-    const formattedDate = new Date(post.date).toLocaleDateString('id-ID', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
+    const formattedDate = new Date(post.date).toLocaleDateString("id-ID", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     });
 
     return {
       id: post.id,
+      slug: post.slug || String(post.id),
       title: post.title,
       description: description,
-      image: post.featuredImage?.node?.sourceUrl || '/dev_workspace.png',
-      date: formattedDate
+      image: post.featuredImage?.node?.sourceUrl || "/dev_workspace_v2.png",
+      date: formattedDate,
     };
   });
+}
+
+// Fetch Single Blog Post by Slug
+export async function getBlogPostBySlug(
+  slug: string,
+): Promise<BlogPost | null> {
+  const query = `
+    query GetBlogPostBySlug($slug: ID!) {
+      post(id: $slug, idType: SLUG) {
+        id
+        title
+        content
+        excerpt
+        date
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+      }
+    }
+  `;
+
+  const data = await fetchGraphQL(query, { slug });
+  if (!data || !data.post) {
+    // Local Fallback to Mock Data
+    const mockPost = MOCK_BLOG_POSTS.find((p) => p.slug === slug);
+    return mockPost || null;
+  }
+
+  const post = data.post;
+  const description = post.excerpt
+    ? post.excerpt.replace(/<[^>]*>/g, "").trim()
+    : post.content
+      ? post.content
+          .substring(0, 150)
+          .replace(/<[^>]*>/g, "")
+          .trim() + "..."
+      : "";
+
+  const formattedDate = new Date(post.date).toLocaleDateString("id-ID", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
+  return {
+    id: post.id,
+    slug: slug,
+    title: post.title,
+    description: description,
+    content: post.content || "",
+    image: post.featuredImage?.node?.sourceUrl || "/dev_workspace_v2.png",
+    date: formattedDate,
+  };
+}
+
+// Fetch Single Service by Slug
+export async function getServiceBySlug(slug: string): Promise<Service | null> {
+  const query = `
+    query GetServiceBySlug($slug: ID!) {
+      post(id: $slug, idType: SLUG) {
+        id
+        title
+        content
+        excerpt
+      }
+    }
+  `;
+
+  const data = await fetchGraphQL(query, { slug });
+  if (!data || !data.post) {
+    // Local Fallback to Mock Data
+    const mockService = MOCK_SERVICES.find((s) => s.slug === slug);
+    return mockService || null;
+  }
+
+  const post = data.post;
+  const description = post.excerpt
+    ? post.excerpt.replace(/<[^>]*>/g, "").trim()
+    : post.content
+      ? post.content
+          .substring(0, 150)
+          .replace(/<[^>]*>/g, "")
+          .trim() + "..."
+      : "";
+
+  return {
+    id: post.id,
+    slug: slug,
+    name: post.title,
+    description: description,
+    content: post.content || "",
+    icon: getServiceIcon(post.title),
+  };
 }

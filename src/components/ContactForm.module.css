@@ -14,13 +14,17 @@
 }
 
 .formContainer::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(120, 92, 255, 0.02) 0%, transparent 60%);
+  background: radial-gradient(
+    circle,
+    rgba(120, 92, 255, 0.02) 0%,
+    transparent 60%
+  );
   pointer-events: none;
   z-index: 0;
 }
@@ -181,24 +185,38 @@
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes scaleIn {
-  from { transform: scale(0.5); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @media (max-width: 768px) {
   .formContainer {
     padding: 30px 20px;
   }
-  
+
   .row {
     grid-template-columns: 1fr;
     gap: 24px;

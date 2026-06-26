@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import styles from './Navbar.module.css';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -19,98 +19,143 @@ const Navbar = () => {
       }
 
       // Scroll progress percentage
-      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const totalScroll =
+        document.documentElement.scrollHeight - window.innerHeight;
       if (totalScroll > 0) {
         const progress = (window.scrollY / totalScroll) * 100;
         setScrollProgress(progress);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
       {/* Scroll Progress Bar */}
-      <div 
-        className={styles.scrollProgress} 
+      <div
+        className={styles.scrollProgress}
         style={{ width: `${scrollProgress}%` }}
         aria-hidden="true"
       />
 
-      <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
+      <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
         <div className={`container ${styles.navContainer}`}>
-        <Link href="/" className={styles.logo}>
-          WP<span className={styles.logoDot}>.dev</span>
-        </Link>
-        
-        {/* Desktop Nav Links */}
-        <div className={styles.navLinks}>
-          <Link href="/" className={styles.navLink}>Beranda</Link>
-          <Link href="#services" className={styles.navLink}>Layanan</Link>
-          <Link href="#projects" className={styles.navLink}>Portfolio</Link>
-          <Link href="#blog" className={styles.navLink}>Blog</Link>
+          <Link href="/" className={styles.logo}>
+            WP<span className={styles.logoDot}>.dev</span>
+          </Link>
+
+          {/* Desktop Nav Links */}
+          <div className={styles.navLinks}>
+            <Link href="/" className={styles.navLink}>
+              Beranda
+            </Link>
+            <Link href="/#services" className={styles.navLink}>
+              Layanan
+            </Link>
+            <Link href="/#projects" className={styles.navLink}>
+              Portfolio
+            </Link>
+            <Link href="/#blog" className={styles.navLink}>
+              Blog
+            </Link>
+          </div>
+
+          <div className={styles.navActions}>
+            <Link
+              href="/#contact"
+              className={`${styles.navLink} btn-desktop`}
+              style={{
+                marginRight: "10px",
+                fontSize: "0.9rem",
+                fontWeight: 600,
+              }}
+            >
+              Konsultasi
+            </Link>
+            <Link
+              href="/#contact"
+              className="btn btn-primary btn-desktop"
+              style={{ padding: "8px 20px", fontSize: "0.85rem" }}
+            >
+              Hubungi Saya
+            </Link>
+
+            {/* Hamburger Menu Button */}
+            <button
+              className={`${styles.hamburger} ${menuOpen ? styles.hamburgerActive : ""}`}
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle menu"
+            >
+              <span className={styles.bar}></span>
+              <span className={styles.bar}></span>
+              <span className={styles.bar}></span>
+            </button>
+          </div>
         </div>
 
-        <div className={styles.navActions}>
-          <a 
-            href="#contact" 
-            className={`${styles.navLink} btn-desktop`} 
-            style={{ marginRight: '10px', fontSize: '0.9rem', fontWeight: 600 }}
-          >
-            Konsultasi
-          </a>
-          <a 
-            href="#contact" 
-            className="btn btn-primary btn-desktop" 
-            style={{ padding: '8px 20px', fontSize: '0.85rem' }}
-          >
-            Hubungi Saya
-          </a>
-
-          {/* Hamburger Menu Button */}
-          <button 
-            className={`${styles.hamburger} ${menuOpen ? styles.hamburgerActive : ''}`} 
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
-            <span className={styles.bar}></span>
-            <span className={styles.bar}></span>
-            <span className={styles.bar}></span>
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Drawer Menu */}
-      <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuActive : ''}`}>
-        <Link href="/" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>Beranda</Link>
-        <Link href="#services" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>Layanan</Link>
-        <Link href="#projects" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>Portfolio</Link>
-        <Link href="#blog" className={styles.mobileNavLink} onClick={() => setMenuOpen(false)}>Blog</Link>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginTop: '20px' }}>
-          <a 
-            href="#contact" 
-            className={`${styles.mobileNavLink}`} 
-            style={{ textAlign: 'center', fontSize: '1.1rem' }} 
+        {/* Mobile Drawer Menu */}
+        <div
+          className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuActive : ""}`}
+        >
+          <Link
+            href="/"
+            className={styles.mobileNavLink}
             onClick={() => setMenuOpen(false)}
           >
-            Konsultasi
-          </a>
-          <a 
-            href="#contact" 
-            className="btn btn-primary" 
-            style={{ width: '100%', textAlign: 'center' }} 
+            Beranda
+          </Link>
+          <Link
+            href="/#services"
+            className={styles.mobileNavLink}
             onClick={() => setMenuOpen(false)}
           >
-            Hubungi Saya
-          </a>
+            Layanan
+          </Link>
+          <Link
+            href="/#projects"
+            className={styles.mobileNavLink}
+            onClick={() => setMenuOpen(false)}
+          >
+            Portfolio
+          </Link>
+          <Link
+            href="/#blog"
+            className={styles.mobileNavLink}
+            onClick={() => setMenuOpen(false)}
+          >
+            Blog
+          </Link>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "15px",
+              marginTop: "20px",
+            }}
+          >
+            <Link
+              href="/#contact"
+              className={`${styles.mobileNavLink}`}
+              style={{ textAlign: "center", fontSize: "1.1rem" }}
+              onClick={() => setMenuOpen(false)}
+            >
+              Konsultasi
+            </Link>
+            <Link
+              href="/#contact"
+              className="btn btn-primary"
+              style={{ width: "100%", textAlign: "center" }}
+              onClick={() => setMenuOpen(false)}
+            >
+              Hubungi Saya
+            </Link>
+          </div>
         </div>
-      </div>
-    </nav>
-  </>
+      </nav>
+    </>
   );
 };
 
 export default Navbar;
-

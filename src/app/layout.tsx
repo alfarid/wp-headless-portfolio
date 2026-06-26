@@ -11,8 +11,15 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "WP.dev | Headless WordPress & Next.js Developer",
-  description: "Portofolio WordPress Developer spesialisasi Headless CMS (WPGraphQL), Custom Themes, dan Plugin Development kustom.",
-  keywords: ["wordpress developer", "headless wordpress", "nextjs developer", "custom plugin wordpress", "gutenberg blocks"],
+  description:
+    "Portofolio WordPress Developer spesialisasi Headless CMS (WPGraphQL), Custom Themes, dan Plugin Development kustom.",
+  keywords: [
+    "wordpress developer",
+    "headless wordpress",
+    "nextjs developer",
+    "custom plugin wordpress",
+    "gutenberg blocks",
+  ],
 };
 
 export default function RootLayout({
@@ -29,5 +36,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-

@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import styles from './Menu.module.css';
-import { Project } from '@/lib/wordpress';
+import { useState } from "react";
+import Image from "next/image";
+import styles from "./Menu.module.css";
+import { Project } from "@/lib/wordpress";
 
 interface MenuProps {
   items: Project[];
@@ -22,7 +22,11 @@ const Menu = ({ items }: MenuProps) => {
   return (
     <section id="projects" className={styles.menuSection}>
       {/* Background glow decoration */}
-      <div className="blur-blob blur-indigo" style={{ bottom: '10%', left: '5%', width: '350px', height: '350px' }} aria-hidden="true"></div>
+      <div
+        className="blur-blob blur-indigo"
+        style={{ bottom: "10%", left: "5%", width: "350px", height: "350px" }}
+        aria-hidden="true"
+      ></div>
 
       <div className="container">
         <div className={styles.header} data-aos="fade-up">
@@ -31,7 +35,9 @@ const Menu = ({ items }: MenuProps) => {
           </div>
           <h2 className="section-title">Hasil Karya Pilihan</h2>
           <p className="section-subtitle">
-            Koleksi proyek nyata yang mendemonstrasikan integrasi headless CMS, custom Gutenberg block development, serta performa Core Web Vitals hijau.
+            Koleksi proyek nyata yang mendemonstrasikan integrasi headless CMS,
+            custom Gutenberg block development, serta performa Core Web Vitals
+            hijau.
           </p>
         </div>
 
@@ -42,7 +48,7 @@ const Menu = ({ items }: MenuProps) => {
             {displayItems.map((project, idx) => (
               <button
                 key={project.id}
-                className={`${styles.tabBtn} ${activeIndex === idx ? styles.activeTab : ''}`}
+                className={`${styles.tabBtn} ${activeIndex === idx ? styles.activeTab : ""}`}
                 onClick={() => setActiveIndex(idx)}
                 role="tab"
                 aria-selected={activeIndex === idx}
@@ -56,7 +62,9 @@ const Menu = ({ items }: MenuProps) => {
                 </div>
 
                 <div className={styles.tabContent}>
-                  <span className={styles.projectCategory}>{project.category}</span>
+                  <span className={styles.projectCategory}>
+                    {project.category}
+                  </span>
                   <h3 className={styles.tabTitle}>{project.name}</h3>
                   <p className={styles.tabDesc}>{project.description}</p>
                 </div>
@@ -65,12 +73,19 @@ const Menu = ({ items }: MenuProps) => {
           </div>
 
           {/* Right: Dynamic Screenshot Display */}
-          <div className={styles.imageContainer} data-aos="fade-left" id={`project-panel-${activeIndex}`} role="tabpanel">
+          <div
+            className={styles.imageContainer}
+            data-aos="fade-left"
+            id={`project-panel-${activeIndex}`}
+            role="tabpanel"
+          >
             {/* Background spotlight backlight */}
             <div className={styles.backlight} aria-hidden="true"></div>
-            
+
             <Image
-              key={activeIndex} /* Key triggers re-mount and CSS animation on tab change */
+              key={
+                activeIndex
+              } /* Key triggers re-mount and CSS animation on tab change */
               src={activeProject.image}
               alt={activeProject.name}
               fill
@@ -86,4 +101,3 @@ const Menu = ({ items }: MenuProps) => {
 };
 
 export default Menu;
-

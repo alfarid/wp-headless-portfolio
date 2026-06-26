@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import styles from './Hero.module.css';
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import styles from "./Hero.module.css";
 
 const PHRASES = [
-  'Headless WordPress',
-  'Next.js & React Frontend',
-  'Custom Plugin & Block',
-  'WooCommerce API Integration'
+  "Headless WordPress",
+  "Next.js & React Frontend",
+  "Custom Plugin & Block",
+  "WooCommerce API Integration",
 ];
 
 const Hero = () => {
-  const [currentText, setCurrentText] = useState('');
+  const [currentText, setCurrentText] = useState("");
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(100);
@@ -25,7 +25,7 @@ const Hero = () => {
       if (!isDeleting) {
         // Typing
         setCurrentText(currentPhrase.substring(0, currentText.length + 1));
-        
+
         // Finished typing the phrase
         if (currentText === currentPhrase) {
           timer = setTimeout(() => setIsDeleting(true), 2500);
@@ -36,7 +36,7 @@ const Hero = () => {
         setCurrentText(currentPhrase.substring(0, currentText.length - 1));
 
         // Finished deleting
-        if (currentText === '') {
+        if (currentText === "") {
           setIsDeleting(false);
           setPhraseIndex((prev) => (prev + 1) % PHRASES.length);
           setTypingSpeed(100); // Reset speed
@@ -47,7 +47,7 @@ const Hero = () => {
       // Determine typing speed
       const nextSpeed = isDeleting ? 40 : 80;
       setTypingSpeed(nextSpeed);
-      
+
       timer = setTimeout(handleType, typingSpeed);
     };
 
@@ -59,13 +59,21 @@ const Hero = () => {
   return (
     <section className={styles.hero}>
       {/* Animated background blurs */}
-      <div className="blur-blob blur-purple" style={{ top: '-10%', left: '20%', width: '600px', height: '600px' }} aria-hidden="true"></div>
-      <div className="blur-blob blur-indigo" style={{ top: '20%', right: '-10%', width: '700px', height: '700px' }} aria-hidden="true"></div>
+      <div
+        className="blur-blob blur-purple"
+        style={{ top: "-10%", left: "20%", width: "600px", height: "600px" }}
+        aria-hidden="true"
+      ></div>
+      <div
+        className="blur-blob blur-indigo"
+        style={{ top: "20%", right: "-10%", width: "700px", height: "700px" }}
+        aria-hidden="true"
+      ></div>
 
       {/* Decorative grid overlay */}
       <div className={styles.gridOverlay} aria-hidden="true"></div>
 
-      <div className="container" style={{ position: 'relative', zIndex: 10 }}>
+      <div className="container" style={{ position: "relative", zIndex: 10 }}>
         <div className={styles.heroContent}>
           <span className={styles.tagline} data-aos="fade-up">
             Headless WordPress & Next.js Specialist
@@ -75,11 +83,21 @@ const Hero = () => {
             <span className="gradient-text">{currentText}</span>
             <span className={styles.cursor}>|</span>
           </h1>
-          <p className={styles.description} data-aos="fade-up" data-aos-delay="200">
-            Saya membantu bisnis dan agensi mengombinasikan kemudahan Content Management dari WordPress dengan performa luar biasa & SEO terbaik dari Next.js Frontend.
+          <p
+            className={styles.description}
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            Saya membantu bisnis dan agensi mengombinasikan kemudahan Content
+            Management dari WordPress dengan performa luar biasa & SEO terbaik
+            dari Next.js Frontend.
           </p>
 
-          <div className={styles.actions} data-aos="fade-up" data-aos-delay="300">
+          <div
+            className={styles.actions}
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <a href="#projects" className="btn btn-primary">
               Cek Portfolio
             </a>
@@ -89,19 +107,28 @@ const Hero = () => {
           </div>
 
           {/* Cruip Open Pro Style Mockup Visual */}
-          <div className={styles.mockupWrapper} data-aos="fade-up" data-aos-delay="400">
+          <div
+            className={styles.mockupWrapper}
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
             <div className={styles.mockupContainer}>
-              <Image 
-                src="/dev_workspace_v2.png" 
-                alt="WordPress Developer Workspace Dashboard" 
-                width={1104} 
+              <Image
+                src="/dev_workspace_v2.png"
+                alt="WordPress Developer Workspace Dashboard"
+                width={1104}
                 height={576}
                 className={styles.mockupImage}
                 priority
               />
               <div className={styles.mockupOverlay}>
                 <span className={styles.playBtn} aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
                     <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" />
                   </svg>
                 </span>
@@ -111,7 +138,11 @@ const Hero = () => {
           </div>
 
           {/* Developer Stats Row */}
-          <div className={styles.statsContainer} data-aos="fade-up" data-aos-delay="500">
+          <div
+            className={styles.statsContainer}
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
             <div className={styles.statItem}>
               <span className={styles.statNumber}>5+</span>
               <span className={styles.statLabel}>Tahun Pengalaman</span>
@@ -134,4 +165,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
