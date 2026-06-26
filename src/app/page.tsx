@@ -46,7 +46,7 @@ export default async function Home() {
               boxShadow: '0 20px 40px rgba(0,0,0,0.4)'
             }}>
               <Image 
-                src="/dev_workspace.png" 
+                src="/dev_workspace_v2.png" 
                 alt="WordPress Developer" 
                 fill 
                 style={{ objectFit: 'cover' }}
@@ -115,7 +115,7 @@ export default async function Home() {
             boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)'
           }}>
             <Image 
-              src="/gutenberg_project.png" 
+              src="/gutenberg_project_v2.png" 
               alt="Gutenberg React Block Editor Showcase" 
               fill
               style={{ objectFit: 'cover', objectPosition: 'center' }}

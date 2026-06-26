@@ -33,7 +33,7 @@ export const MOCK_PROJECTS: Project[] = [
     name: 'Headless WooCommerce Store',
     description: 'Toko online berkecepatan tinggi dengan Next.js App Router, WPGraphQL, dan integrasi Payment Gateway Midtrans.',
     techStack: 'Next.js, Tailwind, WPGraphQL, Midtrans',
-    image: '/ecommerce_project.png',
+    image: '/ecommerce_project_v2.png',
     category: 'Headless'
   },
   {
@@ -41,7 +41,7 @@ export const MOCK_PROJECTS: Project[] = [
     name: 'Custom Gutenberg Block Theme',
     description: 'Tema kustom WordPress interaktif dibangun menggunakan full-site editing (FSE) dan React Gutenberg custom blocks.',
     techStack: 'React, PHP, Tailwind, Gutenberg API',
-    image: '/gutenberg_project.png',
+    image: '/gutenberg_project_v2.png',
     category: 'Custom Themes'
   },
   {
@@ -49,7 +49,7 @@ export const MOCK_PROJECTS: Project[] = [
     name: 'Salesforce CRM Connector Plugin',
     description: 'Plugin kustom WordPress aman untuk sinkronisasi data prospek formulir ke Salesforce CRM secara real-time via REST API.',
     techStack: 'PHP, WordPress Plugin API, Salesforce API',
-    image: '/dev_workspace.png',
+    image: '/dev_workspace_v2.png',
     category: 'Plugins'
   },
   {
@@ -57,7 +57,7 @@ export const MOCK_PROJECTS: Project[] = [
     name: 'High-Traffic News Portal',
     description: 'Migrasi portal berita besar ke arsitektur headless dengan Incremental Static Regeneration (ISR) untuk menangani jutaan pageviews.',
     techStack: 'Next.js, GraphQL, Redis, Node.js',
-    image: '/ecommerce_project.png',
+    image: '/ecommerce_project_v2.png',
     category: 'Headless'
   }
 ];
@@ -94,7 +94,7 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
     id: 'blog-1',
     title: 'Mengenal Headless WordPress: Mengapa Anda Harus Menggunakannya',
     description: 'Analisis mendalam mengenai keunggulan arsitektur decoupled menggunakan WordPress sebagai API-driven CMS dan Next.js di frontend.',
-    image: '/dev_workspace.png',
+    image: '/dev_workspace_v2.png',
     date: 'June 24, 2026'
   },
   {

@@ -92,7 +92,7 @@ const Hero = () => {
           <div className={styles.mockupWrapper} data-aos="fade-up" data-aos-delay="400">
             <div className={styles.mockupContainer}>
               <Image 
-                src="/dev_workspace.png" 
+                src="/dev_workspace_v2.png" 
                 alt="WordPress Developer Workspace Dashboard" 
                 width={1104} 
                 height={576}
