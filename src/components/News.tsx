@@ -34,7 +34,7 @@ const Blog = ({ items }: BlogProps) => {
                 <p style={{ color: 'var(--primary)', fontWeight: '600', fontSize: '0.8rem', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '1px' }}>
                   {blog.date}
                 </p>
-                <h3 style={{ fontSize: '1.1rem', marginBottom: '12px', lineHeight: '1.4', color: '#fff' }}>
+                <h3 style={{ fontSize: '1.1rem', marginBottom: '12px', lineHeight: '1.4', color: 'var(--gray-dark)' }}>
                   {blog.title}
                 </h3>
                 <p style={{ color: 'var(--gray-medium)', fontSize: '0.9rem', lineHeight: '1.6', flexGrow: 1 }}>

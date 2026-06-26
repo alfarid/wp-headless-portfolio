@@ -2,7 +2,7 @@
   position: relative;
   background-color: transparent;
   padding: 100px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .glowBlob {
@@ -11,7 +11,7 @@
   right: 5%;
   width: 350px;
   height: 350px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(120, 92, 255, 0.02) 0%, transparent 70%);
   pointer-events: none;
   z-index: 1;
   filter: blur(40px);
@@ -44,8 +44,8 @@
   right: 24px;
   width: 32px;
   height: 32px;
-  background-color: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -62,15 +62,15 @@
 }
 
 .card:hover .arrowIcon svg path {
-  fill: #0c0e10;
+  fill: #f6f6f6;
 }
 
 /* Icon container */
 .iconWrapper {
   width: 52px;
   height: 52px;
-  background-color: rgba(99, 102, 241, 0.08);
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  background-color: rgba(120, 92, 255, 0.05);
+  border: 1px solid rgba(120, 92, 255, 0.15);
   border-radius: 4px; /* Matches Open Pro's vendor block style */
   display: flex;
   align-items: center;
@@ -97,16 +97,16 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  color: var(--accent);
+  background: rgba(120, 92, 255, 0.06);
+  border: 1px solid rgba(120, 92, 255, 0.15);
+  color: var(--primary);
   margin-bottom: 15px;
 }
 
 .cardName {
   font-size: 1.15rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--gray-dark);
   margin-bottom: 12px;
   letter-spacing: -0.02em;
 }

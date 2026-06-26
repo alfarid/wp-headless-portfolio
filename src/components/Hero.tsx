@@ -68,7 +68,7 @@ const Hero = () => {
       <div className="container" style={{ position: 'relative', zIndex: 10 }}>
         <div className={styles.heroContent}>
           <span className={styles.tagline} data-aos="fade-up">
-            WordPress & Headless Architect
+            Headless WordPress & Next.js Specialist
           </span>
           <h1 className={styles.title} data-aos="fade-up" data-aos-delay="100">
             Membangun Website <br />

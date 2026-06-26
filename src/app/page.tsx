@@ -56,23 +56,24 @@ export default async function Home() {
                 bottom: '20px',
                 left: '20px',
                 right: '20px',
-                background: 'rgba(15, 23, 42, 0.85)',
+                background: 'rgba(255, 255, 255, 0.9)',
                 backdropFilter: 'blur(8px)',
-                border: '1px solid rgba(255,255,255,0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.06)',
                 padding: '20px',
-                borderRadius: 'var(--radius-md)'
+                borderRadius: 'var(--radius-md)',
+                boxShadow: '0 8px 24px rgba(0, 0, 0, 0.08)'
               }}>
-                <p style={{ fontWeight: '600', color: '#fff', fontSize: '1.1rem' }}>WordPress & Next.js Expert</p>
+                <p style={{ fontWeight: '600', color: 'var(--gray-dark)', fontSize: '1.1rem' }}>WordPress & Next.js Expert</p>
                 <p style={{ color: 'var(--primary)', fontSize: '0.85rem', fontWeight: '600', marginTop: '4px' }}>Ready to Scale Your Business</p>
               </div>
             </div>
             <div data-aos="fade-left" data-aos-delay="100">
               <p style={{ color: 'var(--primary)', fontWeight: '600', marginBottom: '15px', letterSpacing: '1px', textTransform: 'uppercase', fontSize: '0.9rem' }}>TENTANG SAYA</p>
-              <h2 style={{ fontSize: '3rem', marginBottom: '25px', lineHeight: '1.2', color: '#fff' }}>
+              <h2 style={{ fontSize: '3rem', marginBottom: '25px', lineHeight: '1.2', color: 'var(--gray-dark)' }}>
                 Menghubungkan Kebebasan Konten & Performa Maksimal
               </h2>
               <p style={{ fontSize: '1.1rem', color: 'var(--gray-medium)', marginBottom: '20px', lineHeight: '1.7' }}>
-                Saya adalah WordPress Developer yang fokus pada pengembangan modern menggunakan konsep **Headless CMS**. Saya percaya bahwa admin konten berhak mendapatkan kemudahan dashboard WordPress, sementara pengunjung website berhak mendapatkan kecepatan loading milidetik dari Next.js.
+                Saya adalah Web Developer yang fokus pada pengembangan modern menggunakan arsitektur **headless wordpress nextjs**. Saya percaya bahwa admin konten berhak mendapatkan kemudahan dashboard WordPress, sementara pengunjung website berhak mendapatkan kecepatan loading milidetik dari Next.js.
               </p>
               <p style={{ fontSize: '1.1rem', color: 'var(--gray-medium)', marginBottom: '30px', lineHeight: '1.7' }}>
                 Dengan keahlian di bidang custom plugin, custom Gutenberg block development, serta GraphQL API, saya mengubah WordPress tradisional Anda menjadi aplikasi web modern yang dinamis dan berkinerja tinggi.
@@ -105,18 +106,19 @@ export default async function Home() {
             position: 'relative',
             width: '100%',
             maxWidth: '960px',
+            aspectRatio: '21 / 8',
+            maxHeight: '300px',
             margin: '0 auto 60px',
             borderRadius: '8px',
             overflow: 'hidden',
-            border: '1px solid rgba(255, 255, 255, 0.08)',
-            boxShadow: '0 20px 50px rgba(0, 0, 0, 0.4)'
+            border: '1px solid rgba(0, 0, 0, 0.06)',
+            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)'
           }}>
             <Image 
               src="/gutenberg_project.png" 
               alt="Gutenberg React Block Editor Showcase" 
-              width={1104} 
-              height={384}
-              style={{ width: '100%', height: 'auto', display: 'block' }}
+              fill
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
             />
           </div>
 
@@ -135,7 +137,7 @@ export default async function Home() {
                   <path d="M12 2v20M2 12h20" />
                 </svg>
               </div>
-              <h3 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: '10px', fontWeight: '600' }}>Decoupled Architecture</h3>
+              <h3 style={{ fontSize: '1.05rem', color: 'var(--gray-dark)', marginBottom: '10px', fontWeight: '600' }}>Decoupled Architecture</h3>
               <p style={{ color: 'var(--gray-medium)', fontSize: '0.9rem', lineHeight: '1.6' }}>
                 Memisahkan frontend Next.js dengan backend WordPress GraphQL. Menjamin kecepatan akses milidetik dan keamanan super tangguh.
               </p>
@@ -150,7 +152,7 @@ export default async function Home() {
                   <line x1="12" y1="22.08" x2="12" y2="12" />
                 </svg>
               </div>
-              <h3 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: '10px', fontWeight: '600' }}>Custom Gutenberg Blocks</h3>
+              <h3 style={{ fontSize: '1.05rem', color: 'var(--gray-dark)', marginBottom: '10px', fontWeight: '600' }}>Custom Gutenberg Blocks</h3>
               <p style={{ color: 'var(--gray-medium)', fontSize: '0.9rem', lineHeight: '1.6' }}>
                 Blok kustom berbasis React untuk editor WordPress Gutenberg. Editor konten bebas membuat layout dinamis tanpa merusak struktur desain.
               </p>
@@ -165,7 +167,7 @@ export default async function Home() {
                   <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
                 </svg>
               </div>
-              <h3 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: '10px', fontWeight: '600' }}>Headless WooCommerce</h3>
+              <h3 style={{ fontSize: '1.05rem', color: 'var(--gray-dark)', marginBottom: '10px', fontWeight: '600' }}>Headless WooCommerce</h3>
               <p style={{ color: 'var(--gray-medium)', fontSize: '0.9rem', lineHeight: '1.6' }}>
                 Toko e-commerce modern berbasis WooCommerce API dengan keranjang belanja, checkout instan, dan integrasi payment gateway lokal.
               </p>
@@ -180,7 +182,7 @@ export default async function Home() {
                   <line x1="6" y1="20" x2="6" y2="14" />
                 </svg>
               </div>
-              <h3 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: '10px', fontWeight: '600' }}>Core Web Vitals Optimal</h3>
+              <h3 style={{ fontSize: '1.05rem', color: 'var(--gray-dark)', marginBottom: '10px', fontWeight: '600' }}>Core Web Vitals Optimal</h3>
               <p style={{ color: 'var(--gray-medium)', fontSize: '0.9rem', lineHeight: '1.6' }}>
                 Pengoptimalan performa Google Lighthouse dengan server-side caching (ISR), load font kustom, dan optimasi aset gambar Next.js.
               </p>
@@ -194,7 +196,7 @@ export default async function Home() {
                   <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                 </svg>
               </div>
-              <h3 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: '10px', fontWeight: '600' }}>Secure Middleware</h3>
+              <h3 style={{ fontSize: '1.05rem', color: 'var(--gray-dark)', marginBottom: '10px', fontWeight: '600' }}>Secure Middleware</h3>
               <p style={{ color: 'var(--gray-medium)', fontSize: '0.9rem', lineHeight: '1.6' }}>
                 Otentikasi formulir, integrasi JWT token, dan pembatasan hak akses rute API langsung pada layer middleware Next.js.
               </p>
@@ -208,7 +210,7 @@ export default async function Home() {
                   <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
                 </svg>
               </div>
-              <h3 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: '10px', fontWeight: '600' }}>API Connectors</h3>
+              <h3 style={{ fontSize: '1.05rem', color: 'var(--gray-dark)', marginBottom: '10px', fontWeight: '600' }}>API Connectors</h3>
               <p style={{ color: 'var(--gray-medium)', fontSize: '0.9rem', lineHeight: '1.6' }}>
                 Sinkronisasi data real-time via Webhooks dari WordPress ke CRM populer seperti Salesforce, HubSpot, atau Mailchimp.
               </p>
@@ -224,10 +226,10 @@ export default async function Home() {
       <News items={blogPosts} />
 
       {/* Contact Section */}
-      <section id="contact" className="section" style={{ backgroundColor: 'rgba(15, 23, 42, 0.4)', borderTop: '1px solid rgba(255,255,255,0.03)' }}>
+      <section id="contact" className="section" style={{ backgroundColor: 'rgba(120, 92, 255, 0.03)', borderTop: '1px solid rgba(0, 0, 0, 0.05)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <span className="badge-glow" data-aos="fade-up">KONSULTASI GRATIS</span>
-          <h2 data-aos="fade-up" data-aos-delay="100" style={{ color: '#fff', fontSize: '3rem', marginTop: '20px', marginBottom: '20px', fontWeight: '700' }}>Siap Membangun Website Impian Anda?</h2>
+          <h2 data-aos="fade-up" data-aos-delay="100" style={{ color: 'var(--gray-dark)', fontSize: '3rem', marginTop: '20px', marginBottom: '20px', fontWeight: '700' }}>Siap Membangun Website Impian Anda?</h2>
           <p data-aos="fade-up" data-aos-delay="200" style={{ color: 'var(--gray-medium)', maxWidth: '700px', margin: '0 auto 40px', fontSize: '1.1rem', lineHeight: '1.6' }}>
             Hubungi saya sekarang untuk mendiskusikan migrasi website ke headless Next.js, pembuatan plugin kustom, atau optimasi speed website WordPress Anda.
           </p>
@@ -244,11 +246,11 @@ export default async function Home() {
       </section>
 
       {/* Footer */}
-      <footer style={{ backgroundColor: 'var(--background)', padding: '80px 0 40px', borderTop: '1px solid rgba(255, 255, 255, 0.05)' }}>
+      <footer style={{ backgroundColor: '#f0f1f4', padding: '80px 0 40px', borderTop: '1px solid rgba(0, 0, 0, 0.06)' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '50px', marginBottom: '60px' }}>
             <div>
-              <h3 style={{ color: '#fff', marginBottom: '25px', fontSize: '1.5rem' }}>
+              <h3 style={{ color: 'var(--gray-dark)', marginBottom: '25px', fontSize: '1.5rem' }}>
                 WP<span style={{ color: 'var(--primary)' }}>.dev</span>
               </h3>
               <p style={{ color: 'var(--gray-medium)', fontSize: '0.9rem', lineHeight: '1.6' }}>
@@ -256,7 +258,7 @@ export default async function Home() {
               </p>
             </div>
             <div>
-              <h4 style={{ marginBottom: '20px', color: '#fff' }}>Navigasi</h4>
+              <h4 style={{ marginBottom: '20px', color: 'var(--gray-dark)' }}>Navigasi</h4>
               <ul style={{ color: 'var(--gray-medium)', fontSize: '0.9rem', display: 'grid', gap: '12px' }}>
                 <li><a href="#about" className="footer-link">Tentang Saya</a></li>
                 <li><a href="#services" className="footer-link">Layanan</a></li>
@@ -265,7 +267,7 @@ export default async function Home() {
               </ul>
             </div>
             <div>
-              <h4 style={{ marginBottom: '20px', color: '#fff' }}>Keahlian Utama</h4>
+              <h4 style={{ marginBottom: '20px', color: 'var(--gray-dark)' }}>Keahlian Utama</h4>
               <ul style={{ color: 'var(--gray-medium)', fontSize: '0.9rem', display: 'grid', gap: '12px' }}>
                 <li>Headless WordPress</li>
                 <li>Next.js & React</li>
@@ -274,7 +276,7 @@ export default async function Home() {
               </ul>
             </div>
             <div>
-              <h4 style={{ marginBottom: '20px', color: '#fff' }}>Kontak & Sosmed</h4>
+              <h4 style={{ marginBottom: '20px', color: 'var(--gray-dark)' }}>Kontak & Sosmed</h4>
               <p style={{ color: 'var(--gray-medium)', fontSize: '0.9rem', lineHeight: '1.8', marginBottom: '15px' }}>
                 Jakarta, Indonesia<br />
                 hello@wpdev.com
@@ -285,7 +287,7 @@ export default async function Home() {
               </div>
             </div>
           </div>
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '30px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px' }}>
+          <div style={{ borderTop: '1px solid rgba(0, 0, 0, 0.06)', paddingTop: '30px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px' }}>
             <p style={{ color: 'var(--gray-medium)', fontSize: '0.8rem' }}>Copyright © WP.dev 2026. All rights reserved.</p>
             <p style={{ color: 'var(--gray-medium)', fontSize: '0.8rem' }}>Built with WordPress & Next.js</p>
           </div>
