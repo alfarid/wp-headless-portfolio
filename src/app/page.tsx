@@ -180,10 +180,12 @@ export default async function Home() {
       </section>
 
       {/* Section Masalah: Pernah Kapok Bikin Website? */}
-      <section className="section" style={{ backgroundColor: "rgba(120, 92, 255, 0.02)" }}>
+      <section className="section" style={{ backgroundColor: "rgba(120, 92, 255, 0.02)", position: "relative" }}>
         <div className="container">
           <div style={{ textAlign: "center", maxWidth: "780px", margin: "0 auto 50px" }} data-aos="fade-up">
-            <span className="badge-glow">KENDALA UMUM CLIENT</span>
+            <span className="badge-glow" style={{ backgroundColor: "rgba(239, 68, 68, 0.08)", color: "#dc2626", border: "1px solid rgba(239, 68, 68, 0.2)" }}>
+              KENDALA UMUM CLIENT
+            </span>
             <h2 className="section-title" style={{ marginTop: "16px" }}>
               Pernah Kapok Bikin Website?
             </h2>
@@ -200,70 +202,133 @@ export default async function Home() {
               marginBottom: "50px",
             }}
           >
-            <div data-aos="fade-up" style={{ padding: "28px", backgroundColor: "#ffffff", borderRadius: "var(--radius-md)", border: "1px solid rgba(0,0,0,0.06)" }}>
-              <h4 style={{ color: "#d9534f", fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px" }}>
-                ❌ Biaya Membengkak di Tengah Jalan
+            {/* Card 1 */}
+            <div
+              data-aos="fade-up"
+              style={{
+                padding: "30px 24px",
+                backgroundColor: "#ffffff",
+                borderRadius: "16px",
+                border: "1px solid rgba(239, 68, 68, 0.15)",
+                boxShadow: "0 8px 24px rgba(239, 68, 68, 0.04)",
+                position: "relative",
+              }}
+            >
+              <div style={{ fontSize: "2rem", marginBottom: "12px" }}>💸</div>
+              <h4 style={{ color: "#dc2626", fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px" }}>
+                Biaya Membengkak di Tengah Jalan
               </h4>
-              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.92rem", lineHeight: "1.6" }}>
                 Harga awal terlihat murah, tetapi tiba-tiba ada biaya tambahan untuk fitur dasar, domain, atau konfigurasi yang tidak dijelaskan di awal.
               </p>
             </div>
 
-            <div data-aos="fade-up" data-aos-delay="100" style={{ padding: "28px", backgroundColor: "#ffffff", borderRadius: "var(--radius-md)", border: "1px solid rgba(0,0,0,0.06)" }}>
-              <h4 style={{ color: "#d9534f", fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px" }}>
-                ❌ Pengerjaan Molor Tanpa Kejelasan
+            {/* Card 2 */}
+            <div
+              data-aos="fade-up"
+              data-aos-delay="100"
+              style={{
+                padding: "30px 24px",
+                backgroundColor: "#ffffff",
+                borderRadius: "16px",
+                border: "1px solid rgba(239, 68, 68, 0.15)",
+                boxShadow: "0 8px 24px rgba(239, 68, 68, 0.04)",
+              }}
+            >
+              <div style={{ fontSize: "2rem", marginBottom: "12px" }}>⏳</div>
+              <h4 style={{ color: "#dc2626", fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px" }}>
+                Pengerjaan Molor Tanpa Kejelasan
               </h4>
-              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.92rem", lineHeight: "1.6" }}>
                 Janji selesai dalam seminggu, tapi berminggu-minggu tanpa kabar progres yang pasti.
               </p>
             </div>
 
-            <div data-aos="fade-up" data-aos-delay="200" style={{ padding: "28px", backgroundColor: "#ffffff", borderRadius: "var(--radius-md)", border: "1px solid rgba(0,0,0,0.06)" }}>
-              <h4 style={{ color: "#d9534f", fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px" }}>
-                ❌ Developer Susah Dihubungi Pasca Bayar
+            {/* Card 3 */}
+            <div
+              data-aos="fade-up"
+              data-aos-delay="200"
+              style={{
+                padding: "30px 24px",
+                backgroundColor: "#ffffff",
+                borderRadius: "16px",
+                border: "1px solid rgba(239, 68, 68, 0.15)",
+                boxShadow: "0 8px 24px rgba(239, 68, 68, 0.04)",
+              }}
+            >
+              <div style={{ fontSize: "2rem", marginBottom: "12px" }}>📵</div>
+              <h4 style={{ color: "#dc2626", fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px" }}>
+                Developer Susah Dihubungi Pasca Bayar
               </h4>
-              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.92rem", lineHeight: "1.6" }}>
                 Setelah pelunasan dilakukan, pesan slow respon dan perbaikan kendala teknis diabaikan.
               </p>
             </div>
 
-            <div data-aos="fade-up" data-aos-delay="300" style={{ padding: "28px", backgroundColor: "#ffffff", borderRadius: "var(--radius-md)", border: "1px solid rgba(0,0,0,0.06)" }}>
-              <h4 style={{ color: "#d9534f", fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px" }}>
-                ❌ Hasil Kaku Mirip Template Pasaran
+            {/* Card 4 */}
+            <div
+              data-aos="fade-up"
+              data-aos-delay="300"
+              style={{
+                padding: "30px 24px",
+                backgroundColor: "#ffffff",
+                borderRadius: "16px",
+                border: "1px solid rgba(239, 68, 68, 0.15)",
+                boxShadow: "0 8px 24px rgba(239, 68, 68, 0.04)",
+              }}
+            >
+              <div style={{ fontSize: "2rem", marginBottom: "12px" }}>🎨</div>
+              <h4 style={{ color: "#dc2626", fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px" }}>
+                Hasil Kaku Mirip Template Pasaran
               </h4>
-              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.92rem", lineHeight: "1.6" }}>
                 Tampilan kaku dan kurang mencerminkan nilai profesionalitas bisnis Anda.
               </p>
             </div>
 
-            <div data-aos="fade-up" data-aos-delay="400" style={{ padding: "28px", backgroundColor: "#ffffff", borderRadius: "var(--radius-md)", border: "1px solid rgba(0,0,0,0.06)" }}>
-              <h4 style={{ color: "#d9534f", fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px" }}>
-                ❌ Bingung Mengedit Konten Sendiri
+            {/* Card 5 */}
+            <div
+              data-aos="fade-up"
+              data-aos-delay="400"
+              style={{
+                padding: "30px 24px",
+                backgroundColor: "#ffffff",
+                borderRadius: "16px",
+                border: "1px solid rgba(239, 68, 68, 0.15)",
+                boxShadow: "0 8px 24px rgba(239, 68, 68, 0.04)",
+              }}
+            >
+              <div style={{ fontSize: "2rem", marginBottom: "12px" }}>😵</div>
+              <h4 style={{ color: "#dc2626", fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px" }}>
+                Bingung Mengedit Konten Sendiri
               </h4>
-              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.92rem", lineHeight: "1.6" }}>
                 Tidak diberi panduan cara memakai dashboard sehingga tergantung terus pada developer tiap kali ingin mengubah teks.
               </p>
             </div>
           </div>
 
-          {/* Transisi */}
+          {/* Solusi Transisi Card */}
           <div
             data-aos="fade-up"
             style={{
-              padding: "32px",
+              padding: "36px 32px",
               backgroundColor: "#ffffff",
-              borderRadius: "var(--radius-lg)",
+              borderRadius: "20px",
               border: "2px solid var(--primary)",
+              boxShadow: "0 15px 40px rgba(120, 92, 255, 0.12)",
               textAlign: "center",
-              maxWidth: "800px",
+              maxWidth: "840px",
               margin: "0 auto",
+              background: "linear-gradient(180deg, #ffffff 0%, rgba(120, 92, 255, 0.03) 100%)",
             }}
           >
-            <h3 style={{ fontSize: "1.3rem", fontWeight: "700", color: "var(--primary)", marginBottom: "8px" }}>
+            <span style={{ fontSize: "2.2rem", display: "inline-block", marginBottom: "12px" }}>💡</span>
+            <h3 style={{ fontSize: "1.4rem", fontWeight: "800", color: "var(--primary)", marginBottom: "10px" }}>
               Saya Bekerja Secara Berbeda.
             </h3>
-            <p style={{ color: "var(--gray-medium)", fontSize: "1rem", lineHeight: "1.6" }}>
-              Anda berkomunikasi langsung dengan saya dari awal konsultasi hingga peluncuran. Tanpa perantara, rincian biaya disepakati di awal, dan pengerjaan terpantau secara transparan.
+            <p style={{ color: "var(--gray-medium)", fontSize: "1.05rem", lineHeight: "1.7", margin: 0 }}>
+              Anda berkomunikasi langsung dengan saya dari awal konsultasi hingga peluncuran. Tanpa perantara sales, rincian biaya disepakati transparan di awal, dan progres pengerjaan terpantau secara berkala.
             </p>
           </div>
         </div>
@@ -477,43 +542,158 @@ export default async function Home() {
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: "24px",
+              gap: "28px",
             }}
           >
-            <div data-aos="fade-up" style={{ padding: "32px", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "var(--radius-lg)" }}>
-              <span style={{ fontSize: "2rem", fontWeight: "800", color: "var(--primary)" }}>01</span>
-              <h4 style={{ fontSize: "1.2rem", fontWeight: "700", marginTop: "12px", marginBottom: "8px", color: "var(--gray-dark)" }}>
-                Konsultasi Gratis
+            {/* Step 1 */}
+            <div
+              data-aos="fade-up"
+              style={{
+                padding: "36px 28px",
+                backgroundColor: "#ffffff",
+                borderRadius: "20px",
+                border: "1px solid rgba(0, 0, 0, 0.08)",
+                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.03)",
+                position: "relative",
+              }}
+            >
+              <div
+                style={{
+                  width: "48px",
+                  height: "48px",
+                  borderRadius: "14px",
+                  background: "linear-gradient(135deg, var(--primary) 0%, #8b5cf6 100%)",
+                  color: "#ffffff",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontWeight: "800",
+                  fontSize: "1.1rem",
+                  boxShadow: "0 6px 16px rgba(120, 92, 255, 0.25)",
+                  marginBottom: "20px",
+                }}
+              >
+                01
+              </div>
+              <h4 style={{ fontSize: "1.25rem", fontWeight: "700", marginBottom: "10px", color: "var(--gray-dark)" }}>
+                💬 Konsultasi Gratis
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
                 Diskusi awal mengenai kebutuhan website, tujuan bisnis, serta referensi tampilan yang Anda sukai.
               </p>
             </div>
 
-            <div data-aos="fade-up" data-aos-delay="100" style={{ padding: "32px", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "var(--radius-lg)" }}>
-              <span style={{ fontSize: "2rem", fontWeight: "800", color: "var(--primary)" }}>02</span>
-              <h4 style={{ fontSize: "1.2rem", fontWeight: "700", marginTop: "12px", marginBottom: "8px", color: "var(--gray-dark)" }}>
-                Penawaran & Kesepakatan
+            {/* Step 2 */}
+            <div
+              data-aos="fade-up"
+              data-aos-delay="100"
+              style={{
+                padding: "36px 28px",
+                backgroundColor: "#ffffff",
+                borderRadius: "20px",
+                border: "1px solid rgba(0, 0, 0, 0.08)",
+                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.03)",
+                position: "relative",
+              }}
+            >
+              <div
+                style={{
+                  width: "48px",
+                  height: "48px",
+                  borderRadius: "14px",
+                  background: "linear-gradient(135deg, var(--primary) 0%, #8b5cf6 100%)",
+                  color: "#ffffff",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontWeight: "800",
+                  fontSize: "1.1rem",
+                  boxShadow: "0 6px 16px rgba(120, 92, 255, 0.25)",
+                  marginBottom: "20px",
+                }}
+              >
+                02
+              </div>
+              <h4 style={{ fontSize: "1.25rem", fontWeight: "700", marginBottom: "10px", color: "var(--gray-dark)" }}>
+                📋 Penawaran & Kesepakatan
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Penyampaian rincian harga, estimasi waktu pengerjaan, dan pembayaran DP sebelum dimulai.
+                Penyampaian rincian harga, estimasi waktu pengerjaan, dan pembayaran DP sebelum pengerjaan dimulai.
               </p>
             </div>
 
-            <div data-aos="fade-up" data-aos-delay="200" style={{ padding: "32px", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "var(--radius-lg)" }}>
-              <span style={{ fontSize: "2rem", fontWeight: "800", color: "var(--primary)" }}>03</span>
-              <h4 style={{ fontSize: "1.2rem", fontWeight: "700", marginTop: "12px", marginBottom: "8px", color: "var(--gray-dark)" }}>
-                Desain & Pengembangan
+            {/* Step 3 */}
+            <div
+              data-aos="fade-up"
+              data-aos-delay="200"
+              style={{
+                padding: "36px 28px",
+                backgroundColor: "#ffffff",
+                borderRadius: "20px",
+                border: "1px solid rgba(0, 0, 0, 0.08)",
+                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.03)",
+                position: "relative",
+              }}
+            >
+              <div
+                style={{
+                  width: "48px",
+                  height: "48px",
+                  borderRadius: "14px",
+                  background: "linear-gradient(135deg, var(--primary) 0%, #8b5cf6 100%)",
+                  color: "#ffffff",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontWeight: "800",
+                  fontSize: "1.1rem",
+                  boxShadow: "0 6px 16px rgba(120, 92, 255, 0.25)",
+                  marginBottom: "20px",
+                }}
+              >
+                03
+              </div>
+              <h4 style={{ fontSize: "1.25rem", fontWeight: "700", marginBottom: "10px", color: "var(--gray-dark)" }}>
+                💻 Desain & Kode
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
                 Proses pengkodean dan penyusunan tata letak website dengan laporan perkembangan secara berkala.
               </p>
             </div>
 
-            <div data-aos="fade-up" data-aos-delay="300" style={{ padding: "32px", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "var(--radius-lg)" }}>
-              <span style={{ fontSize: "2rem", fontWeight: "800", color: "var(--primary)" }}>04</span>
-              <h4 style={{ fontSize: "1.2rem", fontWeight: "700", marginTop: "12px", marginBottom: "8px", color: "var(--gray-dark)" }}>
-                Revisi, Peluncuran & Serah Terima
+            {/* Step 4 */}
+            <div
+              data-aos="fade-up"
+              data-aos-delay="300"
+              style={{
+                padding: "36px 28px",
+                backgroundColor: "#ffffff",
+                borderRadius: "20px",
+                border: "1px solid rgba(0, 0, 0, 0.08)",
+                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.03)",
+                position: "relative",
+              }}
+            >
+              <div
+                style={{
+                  width: "48px",
+                  height: "48px",
+                  borderRadius: "14px",
+                  background: "linear-gradient(135deg, var(--primary) 0%, #8b5cf6 100%)",
+                  color: "#ffffff",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontWeight: "800",
+                  fontSize: "1.1rem",
+                  boxShadow: "0 6px 16px rgba(120, 92, 255, 0.25)",
+                  marginBottom: "20px",
+                }}
+              >
+                04
+              </div>
+              <h4 style={{ fontSize: "1.25rem", fontWeight: "700", marginBottom: "10px", color: "var(--gray-dark)" }}>
+                🚀 Live & Serah Terima
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
                 Pengecekan bersama, perbaikan revisi, pengaktifan ke domain Anda, dan penyerahan panduan pengelolaan.
@@ -569,6 +749,14 @@ export default async function Home() {
                 <p style={{ color: "var(--gray-medium)", fontSize: "0.9rem", marginBottom: "16px" }}>
                   Cocok untuk campaign promosi produk, halaman iklan sales, atau UMKM.
                 </p>
+                <div style={{ marginBottom: "20px", background: "rgba(120,92,255,0.05)", padding: "12px", borderRadius: "10px" }}>
+                  <p style={{ fontSize: "1.2rem", fontWeight: "800", color: "var(--gray-dark)", margin: 0 }}>
+                    Mulai dari Rp **[X]**
+                  </p>
+                  <p style={{ fontSize: "0.85rem", color: "var(--gray-medium)", margin: "4px 0 0" }}>
+                    Estimasi pengerjaan: 3 hari kerja
+                  </p>
+                </div>
 
                 <div style={{ borderTop: "1px dashed rgba(0, 0, 0, 0.1)", paddingTop: "20px", marginBottom: "24px" }}>
                   <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "12px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
@@ -576,7 +764,7 @@ export default async function Home() {
                     <li>✓ Free Domain & Cloud Hosting 1 Tahun</li>
                     <li>✓ Integrasi Tombol WhatsApp Direct</li>
                     <li>✓ Desain Mobile Friendly & Fast Loading</li>
-                    <li>✓ Kesempatan revisi: **[X]**x kesempatan</li>
+                    <li>✓ Kesempatan revisi: 3x kesempatan</li>
                   </ul>
                 </div>
               </div>
@@ -634,15 +822,23 @@ export default async function Home() {
                 <p style={{ color: "var(--gray-medium)", fontSize: "0.9rem", marginBottom: "16px" }}>
                   Pilihan ideal untuk profil bisnis perusahaan & lembaga resmi.
                 </p>
+                <div style={{ marginBottom: "20px", background: "rgba(120,92,255,0.08)", padding: "12px", borderRadius: "10px" }}>
+                  <p style={{ fontSize: "1.2rem", fontWeight: "800", color: "var(--primary)", margin: 0 }}>
+                    Mulai dari Rp **[X]**
+                  </p>
+                  <p style={{ fontSize: "0.85rem", color: "var(--gray-medium)", margin: "4px 0 0" }}>
+                    Estimasi pengerjaan: 7 hari kerja
+                  </p>
+                </div>
 
                 <div style={{ borderTop: "1px dashed rgba(120, 92, 255, 0.2)", paddingTop: "20px", marginBottom: "24px" }}>
                   <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "12px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
-                    <li>✓ Struktur Utama Hingga **[X]** Halaman</li>
+                    <li>✓ Struktur Utama Hingga 7 Halaman</li>
                     <li>✓ Free Domain .COM & Hosting Premium</li>
                     <li>✓ Email Domain Perusahaan (@namabisnis.com)</li>
                     <li>✓ Modul Blog & Galeri Portfolio</li>
                     <li>✓ Optimasi SEO Dasar & Google Maps</li>
-                    <li>✓ Kesempatan revisi: **[X]**x kesempatan</li>
+                    <li>✓ Kesempatan revisi: 5x kesempatan</li>
                   </ul>
                 </div>
               </div>
@@ -683,6 +879,14 @@ export default async function Home() {
                 <p style={{ color: "var(--gray-medium)", fontSize: "0.9rem", marginBottom: "16px" }}>
                   Untuk Toko Online, Web LMS E-Learning, Portal Berita & Headless.
                 </p>
+                <div style={{ marginBottom: "20px", background: "rgba(120,92,255,0.05)", padding: "12px", borderRadius: "10px" }}>
+                  <p style={{ fontSize: "1.2rem", fontWeight: "800", color: "var(--gray-dark)", margin: 0 }}>
+                    Mulai dari Rp **[X]**
+                  </p>
+                  <p style={{ fontSize: "0.85rem", color: "var(--gray-medium)", margin: "4px 0 0" }}>
+                    Estimasi pengerjaan: 2 minggu
+                  </p>
+                </div>
 
                 <div style={{ borderTop: "1px dashed rgba(0, 0, 0, 0.1)", paddingTop: "20px", marginBottom: "24px" }}>
                   <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "12px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
@@ -691,7 +895,7 @@ export default async function Home() {
                     <li>✓ Integrasi Payment Gateway & Auto Certificate</li>
                     <li>✓ Server Kapasitas Tinggi / CDN</li>
                     <li>✓ Training Admin & Panduan Penggunaan</li>
-                    <li>✓ Kesempatan revisi: **[X]**x kesempatan</li>
+                    <li>✓ Kesempatan revisi: 5x kesempatan</li>
                   </ul>
                 </div>
               </div>
@@ -743,7 +947,7 @@ export default async function Home() {
                 1. Berapa kisaran biaya pembuatan website?
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Biaya pembuatan website bervariasi tergantung pada fitur dan skala halaman yang dibutuhkan. Rincian penawaran akan disepakati transparan di awal tanpa biaya tersembunyi.
+                Biaya pembuatan website bervariasi mulai dari Rp **[X]** tergantung pada fitur dan skala halaman yang dibutuhkan. Rincian penawaran akan disepakati transparan di awal tanpa biaya tersembunyi.
               </p>
             </div>
 
@@ -753,7 +957,7 @@ export default async function Home() {
                 2. Berapa lama estimasi waktu pengerjaan?
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Estimasi waktu pengerjaan Landing Page sekitar 3 hari kerja, Company Profile 7 hari kerja, dan sistem custom (LMS/Toko Online) berkisar 5 minggu.
+                Estimasi waktu pengerjaan Landing Page sekitar 3 hari kerja, Company Profile 7 hari kerja, dan sistem custom (LMS/Toko Online) berkisar 2 minggu.
               </p>
             </div>
 
@@ -763,7 +967,7 @@ export default async function Home() {
                 3. Bagaimana sistem pembayarannya?
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Sistem pembayaran dilakukan dengan DP di awal saat kesepakatan penawaran, dan pelunasan dilakukan setelah website selesai diuji dan siap diluncurkan.
+                Sistem pembayaran dilakukan dengan DP sebesar 50% di awal saat kesepakatan penawaran, dan pelunasan sebesar 50% dilakukan setelah website selesai diuji dan siap diluncurkan.
               </p>
             </div>
 
@@ -793,7 +997,7 @@ export default async function Home() {
                 6. Bagaimana ketentuan garansi dan perbaikan bug?
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Setiap pembuatan website mencakup garansi gratis perbaikan bug selama 30 hari setelah live. Setelah masa garansi berakhir, Anda dapat mengambil paket pemeliharaan (maintenance).
+                Setiap pembuatan website mencakup garansi gratis perbaikan bug selama 30 hari setelah live. Setelah masa garansi berakhir, Anda dapat mengambil paket pemeliharaan (maintenance) berkala mulai dari Rp **[X]**/bulan.
               </p>
             </div>
 
@@ -803,7 +1007,7 @@ export default async function Home() {
                 7. Berapa kali kesempatan revisi yang didapatkan?
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Jumlah kesempatan revisi disesuaikan dengan paket yang dipilih (umumnya 5x kesempatan revisi pada tahap desain dan pengembangan sebelum website resmi diluncurkan).
+                Jumlah kesempatan revisi disesuaikan dengan paket yang dipilih (3x kesempatan revisi pada Paket Starter dan 5x kesempatan revisi pada Paket Business/Enterprise).
               </p>
             </div>
           </div>
@@ -828,10 +1032,11 @@ export default async function Home() {
             data-aos-delay="100"
             style={{
               color: "var(--gray-dark)",
-              fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-              marginTop: "20px",
+              fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)",
+              marginTop: "16px",
               marginBottom: "20px",
               fontWeight: "700",
+              lineHeight: "1.4",
             }}
           >
             Punya Ide Website? Ceritakan, Saya Balas dengan Estimasi Harga & Waktu Pengerjaan.
