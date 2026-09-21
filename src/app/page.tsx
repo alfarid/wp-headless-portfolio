@@ -65,7 +65,7 @@ export default async function Home() {
                 letterSpacing: "-0.5px",
               }}
             >
-              Website Bisnis Anda Nggak Boleh Cuma Jadi Pajangan.
+              Maksimalkan Performa Website Bisnis Anda
             </h1>
 
             <p
@@ -80,7 +80,7 @@ export default async function Home() {
                 margin: "0 auto 40px",
               }}
             >
-              Saya membantu pemilik bisnis, UMKM, dan kreator membangun website yang tidak hanya terlihat profesional, tapi juga menghasilkan calon pembeli. Tanpa biaya tersembunyi, tanpa agen perantara, dikerjakan langsung oleh developernya.
+              Membantu pemilik bisnis, UMKM, dan kreator membangun website yang tidak hanya terlihat profesional, tapi juga menghasilkan calon pembeli. Tanpa biaya tersembunyi, tanpa agen perantara, dikerjakan langsung oleh developernya.
             </p>
 
             <div
@@ -165,13 +165,13 @@ export default async function Home() {
             </div>
             <div>
               <h3 style={{ fontSize: "1.2rem", fontWeight: "700", color: "var(--primary)", marginBottom: "4px" }}>
-                **[X]** Proyek Selesai
+                50+ Proyek Selesai
               </h3>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.9rem" }}>Hasil Kerja Terbukti Dituntaskan</p>
             </div>
             <div>
               <h3 style={{ fontSize: "1.2rem", fontWeight: "700", color: "var(--primary)", marginBottom: "4px" }}>
-                **[X]%** Uptime Server
+                96% Uptime Server
               </h3>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.9rem" }}>Keandalan Akses Website Anda</p>
             </div>
@@ -493,10 +493,10 @@ export default async function Home() {
             <div data-aos="fade-up" data-aos-delay="100" style={{ padding: "32px", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "var(--radius-lg)" }}>
               <span style={{ fontSize: "2rem", fontWeight: "800", color: "var(--primary)" }}>02</span>
               <h4 style={{ fontSize: "1.2rem", fontWeight: "700", marginTop: "12px", marginBottom: "8px", color: "var(--gray-dark)" }}>
-                Penawaran & Kesepakatan DP **[X]%**
+                Penawaran & Kesepakatan
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Penyampaian rincian harga, estimasi waktu pengerjaan, dan pembayaran DP sebesar **[X]%** sebelum dimulai.
+                Penyampaian rincian harga, estimasi waktu pengerjaan, dan pembayaran DP sebelum dimulai.
               </p>
             </div>
 
@@ -569,14 +569,6 @@ export default async function Home() {
                 <p style={{ color: "var(--gray-medium)", fontSize: "0.9rem", marginBottom: "16px" }}>
                   Cocok untuk campaign promosi produk, halaman iklan sales, atau UMKM.
                 </p>
-                <div style={{ marginBottom: "20px", background: "rgba(120,92,255,0.05)", padding: "12px", borderRadius: "10px" }}>
-                  <p style={{ fontSize: "1.2rem", fontWeight: "800", color: "var(--gray-dark)", margin: 0 }}>
-                    Mulai dari Rp **[X]**
-                  </p>
-                  <p style={{ fontSize: "0.85rem", color: "var(--gray-medium)", margin: "4px 0 0" }}>
-                    Estimasi pengerjaan: **[X]** hari kerja
-                  </p>
-                </div>
 
                 <div style={{ borderTop: "1px dashed rgba(0, 0, 0, 0.1)", paddingTop: "20px", marginBottom: "24px" }}>
                   <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "12px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
@@ -642,14 +634,6 @@ export default async function Home() {
                 <p style={{ color: "var(--gray-medium)", fontSize: "0.9rem", marginBottom: "16px" }}>
                   Pilihan ideal untuk profil bisnis perusahaan & lembaga resmi.
                 </p>
-                <div style={{ marginBottom: "20px", background: "rgba(120,92,255,0.08)", padding: "12px", borderRadius: "10px" }}>
-                  <p style={{ fontSize: "1.2rem", fontWeight: "800", color: "var(--primary)", margin: 0 }}>
-                    Mulai dari Rp **[X]**
-                  </p>
-                  <p style={{ fontSize: "0.85rem", color: "var(--gray-medium)", margin: "4px 0 0" }}>
-                    Estimasi pengerjaan: **[X]** hari kerja
-                  </p>
-                </div>
 
                 <div style={{ borderTop: "1px dashed rgba(120, 92, 255, 0.2)", paddingTop: "20px", marginBottom: "24px" }}>
                   <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "12px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
@@ -699,14 +683,6 @@ export default async function Home() {
                 <p style={{ color: "var(--gray-medium)", fontSize: "0.9rem", marginBottom: "16px" }}>
                   Untuk Toko Online, Web LMS E-Learning, Portal Berita & Headless.
                 </p>
-                <div style={{ marginBottom: "20px", background: "rgba(120,92,255,0.05)", padding: "12px", borderRadius: "10px" }}>
-                  <p style={{ fontSize: "1.2rem", fontWeight: "800", color: "var(--gray-dark)", margin: 0 }}>
-                    Mulai dari Rp **[X]**
-                  </p>
-                  <p style={{ fontSize: "0.85rem", color: "var(--gray-medium)", margin: "4px 0 0" }}>
-                    Estimasi pengerjaan: **[X]** minggu
-                  </p>
-                </div>
 
                 <div style={{ borderTop: "1px dashed rgba(0, 0, 0, 0.1)", paddingTop: "20px", marginBottom: "24px" }}>
                   <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "12px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
@@ -767,7 +743,7 @@ export default async function Home() {
                 1. Berapa kisaran biaya pembuatan website?
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Biaya pembuatan website bervariasi mulai dari Rp **[X]** tergantung pada fitur dan skala halaman yang dibutuhkan. Rincian penawaran akan disepakati transparan di awal tanpa biaya tersembunyi.
+                Biaya pembuatan website bervariasi tergantung pada fitur dan skala halaman yang dibutuhkan. Rincian penawaran akan disepakati transparan di awal tanpa biaya tersembunyi.
               </p>
             </div>
 
@@ -777,7 +753,7 @@ export default async function Home() {
                 2. Berapa lama estimasi waktu pengerjaan?
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Estimasi waktu pengerjaan Landing Page sekitar **[X]** hari kerja, Company Profile **[X]** hari kerja, dan sistem custom (LMS/Toko Online) berkisar **[X]** minggu.
+                Estimasi waktu pengerjaan Landing Page sekitar 3 hari kerja, Company Profile 7 hari kerja, dan sistem custom (LMS/Toko Online) berkisar 5 minggu.
               </p>
             </div>
 
@@ -787,7 +763,7 @@ export default async function Home() {
                 3. Bagaimana sistem pembayarannya?
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Sistem pembayaran dilakukan dengan DP sebesar **[X]%** di awal saat kesepakatan penawaran, dan pelunasan sebesar **[X]%** dilakukan setelah website selesai diuji dan siap diluncurkan.
+                Sistem pembayaran dilakukan dengan DP di awal saat kesepakatan penawaran, dan pelunasan dilakukan setelah website selesai diuji dan siap diluncurkan.
               </p>
             </div>
 
@@ -817,7 +793,7 @@ export default async function Home() {
                 6. Bagaimana ketentuan garansi dan perbaikan bug?
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Setiap pembuatan website mencakup garansi gratis perbaikan bug selama 30 hari setelah live. Setelah masa garansi berakhir, Anda dapat mengambil paket pemeliharaan (maintenance) berkala mulai dari Rp **[X]**/bulan.
+                Setiap pembuatan website mencakup garansi gratis perbaikan bug selama 30 hari setelah live. Setelah masa garansi berakhir, Anda dapat mengambil paket pemeliharaan (maintenance).
               </p>
             </div>
 
@@ -827,7 +803,7 @@ export default async function Home() {
                 7. Berapa kali kesempatan revisi yang didapatkan?
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Jumlah kesempatan revisi disesuaikan dengan paket yang dipilih (umumnya **[X]**x kesempatan revisi pada tahap desain dan pengembangan sebelum website resmi diluncurkan).
+                Jumlah kesempatan revisi disesuaikan dengan paket yang dipilih (umumnya 5x kesempatan revisi pada tahap desain dan pengembangan sebelum website resmi diluncurkan).
               </p>
             </div>
           </div>
