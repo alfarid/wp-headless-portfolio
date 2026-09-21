@@ -19,6 +19,7 @@ export default async function Home() {
   ]);
 
   const projects = MOCK_PROJECTS;
+  const WA_NUMBER = "62895334155259";
 
   return (
     <main
@@ -103,7 +104,7 @@ export default async function Home() {
               }}
             >
               <a
-                href="https://wa.me/6281112345678?text=Halo,%20saya%20ingin%20konsultasi%20pembuatan%20website"
+                href={`https://wa.me/${WA_NUMBER}?text=Halo,%20saya%20ingin%20konsultasi%20pembuatan%20website`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary"
@@ -116,7 +117,7 @@ export default async function Home() {
                 className="btn btn-outline"
                 style={{ padding: "14px 32px", fontSize: "1rem" }}
               >
-                Lihat Paket & Harga
+                Lihat Paket Servis
               </a>
             </div>
           </div>
@@ -372,150 +373,313 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Pricing Section (Paket Pembuatan Website) */}
-      <section id="pricing" className="section">
+      {/* Pricing / PAKET SERVIS Section - Beautiful, High Converting, No Prices */}
+      <section id="pricing" className="section" style={{ position: "relative", backgroundColor: "#ffffff" }}>
         <div className="container">
-          <div style={{ textAlign: "center", maxWidth: "750px", margin: "0 auto 60px" }} data-aos="fade-up">
-            <span className="badge-glow">PAKET SERVIS</span>
-            <h2 className="section-title" style={{ marginTop: "16px" }}>
+          <div style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto 60px" }} data-aos="fade-up">
+            <span className="badge-glow">PAKET SERVIS & SOLUSI WEB</span>
+            <h2 className="section-title" style={{ marginTop: "16px", fontSize: "clamp(2.2rem, 4vw, 3rem)" }}>
               Pilihan Paket Pembuatan Website
             </h2>
-            <p className="section-subtitle">
-              Pilihan paket layanan web development yang dirancang khusus sesuai skala kebutuhan bisnis Anda.
+            <p className="section-subtitle" style={{ fontSize: "1.1rem" }}>
+              Dirancang secara presisi untuk membantu pertumbuhan bisnis Anda. Konsultasikan kebutuhan Anda bersama kami tanpa dipungut biaya.
             </p>
           </div>
 
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-              gap: "30px",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: "36px",
               alignItems: "stretch",
             }}
           >
-            {/* Starter Package */}
+            {/* Starter Package Card */}
             <div
               data-aos="fade-up"
               data-aos-delay="100"
               style={{
                 backgroundColor: "#ffffff",
-                padding: "40px 30px",
-                borderRadius: "var(--radius-lg)",
+                padding: "44px 32px",
+                borderRadius: "20px",
                 border: "1px solid rgba(0, 0, 0, 0.08)",
+                boxShadow: "0 12px 35px rgba(0, 0, 0, 0.04)",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
+                position: "relative",
+                transition: "all 0.3s ease",
               }}
             >
               <div>
-                <h3 style={{ fontSize: "1.4rem", fontWeight: "700", color: "var(--gray-dark)", marginBottom: "8px" }}>
-                  Paket Landing Page / Starter
-                </h3>
-                <p style={{ color: "var(--gray-medium)", fontSize: "0.9rem", marginBottom: "24px" }}>
-                  Cocok untuk campaign promosi, iklan produk, atau UMKM.
+                <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "20px" }}>
+                  <div
+                    style={{
+                      width: "52px",
+                      height: "52px",
+                      borderRadius: "14px",
+                      background: "rgba(120, 92, 255, 0.08)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: "1.8rem",
+                    }}
+                  >
+                    🚀
+                  </div>
+                  <div>
+                    <span style={{ fontSize: "0.75rem", fontWeight: "700", color: "var(--primary)", textTransform: "uppercase", letterSpacing: "1px" }}>
+                      STARTER TIER
+                    </span>
+                    <h3 style={{ fontSize: "1.35rem", fontWeight: "700", color: "var(--gray-dark)", margin: "2px 0 0" }}>
+                      Paket Landing Page / Starter
+                    </h3>
+                  </div>
+                </div>
+
+                <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6", marginBottom: "28px" }}>
+                  Pilihan terbaik untuk campaign promosi produk, halaman iklan sales, atau memperkuat identitas brand UMKM.
                 </p>
-                <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "12px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
-                  <li>✓ 1 Halaman Landing Page Sales</li>
-                  <li>✓ Free Domain & Hosting 1 Tahun</li>
-                  <li>✓ Integrasi Tombol WhatsApp Direct</li>
-                  <li>✓ Desain Mobile Friendly & Fast Loading</li>
-                  <li>✓ Panduan Input Konten</li>
-                </ul>
+
+                <div style={{ borderTop: "1px dashed rgba(0, 0, 0, 0.1)", paddingTop: "24px", marginBottom: "28px" }}>
+                  <p style={{ fontWeight: "700", fontSize: "0.85rem", color: "var(--gray-dark)", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "16px" }}>
+                    FITUR & CAKUPAN SERVIS:
+                  </p>
+                  <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "14px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
+                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> 1 Halaman Landing Page High Conversion
+                    </li>
+                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Free Domain & Cloud Hosting 1 Tahun
+                    </li>
+                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Integrasi Tombol WhatsApp Direct Chat
+                    </li>
+                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Desain Mobile Friendly & Ultra Fast Loading
+                    </li>
+                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Panduan Ringkas Kelola Konten
+                    </li>
+                  </ul>
+                </div>
               </div>
+
               <a
-                href="https://wa.me/6281112345678?text=Halo,%20saya%20tertarik%20Paket%20Starter"
+                href={`https://wa.me/${WA_NUMBER}?text=Halo,%20saya%20tertarik%20konsultasi%20Paket%20Starter`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline"
-                style={{ width: "100%", marginTop: "30px", textAlign: "center" }}
+                style={{
+                  width: "100%",
+                  padding: "14px 20px",
+                  borderRadius: "12px",
+                  fontSize: "0.95rem",
+                  fontWeight: "600",
+                  textAlign: "center",
+                  justifyContent: "center",
+                }}
               >
-                Pilih Paket Starter
+                Diskusi Paket Starter →
               </a>
             </div>
 
-            {/* Business Package */}
+            {/* Business Package Card (Featured) */}
             <div
               data-aos="fade-up"
               data-aos-delay="200"
               style={{
                 backgroundColor: "#ffffff",
-                padding: "40px 30px",
-                borderRadius: "var(--radius-lg)",
+                padding: "44px 32px",
+                borderRadius: "20px",
                 border: "2px solid var(--primary)",
-                boxShadow: "0 15px 40px rgba(120, 92, 255, 0.12)",
-                position: "relative",
+                boxShadow: "0 20px 50px rgba(120, 92, 255, 0.16)",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
+                position: "relative",
+                background: "linear-gradient(180deg, #ffffff 0%, rgba(120, 92, 255, 0.02) 100%)",
               }}
             >
-              <div style={{ position: "absolute", top: "-14px", right: "20px", background: "var(--primary)", color: "#fff", padding: "4px 14px", borderRadius: "20px", fontSize: "0.75rem", fontWeight: "700" }}>
-                POPULER
+              <div
+                style={{
+                  position: "absolute",
+                  top: "-15px",
+                  right: "24px",
+                  background: "linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%)",
+                  color: "#ffffff",
+                  padding: "6px 18px",
+                  borderRadius: "20px",
+                  fontSize: "0.75rem",
+                  fontWeight: "700",
+                  letterSpacing: "1px",
+                  boxShadow: "0 4px 15px rgba(120, 92, 255, 0.3)",
+                }}
+              >
+                PALING FAVORIT
               </div>
+
               <div>
-                <h3 style={{ fontSize: "1.4rem", fontWeight: "700", color: "var(--gray-dark)", marginBottom: "8px" }}>
-                  Paket Business (Company Profile)
-                </h3>
-                <p style={{ color: "var(--gray-medium)", fontSize: "0.9rem", marginBottom: "24px" }}>
-                  Solusi ideal untuk profil perusahaan & lembaga resmi.
+                <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "20px" }}>
+                  <div
+                    style={{
+                      width: "52px",
+                      height: "52px",
+                      borderRadius: "14px",
+                      background: "rgba(120, 92, 255, 0.12)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: "1.8rem",
+                    }}
+                  >
+                    🏢
+                  </div>
+                  <div>
+                    <span style={{ fontSize: "0.75rem", fontWeight: "700", color: "var(--primary)", textTransform: "uppercase", letterSpacing: "1px" }}>
+                      BUSINESS TIER
+                    </span>
+                    <h3 style={{ fontSize: "1.35rem", fontWeight: "700", color: "var(--gray-dark)", margin: "2px 0 0" }}>
+                      Paket Business (Company Profile)
+                    </h3>
+                  </div>
+                </div>
+
+                <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6", marginBottom: "28px" }}>
+                  Solusi ideal dan paling diminati untuk profil bisnis perusahaan, profil lembaga resmi, serta ekspansi pasar digital.
                 </p>
-                <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "12px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
-                  <li>✓ Hingga 7 Halaman Struktur Utama</li>
-                  <li>✓ Free Domain .COM & Cloud Hosting</li>
-                  <li>✓ Email Profesional Perusahaan (@nama.com)</li>
-                  <li>✓ Fitur Blog & Galeri Foto</li>
-                  <li>✓ Optimasi SEO Dasar & Google Maps</li>
-                </ul>
+
+                <div style={{ borderTop: "1px dashed rgba(120, 92, 255, 0.2)", paddingTop: "24px", marginBottom: "28px" }}>
+                  <p style={{ fontWeight: "700", fontSize: "0.85rem", color: "var(--primary)", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "16px" }}>
+                    FITUR & CAKUPAN SERVIS:
+                  </p>
+                  <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "14px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
+                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Hingga 7 Halaman Struktur Utama Custom
+                    </li>
+                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Free Domain .COM & Cloud Hosting Premium
+                    </li>
+                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Email Profesional Perusahaan (@namabisnis.com)
+                    </li>
+                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Modul Blog Berita & Galeri Portfolio
+                    </li>
+                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Optimasi SEO Dasar & Integrasi Google Maps
+                    </li>
+                  </ul>
+                </div>
               </div>
+
               <a
-                href="https://wa.me/6281112345678?text=Halo,%20saya%20tertarik%20Paket%20Business"
+                href={`https://wa.me/${WA_NUMBER}?text=Halo,%20saya%20tertarik%20konsultasi%20Paket%20Business`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary"
-                style={{ width: "100%", marginTop: "30px", textAlign: "center" }}
+                style={{
+                  width: "100%",
+                  padding: "14px 20px",
+                  borderRadius: "12px",
+                  fontSize: "0.95rem",
+                  fontWeight: "600",
+                  textAlign: "center",
+                  justifyContent: "center",
+                  boxShadow: "0 8px 20px rgba(120, 92, 255, 0.25)",
+                }}
               >
-                Pilih Paket Business
+                Diskusi Paket Business →
               </a>
             </div>
 
-            {/* Custom / Enterprise Package */}
+            {/* Custom / Enterprise Package Card */}
             <div
               data-aos="fade-up"
               data-aos-delay="300"
               style={{
                 backgroundColor: "#ffffff",
-                padding: "40px 30px",
-                borderRadius: "var(--radius-lg)",
+                padding: "44px 32px",
+                borderRadius: "20px",
                 border: "1px solid rgba(0, 0, 0, 0.08)",
+                boxShadow: "0 12px 35px rgba(0, 0, 0, 0.04)",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
+                position: "relative",
+                transition: "all 0.3s ease",
               }}
             >
               <div>
-                <h3 style={{ fontSize: "1.4rem", fontWeight: "700", color: "var(--gray-dark)", marginBottom: "8px" }}>
-                  Paket Custom / Enterprise
-                </h3>
-                <p style={{ color: "var(--gray-medium)", fontSize: "0.9rem", marginBottom: "24px" }}>
-                  Untuk Toko Online, Web LMS E-Learning, Portal Berita & Headless.
+                <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "20px" }}>
+                  <div
+                    style={{
+                      width: "52px",
+                      height: "52px",
+                      borderRadius: "14px",
+                      background: "rgba(120, 92, 255, 0.08)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: "1.8rem",
+                    }}
+                  >
+                    ⚡
+                  </div>
+                  <div>
+                    <span style={{ fontSize: "0.75rem", fontWeight: "700", color: "var(--primary)", textTransform: "uppercase", letterSpacing: "1px" }}>
+                      ENTERPRISE TIER
+                    </span>
+                    <h3 style={{ fontSize: "1.35rem", fontWeight: "700", color: "var(--gray-dark)", margin: "2px 0 0" }}>
+                      Paket Custom / Enterprise
+                    </h3>
+                  </div>
+                </div>
+
+                <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6", marginBottom: "28px" }}>
+                  Pengembangan web skala besar: Toko Online, Web LMS E-Learning, Portal Berita/Media, dan Headless Next.js.
                 </p>
-                <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "12px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
-                  <li>✓ Sistem E-Commerce / LMS / Portal Berita</li>
-                  <li>✓ Arsitektur Headless WP + Next.js (Opsional)</li>
-                  <li>✓ Integrasi Payment Gateway & Auto Certificate</li>
-                  <li>✓ Server Kapasitas Tinggi / CDN</li>
-                  <li>✓ Training Admin & Manual Book Lanjutan</li>
-                  <li>✓ Priority Support</li>
-                </ul>
+
+                <div style={{ borderTop: "1px dashed rgba(0, 0, 0, 0.1)", paddingTop: "24px", marginBottom: "28px" }}>
+                  <p style={{ fontWeight: "700", fontSize: "0.85rem", color: "var(--gray-dark)", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "16px" }}>
+                    FITUR & CAKUPAN SERVIS:
+                  </p>
+                  <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "14px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
+                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Sistem E-Commerce / LMS / Portal Berita
+                    </li>
+                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Arsitektur Headless WP + Next.js (Opsional)
+                    </li>
+                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Integrasi Payment Gateway & Auto Certificate
+                    </li>
+                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Server Kapasitas Tinggi / CDN Integration
+                    </li>
+                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Training Admin & Priority Support
+                    </li>
+                  </ul>
+                </div>
               </div>
+
               <a
-                href="https://wa.me/6281112345678?text=Halo,%20saya%20ingin%20konsultasi%20Paket%20Enterprise"
+                href={`https://wa.me/${WA_NUMBER}?text=Halo,%20saya%20tertarik%20konsultasi%20Paket%20Custom%20Enterprise`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline"
-                style={{ width: "100%", marginTop: "30px", textAlign: "center" }}
+                style={{
+                  width: "100%",
+                  padding: "14px 20px",
+                  borderRadius: "12px",
+                  fontSize: "0.95rem",
+                  fontWeight: "600",
+                  textAlign: "center",
+                  justifyContent: "center",
+                }}
               >
-                Konsultasi Custom Project
+                Diskusi Custom Project →
               </a>
             </div>
           </div>
@@ -649,7 +813,7 @@ export default async function Home() {
             </a>
             atau
             <a
-              href="https://wa.me/6281112345678"
+              href={`https://wa.me/${WA_NUMBER}`}
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -658,7 +822,7 @@ export default async function Home() {
                 textDecoration: "underline",
               }}
             >
-              WhatsApp Direct
+              WhatsApp Direct (+62895334155259)
             </a>
           </p>
         </div>

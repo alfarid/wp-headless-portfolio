@@ -78,7 +78,7 @@ const Navbar = () => {
               Konsultasi
             </a>
             <a
-              href="https://wa.me/6281112345678"
+              href="https://wa.me/62895334155259"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary btn-desktop"
@@ -156,7 +156,7 @@ const Navbar = () => {
               Konsultasi
             </a>
             <a
-              href="https://wa.me/6281112345678"
+              href="https://wa.me/62895334155259"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"
