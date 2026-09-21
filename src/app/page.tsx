@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,7 +8,7 @@ import News from "@/components/News"; // Blog
 import { getBlogPosts, getTestimonials, MOCK_PROJECTS } from "@/lib/wordpress";
 
 export const metadata = {
-  title: "DevStudio - Jasa Pembuatan Website Profesional & Modern",
+  title: "Jasa Pembuatan Website Profesional & Modern",
   description: "Jasa pembuatan website profil perusahaan, toko online (e-commerce), web e-learning LMS, portal berita/news, dan arsitektur Headless WordPress + Next.js.",
 };
 
@@ -30,7 +29,7 @@ export default async function Home() {
     >
       <Navbar />
 
-      {/* Hero Section Agensi */}
+      {/* Hero Section */}
       <section
         style={{
           position: "relative",
@@ -39,7 +38,7 @@ export default async function Home() {
           background: "radial-gradient(ellipse at top, rgba(120, 92, 255, 0.08) 0%, transparent 70%)",
         }}
       >
-        {/* Glow & Grid Background */}
+        {/* Glow Background */}
         <div
           className="blur-blob blur-purple"
           style={{ top: "-10%", left: "20%", width: "600px", height: "600px" }}
@@ -101,11 +100,10 @@ export default async function Home() {
                 gap: "16px",
                 justifyContent: "center",
                 flexWrap: "wrap",
-                marginBottom: "60px",
               }}
             >
               <a
-                href="https://wa.me/6281112345678?text=Halo%20DevStudio,%20saya%20ingin%20konsultasi%20pembuatan%20website"
+                href="https://wa.me/6281112345678?text=Halo,%20saya%20ingin%20konsultasi%20pembuatan%20website"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary"
@@ -120,29 +118,6 @@ export default async function Home() {
               >
                 Lihat Paket & Harga
               </a>
-            </div>
-
-            {/* Showcase Visual Dashboard / Hero Mockup */}
-            <div
-              data-aos="fade-up"
-              data-aos-delay="400"
-              style={{
-                position: "relative",
-                borderRadius: "16px",
-                overflow: "hidden",
-                border: "1px solid rgba(120, 92, 255, 0.2)",
-                boxShadow: "0 20px 60px rgba(0, 0, 0, 0.1)",
-                background: "#ffffff",
-              }}
-            >
-              <Image
-                src="/dev_workspace_v2.png"
-                alt="DevStudio Web Development Showcase"
-                width={1200}
-                height={630}
-                style={{ width: "100%", height: "auto", display: "block" }}
-                priority
-              />
             </div>
           </div>
         </div>
@@ -216,7 +191,6 @@ export default async function Home() {
                 borderRadius: "var(--radius-lg)",
                 border: "1px solid rgba(0, 0, 0, 0.07)",
                 boxShadow: "0 10px 30px rgba(0,0,0,0.03)",
-                transition: "transform 0.3s ease",
               }}
             >
               <div style={{ fontSize: "2.5rem", marginBottom: "20px" }}>🏢</div>
@@ -349,7 +323,7 @@ export default async function Home() {
       >
         <div className="container">
           <div style={{ textAlign: "center", maxWidth: "750px", margin: "0 auto 60px" }} data-aos="fade-up">
-            <span className="badge-glow">KEUNGGULAN DEVSTUDIO</span>
+            <span className="badge-glow">KEUNGGULAN KAMI</span>
             <h2 className="section-title" style={{ marginTop: "16px" }}>
               Mengapa Mempercayakan Web Anda Kepada Kami?
             </h2>
@@ -449,7 +423,7 @@ export default async function Home() {
                 </ul>
               </div>
               <a
-                href="https://wa.me/6281112345678?text=Halo%20DevStudio,%20saya%20tertarik%20Paket%20Starter"
+                href="https://wa.me/6281112345678?text=Halo,%20saya%20tertarik%20Paket%20Starter"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline"
@@ -494,7 +468,7 @@ export default async function Home() {
                 </ul>
               </div>
               <a
-                href="https://wa.me/6281112345678?text=Halo%20DevStudio,%20saya%20tertarik%20Paket%20Business"
+                href="https://wa.me/6281112345678?text=Halo,%20saya%20tertarik%20Paket%20Business"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary"
@@ -531,11 +505,11 @@ export default async function Home() {
                   <li>✓ Integrasi Payment Gateway & Auto Certificate</li>
                   <li>✓ Server Kapasitas Tinggi / CDN</li>
                   <li>✓ Training Admin & Manual Book Lanjutan</li>
-                  <li>✓ Priority Support & Garansi Penuh</li>
+                  <li>✓ Priority Support</li>
                 </ul>
               </div>
               <a
-                href="https://wa.me/6281112345678?text=Halo%20DevStudio,%20saya%20ingin%20konsultasi%20Paket%20Enterprise"
+                href="https://wa.me/6281112345678?text=Halo,%20saya%20ingin%20konsultasi%20Paket%20Enterprise"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline"
@@ -604,7 +578,7 @@ export default async function Home() {
                 Apakah ada garansi jika terjadi error?
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Ya, setiap layanan pembuatan website di DevStudio dilengkapi dengan garansi pemeliharaan teknis untuk memastikan website Anda selalu berjalan stabil dan aman dari kendala teknis.
+                Ya, setiap layanan pembuatan website dilengkapi dengan pemeliharaan teknis untuk memastikan website Anda selalu berjalan stabil dan aman dari kendala teknis.
               </p>
             </div>
           </div>
@@ -647,7 +621,7 @@ export default async function Home() {
               margin: "0 auto 40px",
             }}
           >
-            Diskusikan kebutuhan ide website Anda bersama tim konsultan DevStudio tanpa dipungut biaya.
+            Diskusikan kebutuhan ide website Anda bersama tim konsultan kami tanpa dipungut biaya.
           </p>
 
           <ContactForm />

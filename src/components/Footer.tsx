@@ -174,7 +174,7 @@ const Footer = () => {
           }}
         >
           <p style={{ color: "var(--gray-medium)", fontSize: "0.8rem" }}>
-            Copyright © DevStudio 2026. All rights reserved.
+            Copyright © malfa 2026. All rights reserved.
           </p>
           <p style={{ color: "var(--gray-medium)", fontSize: "0.8rem" }}>
             Built with WordPress
