@@ -43,7 +43,7 @@ const Navbar = () => {
       <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
         <div className={`container ${styles.navContainer}`}>
           <Link href="/" className={styles.logo}>
-            WP<span className={styles.logoDot}>.dev</span>
+            malfa<span className={styles.logoDot}>.</span>
           </Link>
 
           {/* Desktop Nav Links */}
@@ -57,14 +57,17 @@ const Navbar = () => {
             <Link href="/#projects" className={styles.navLink}>
               Portfolio
             </Link>
-            <Link href="/#blog" className={styles.navLink}>
+            <Link href="/tentang-saya" className={styles.navLink}>
+              Tentang Saya
+            </Link>
+            <Link href="/blog" className={styles.navLink}>
               Blog
             </Link>
           </div>
 
           <div className={styles.navActions}>
-            <Link
-              href="/#contact"
+            <a
+              href="#contact"
               className={`${styles.navLink} btn-desktop`}
               style={{
                 marginRight: "10px",
@@ -73,14 +76,16 @@ const Navbar = () => {
               }}
             >
               Konsultasi
-            </Link>
-            <Link
-              href="/#contact"
+            </a>
+            <a
+              href="https://wa.me/6281112345678"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-primary btn-desktop"
               style={{ padding: "8px 20px", fontSize: "0.85rem" }}
             >
-              Hubungi Saya
-            </Link>
+              Hubungi Kami
+            </a>
 
             {/* Hamburger Menu Button */}
             <button
@@ -121,7 +126,14 @@ const Navbar = () => {
             Portfolio
           </Link>
           <Link
-            href="/#blog"
+            href="/tentang-saya"
+            className={styles.mobileNavLink}
+            onClick={() => setMenuOpen(false)}
+          >
+            Tentang Saya
+          </Link>
+          <Link
+            href="/blog"
             className={styles.mobileNavLink}
             onClick={() => setMenuOpen(false)}
           >
@@ -135,22 +147,24 @@ const Navbar = () => {
               marginTop: "20px",
             }}
           >
-            <Link
-              href="/#contact"
+            <a
+              href="#contact"
               className={`${styles.mobileNavLink}`}
               style={{ textAlign: "center", fontSize: "1.1rem" }}
               onClick={() => setMenuOpen(false)}
             >
               Konsultasi
-            </Link>
-            <Link
-              href="/#contact"
+            </a>
+            <a
+              href="https://wa.me/6281112345678"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-primary"
               style={{ width: "100%", textAlign: "center" }}
               onClick={() => setMenuOpen(false)}
             >
-              Hubungi Saya
-            </Link>
+              Hubungi Kami
+            </a>
           </div>
         </div>
       </nav>

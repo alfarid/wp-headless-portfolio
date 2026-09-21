@@ -60,16 +60,31 @@ const ContactForm = () => {
 
     setStatus("loading");
 
-    // Simulate API request (1.5 seconds)
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      setStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        service: "headless",
-        message: "",
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
       });
+
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          service: "",
+          message: "",
+        });
+      } else {
+        setStatus("error");
+      }
     } catch (err) {
       setStatus("error");
     }
@@ -146,29 +161,6 @@ const ContactForm = () => {
           </div>
 
           <div className={styles.inputGroup}>
-            <label htmlFor="service" className={styles.label}>
-              Layanan yang Diminati
-            </label>
-            <select
-              id="service"
-              name="service"
-              value={formData.service}
-              onChange={handleChange}
-              className={styles.select}
-              disabled={status === "loading"}
-            >
-              <option value="headless">Headless WordPress & Next.js</option>
-              <option value="theme">Custom Theme & Gutenberg Block</option>
-              <option value="plugin">Custom Plugin Development</option>
-              <option value="ecommerce">WooCommerce & API Integration</option>
-              <option value="optimization">
-                Speed & Core Web Vitals Optimization
-              </option>
-              <option value="other">Lainnya / Konsultasi Umum</option>
-            </select>
-          </div>
-
-          <div className={styles.inputGroup}>
             <label htmlFor="message" className={styles.label}>
               Detail Project / Pesan
             </label>
@@ -189,8 +181,10 @@ const ContactForm = () => {
 
           {status === "error" && (
             <div className={styles.errorContainer}>
-              Terjadi kesalahan. Silakan coba lagi atau kirim email langsung ke
-              hello@wpdev.com.
+              Terjadi kesalahan. Silakan coba lagi atau kirim email langsung ke{" "}
+              <a href="mailto:alfaridzim7@gmail.com" style={{ color: "var(--primary)", textDecoration: "underline" }}>
+                alfaridzim7@gmail.com
+              </a>.
             </div>
           )}
 

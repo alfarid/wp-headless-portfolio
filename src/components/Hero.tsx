@@ -5,10 +5,10 @@ import Image from "next/image";
 import styles from "./Hero.module.css";
 
 const PHRASES = [
-  "Headless WordPress",
-  "Next.js & React Frontend",
-  "Custom Plugin & Block",
-  "WooCommerce API Integration",
+  "WordPress Developer",
+  "WordPress Headless Next.js",
+  "Elementor Page Builder",
+  "Figma to WordPress",
 ];
 
 const Hero = () => {
@@ -76,10 +76,10 @@ const Hero = () => {
       <div className="container" style={{ position: "relative", zIndex: 10 }}>
         <div className={styles.heroContent}>
           <span className={styles.tagline} data-aos="fade-up">
-            Headless WordPress & Next.js Specialist
+            WordPress Developer
           </span>
           <h1 className={styles.title} data-aos="fade-up" data-aos-delay="100">
-            Membangun Website <br />
+            Membangun Solusi <br />
             <span className="gradient-text">{currentText}</span>
             <span className={styles.cursor}>|</span>
           </h1>
@@ -88,9 +88,9 @@ const Hero = () => {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            Saya membantu bisnis dan agensi mengombinasikan kemudahan Content
-            Management dari WordPress dengan performa luar biasa & SEO terbaik
-            dari Next.js Frontend.
+            Halo! Saya membantu Anda merancang antarmuka di Figma, membangun dengan
+            Elementor secara pixel-perfect, hingga memprogram solusi website WordPress kustom
+            yang super cepat, aman, dan ramah SEO.
           </p>
 
           <div
@@ -101,7 +101,12 @@ const Hero = () => {
             <a href="#projects" className="btn btn-primary">
               Cek Portfolio
             </a>
-            <a href="#contact" className="btn btn-outline">
+            <a
+              href="https://www.linkedin.com/in/malfaridzi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline"
+            >
               Hubungi Saya
             </a>
           </div>

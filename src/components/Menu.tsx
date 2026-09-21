@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import styles from "./Menu.module.css";
 import { Project } from "@/lib/wordpress";
@@ -10,14 +9,11 @@ interface MenuProps {
 }
 
 const Menu = ({ items }: MenuProps) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
   // Fallback if there are no items
   if (!items || items.length === 0) return null;
 
-  // Limit to first 4 projects to fit the carousel nicely
-  const displayItems = items.slice(0, 4);
-  const activeProject = displayItems[activeIndex] || displayItems[0];
+  // Show all 6 projects as cards in a grid
+  const displayItems = items.slice(0, 6);
 
   return (
     <section id="projects" className={styles.menuSection}>
@@ -35,65 +31,74 @@ const Menu = ({ items }: MenuProps) => {
           </div>
           <h2 className="section-title">Hasil Karya Pilihan</h2>
           <p className="section-subtitle">
-            Koleksi proyek nyata yang mendemonstrasikan integrasi headless CMS,
-            custom Gutenberg block development, serta performa Core Web Vitals
-            hijau.
+            Koleksi proyek nyata yang mendemonstrasikan hasil desain di Figma,
+            pembangunan dengan Elementor, hingga pengembangan custom theme.
           </p>
         </div>
 
-        {/* Tabbed Split Carousel Layout */}
-        <div className={styles.splitLayout}>
-          {/* Left: Tab Buttons */}
-          <div className={styles.tabList} data-aos="fade-right">
-            {displayItems.map((project, idx) => (
-              <button
+        {/* Grid of Project Cards */}
+        <div className={styles.cardsGrid} data-aos="fade-up">
+          {displayItems.map((project) => {
+            const CardComponent = project.url ? "a" : "div";
+            const isScrollable = project.category === "Landing Page";
+
+            return (
+              <CardComponent
                 key={project.id}
-                className={`${styles.tabBtn} ${activeIndex === idx ? styles.activeTab : ""}`}
-                onClick={() => setActiveIndex(idx)}
-                role="tab"
-                aria-selected={activeIndex === idx}
-                aria-controls={`project-panel-${idx}`}
+                href={project.url}
+                target={project.url ? "_blank" : undefined}
+                rel={project.url ? "noopener noreferrer" : undefined}
+                className={styles.projectCard}
+                title={project.url ? "Kunjungi Website" : undefined}
               >
-                {/* Active Indicator check icon matching Open Pro */}
-                <div className={styles.tabIcon}>
-                  <svg viewBox="0 0 16 16" fill="currentColor">
-                    <path d="M14.092 5.207-8.207 8.207-3.592-3.591 1.414-1.415 2.178 2.178 6.793-6.793 1.414 1.414Z"></path>
-                  </svg>
+                <div className={styles.cardImageWrapper}>
+                  {isScrollable ? (
+                    <Image
+                      src={project.image}
+                      alt={project.name}
+                      width={600}
+                      height={2000}
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                      }}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className={styles.cardImageScroll}
+                      priority={false}
+                    />
+                  ) : (
+                    <Image
+                      src={project.image}
+                      alt={project.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className={styles.cardImage}
+                    />
+                  )}
+                  <span className={styles.cardCategory}>{project.category}</span>
                 </div>
-
-                <div className={styles.tabContent}>
-                  <span className={styles.projectCategory}>
-                    {project.category}
-                  </span>
-                  <h3 className={styles.tabTitle}>{project.name}</h3>
-                  <p className={styles.tabDesc}>{project.description}</p>
+                <div className={styles.cardBody}>
+                  <h3 className={styles.cardTitle}>{project.name}</h3>
+                  <p className={styles.cardDescription}>{project.description}</p>
+                  <div className={styles.techList}>
+                    {project.techStack.split(",").map((tech, idx) => (
+                      <span key={idx} className={styles.techTag}>
+                        {tech.trim()}
+                      </span>
+                    ))}
+                  </div>
+                  {project.url && (
+                    <div className={styles.cardLink}>
+                      Kunjungi Website <span className={styles.arrow}>&rarr;</span>
+                    </div>
+                  )}
                 </div>
-              </button>
-            ))}
-          </div>
-
-          {/* Right: Dynamic Screenshot Display */}
-          <div
-            className={styles.imageContainer}
-            data-aos="fade-left"
-            id={`project-panel-${activeIndex}`}
-            role="tabpanel"
-          >
-            {/* Background spotlight backlight */}
-            <div className={styles.backlight} aria-hidden="true"></div>
-
-            <Image
-              key={
-                activeIndex
-              } /* Key triggers re-mount and CSS animation on tab change */
-              src={activeProject.image}
-              alt={activeProject.name}
-              fill
-              sizes="(max-width: 991px) 100vw, 50vw"
-              className={`${styles.carouselImage} ${styles.fadeAnim}`}
-              priority
-            />
-          </div>
+              </CardComponent>
+            );
+          })}
         </div>
       </div>
     </section>

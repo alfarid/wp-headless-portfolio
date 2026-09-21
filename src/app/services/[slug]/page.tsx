@@ -16,13 +16,13 @@ export async function generateMetadata({
 
   if (!service) {
     return {
-      title: "Layanan Tidak Ditemukan | WP.dev",
+      title: "Layanan Tidak Ditemukan | Malfa",
       description: "Layanan yang Anda cari tidak ditemukan.",
     };
   }
 
   return {
-    title: `${service.name} | Layanan WP.dev`,
+    title: `${service.name} | Layanan Malfa`,
     description: service.description,
   };
 }
@@ -192,9 +192,14 @@ export default async function ServicePage({
                 Konsultasikan kebutuhan proyek headless WordPress, plugin
                 kustom, atau optimasi speed website Anda sekarang secara gratis.
               </p>
-              <Link href="/#contact" className="btn btn-primary">
+              <a
+                href="https://www.linkedin.com/in/malfaridzi/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+              >
                 Hubungi Developer
-              </Link>
+              </a>
             </div>
           </article>
         </div>

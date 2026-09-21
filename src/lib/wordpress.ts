@@ -1,7 +1,38 @@
 const WORDPRESS_API_URL =
   process.env.WORDPRESS_API_URL || "http://portfolio-backend.local/graphql";
 
-// Interface definitions
+export interface Product {
+  id: string;
+  name: string;
+  slug: string;
+  price: string;
+  regularPrice?: string;
+  description: string;
+  image: string;
+  category: string;
+}
+
+  // Interface definitions
+export interface Product {
+  id: string;
+  name: string;
+  slug: string;
+  price: string;
+  regularPrice?: string;
+  description: string;
+  image: string;
+  category: string;
+}
+
+export interface Testimonial{
+  id: string;
+  clientName: string;
+  company: string;
+  rating: number;
+  comment: string;
+  avatar: string;
+}
+
 export interface Project {
   id: string | number;
   name: string;
@@ -10,6 +41,7 @@ export interface Project {
   techStack: string;
   image: string;
   category: string;
+  url?: string;
 }
 
 export interface Service {
@@ -32,42 +64,126 @@ export interface BlogPost {
 }
 
 // Fallback Mock Data
+export const MOCK_PRODUCTS: Product[] = [
+  {
+    id: "prod-1",
+    name: "Kaos Next.js Developer Premium",
+    slug: "kaos-nextjs-developer",
+    price: "Rp 149.000",
+    regularPrice: "Rp 199.000",
+    description: "Bahan katun combed 30s super adem dengan sablon DTF tahan lama.",
+    image: "/dev_workspace.png",
+    category: "Merchandise",
+  },
+  {
+    id: "prod-2",
+    name: "Template Headless WP Agency Pro",
+    slug: "template-headless-wp-agency",
+    price: "Rp 499.000",
+    regularPrice: "Rp 799.000",
+    description: "Source code lengkap Next.js 16 + WPGraphQL siap pakai untuk agensi web.",
+    image: "/dev_workspace_v2.png",
+    category: "Source Code",
+  },
+  {
+    id: "prod-3",
+    name: "E-Book Panduan Headless WordPress",
+    slug: "ebook-panduan-headless-wp",
+    price: "Rp 99.000",
+    regularPrice: "Rp 150.000",
+    description: "Panduan praktis membangun website kencang dengan Next.js dan WordPress.",
+    image: "/gutenberg_project_v2.png",
+    category: "E-Book",
+  },
+];
+
+export const MOCK_TESTIMONIALS: Testimonial[] = [
+  {
+    id: "testi-1",
+    clientName: "Budi Santoso",
+    company: "CEO PT Digital Nusantara",
+    rating: 5,
+    comment: "Pengerjaan website Next.js + WordPress super cepat! Skor Google PageSpeed tembus 98. Sangat puas dengan hasilnya.",
+    avatar: "https://i.pravatar.cc/150?img=11",
+  },
+  {
+    id: "testi-2",
+    clientName: "Siti Rahma",
+    company: "Founder Inspirasi Hijab",
+    rating: 5,
+    comment: "Integrasi Headless CMS-nya bikin tim konten kami gampang banget posting artikel tanpa pernah merusak tampilan web.",
+    avatar: "https://i.pravatar.cc/150?img=5",
+  },
+  {
+    id: "testi-3",
+    clientName: "Hendrik Wijaya",
+    company: "Marketing Director Sagas Security",
+    rating: 5,
+    comment: "Desain estetik dan keamanannya terjamin. Tidak ada celah peretasan WordPress yang bocor ke publik.",
+    avatar: "https://i.pravatar.cc/150?img=12",
+  },
+];
+
 export const MOCK_PROJECTS: Project[] = [
   {
     id: "mock-1",
-    name: "Headless WooCommerce Store",
+    name: "Adsfa Elementor Template Kit",
     description:
-      "Toko online berkecepatan tinggi dengan Next.js App Router, WPGraphQL, dan integrasi Payment Gateway Midtrans.",
-    techStack: "Next.js, Tailwind, WPGraphQL, Midtrans",
-    image: "/ecommerce_project_v2.png",
-    category: "Headless",
+      "Template kit Elementor premium untuk agensi pemasaran sosial media di ThemeForest.",
+    techStack: "Elementor, Figma, WordPress",
+    image: "/AdsFa.jpg",
+    category: "Template Elementor",
+    url: "https://themeforest.net/item/adsfa-social-media-marketing-agency-elementor-template-kit/59016792",
   },
   {
     id: "mock-2",
-    name: "Custom Gutenberg Block Theme",
+    name: "Sagas Security",
     description:
-      "Tema kustom WordPress interaktif dibangun menggunakan full-site editing (FSE) dan React Gutenberg custom blocks.",
-    techStack: "React, PHP, Tailwind, Gutenberg API",
-    image: "/gutenberg_project_v2.png",
-    category: "Custom Themes",
+      "Website profil perusahaan (company profile) penyedia layanan keamanan fisik & cyber.",
+    techStack: "WordPress, Custom Theme, Responsive CSS",
+    image: "/sagas.png",
+    category: "Company Profile",
+    url: "https://www.sagassecurity.com/id/",
   },
   {
     id: "mock-3",
-    name: "Salesforce CRM Connector Plugin",
+    name: "Akademi Inspiradzi",
     description:
-      "Plugin kustom WordPress aman untuk sinkronisasi data prospek formulir ke Salesforce CRM secara real-time via REST API.",
-    techStack: "PHP, WordPress Plugin API, Salesforce API",
-    image: "/dev_workspace_v2.png",
-    category: "Plugins",
+      "Platform e-learning berbasis LMS (Learning Management System) untuk kursus online & sertifikasi.",
+    techStack: "WordPress, LearnDash LMS, WooCommerce",
+    image: "/AI.png",
+    category: "E-Learning",
+    url: "https://akademiinspiradzi.com/",
   },
   {
     id: "mock-4",
-    name: "High-Traffic News Portal",
+    name: "DigitalBrain - Share Konten",
     description:
-      "Migrasi portal berita besar ke arsitektur headless dengan Incremental Static Regeneration (ISR) untuk menangani jutaan pageviews.",
-    techStack: "Next.js, GraphQL, Redis, Node.js",
-    image: "/ecommerce_project_v2.png",
-    category: "Headless",
+      "Landing page campaign program rujukan digital untuk mengubah konten rekomendasi menjadi penghasilan.",
+    techStack: "Elementor, Mobile Friendly, Opt-in Form",
+    image: "/share-konten.png",
+    category: "Landing Page",
+    url: "https://digitalbrain.co.id/share-konten-rekomendasi-jadi-penghasilan/",
+  },
+  {
+    id: "mock-5",
+    name: "DigitalBrain - Hewan Ternak",
+    description:
+      "Landing page edukatif nutrisi hewan ternak untuk kesuburan dan hasil panen melimpah (non-CTA version).",
+    techStack: "Elementor, Custom Layout, Web Design",
+    image: "/hewan-ternak.png",
+    category: "Landing Page",
+    url: "https://digitalbrain.co.id/hewan-ternak-lebih-subur-hasil-makin-makmur-non-cta/",
+  },
+  {
+    id: "mock-6",
+    name: "DigitalBrain - Urban Farming",
+    description:
+      "Landing page edukasi teknik bertani perkotaan (urban farming) modern bagi ibu rumah tangga.",
+    techStack: "Elementor, Custom Graphic Design",
+    image: "/urban-farming.png",
+    category: "Landing Page",
+    url: "https://digitalbrain.co.id/urban-farming-di-balik-full-senyum-mommy-non-cta/",
   },
 ];
 
@@ -431,5 +547,122 @@ export async function getServiceBySlug(slug: string): Promise<Service | null> {
     description: description,
     content: post.content || "",
     icon: getServiceIcon(post.title),
+  };
+}
+
+// Fetch Custom Post Type 'testimonials'
+export async function getTestimonials(): Promise<Testimonial[]> {
+  const query = `
+    query GetTestimonials {
+      testimonials(first: 10) {
+        nodes {
+          id
+          title
+          content
+          featuredImage {
+            node {
+              sourceUrl
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const data = await fetchGraphQL(query);
+
+  if (!data || !data.testimonials || !data.testimonials.nodes || data.testimonials.nodes.length === 0) {
+    return MOCK_TESTIMONIALS;
+  }
+
+  return data.testimonials.nodes.map((item: any) => {
+    const cleanComment = item.content ? item.content.replace(/<[^>]*>/g, "").trim() : "";
+    return {
+      id: item.id,
+      clientName: item.title || "Klien Terverifikasi",
+      company: "Klien Terverifikasi",
+      rating: 5,
+      comment: cleanComment || "Sangat puas dengan layanan web development.",
+      avatar: item.featuredImage?.node?.sourceUrl || "https://i.pravatar.cc/150?img=11",
+    };
+  });
+}
+
+// Fetch data Produk dari plugin WooGraphQL (WooCommerce GraphQL)
+export async function getProducts(): Promise<Product[]> {
+  const query = `
+    query GetWooCommerceProducts {
+      products(first: 20) {
+        nodes {
+          id
+          name
+          slug
+          description
+          image {
+            sourceUrl
+          }
+          ... on SimpleProduct {
+            price
+            regularPrice
+          }
+        }
+      }
+    }
+  `;
+
+  const data = await fetchGraphQL(query);
+
+  if (!data || !data.products || !data.products.nodes) {
+    return MOCK_PRODUCTS;
+  }
+
+  return data.products.nodes.map((prod: any) => ({
+    id: prod.id,
+    name: prod.name,
+    slug: prod.slug,
+    price: prod.price || "Rp 0",
+    regularPrice: prod.regularPrice || "",
+    description: prod.description ? prod.description.replace(/<[^>]*>/g, "").trim() : "",
+    image: prod.image?.sourceUrl || "/dev_workspace.png",
+    category: "Store",
+  }));
+}
+
+// Fetch Single WooCommerce Product by Slug
+export async function getProductBySlug(slug: string): Promise<Product | null> {
+  const query = `
+    query GetProductBySlug($slug: ID!) {
+      product(id: $slug, idType: SLUG) {
+        id
+        name
+        slug
+        description
+        image {
+          sourceUrl
+        }
+        ... on SimpleProduct {
+          price
+          regularPrice
+        }
+      }
+    }
+  `;
+
+  const data = await fetchGraphQL(query, { slug });
+  if (!data || !data.product) {
+    const mockProd = MOCK_PRODUCTS.find((p) => p.slug === slug);
+    return mockProd || null;
+  }
+
+  const prod = data.product;
+  return {
+    id: prod.id,
+    name: prod.name,
+    slug: slug,
+    price: prod.price || "Rp 0",
+    regularPrice: prod.regularPrice || "",
+    description: prod.description ? prod.description.replace(/<[^>]*>/g, "").trim() : "",
+    image: prod.image?.sourceUrl || "/dev_workspace.png",
+    category: "Store",
   };
 }

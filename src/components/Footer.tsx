@@ -29,7 +29,7 @@ const Footer = () => {
                 fontWeight: 700,
               }}
             >
-              WP<span style={{ color: "var(--primary)" }}>.dev</span>
+              malfa<span style={{ color: "var(--primary)" }}>.</span>
             </h3>
             <p
               style={{
@@ -38,8 +38,8 @@ const Footer = () => {
                 lineHeight: "1.6",
               }}
             >
-              Menyajikan website berkecepatan ekstrim dan skalabilitas tinggi
-              menggunakan arsitektur headless WordPress modern.
+              Layanan profesional jasa pembuatan website modern, cepat, aman,
+              responsif, dan berkonversi tinggi untuk bisnis Anda.
             </p>
           </div>
           <div>
@@ -63,7 +63,12 @@ const Footer = () => {
               }}
             >
               <li>
-                <Link href="/#about" className="footer-link">
+                <Link href="/" className="footer-link">
+                  Beranda
+                </Link>
+              </li>
+              <li>
+                <Link href="/tentang-saya" className="footer-link">
                   Tentang Saya
                 </Link>
               </li>
@@ -78,7 +83,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/#blog" className="footer-link">
+                <Link href="/blog" className="footer-link">
                   Blog & Catatan
                 </Link>
               </li>
@@ -92,7 +97,7 @@ const Footer = () => {
                 fontWeight: 600,
               }}
             >
-              Keahlian Utama
+              Layanan Utama
             </h4>
             <ul
               style={{
@@ -104,10 +109,11 @@ const Footer = () => {
                 listStyle: "none",
               }}
             >
-              <li>Headless WordPress</li>
-              <li>Next.js & React</li>
-              <li>GraphQL & REST API</li>
-              <li>Custom Plugin & Theme</li>
+              <li>Website Profil Perusahaan</li>
+              <li>Toko Online / E-Commerce</li>
+              <li>Web E-Learning (LMS)</li>
+              <li>Web Berita & Media</li>
+              <li>Headless WP & Next.js</li>
             </ul>
           </div>
           <div>
@@ -118,7 +124,7 @@ const Footer = () => {
                 fontWeight: 600,
               }}
             >
-              Kontak & Sosmed
+              Kontak & Konsultasi
             </h4>
             <p
               style={{
@@ -130,7 +136,7 @@ const Footer = () => {
             >
               Jakarta, Indonesia
               <br />
-              hello@wpdev.com
+              hello@devstudio.com
             </p>
             <div style={{ display: "flex", gap: "15px" }}>
               <a
@@ -168,10 +174,10 @@ const Footer = () => {
           }}
         >
           <p style={{ color: "var(--gray-medium)", fontSize: "0.8rem" }}>
-            Copyright © WP.dev 2026. All rights reserved.
+            Copyright © DevStudio 2026. All rights reserved.
           </p>
           <p style={{ color: "var(--gray-medium)", fontSize: "0.8rem" }}>
-            Built with WordPress & Next.js
+            Built with WordPress
           </p>
         </div>
       </div>

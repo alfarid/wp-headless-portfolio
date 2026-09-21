@@ -10,15 +10,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "WP.dev | Headless WordPress & Next.js Developer",
+  title: "Malfa | WordPress Developer",
   description:
-    "Portofolio WordPress Developer spesialisasi Headless CMS (WPGraphQL), Custom Themes, dan Plugin Development kustom.",
+    "Portofolio WordPress Developer spesialisasi Custom Themes, Plugin Development kustom, dan Elementor Page Builder.",
   keywords: [
     "wordpress developer",
     "headless wordpress",
-    "nextjs developer",
+    "custom themes wordpress",
     "custom plugin wordpress",
-    "gutenberg blocks",
+    "elementor builder",
   ],
 };
 

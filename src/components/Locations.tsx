@@ -9,11 +9,11 @@ interface ServicesProps {
 const Services = ({ items }: ServicesProps) => {
   // Map index to a specific tech sub-category for badges
   const getSubCategory = (idx: number) => {
-    const categories = ["DECOUPLED", "BLOCKS API", "PLUGINS", "WEB VITALS"];
+    const categories = ["SPEED & SECURITY", "CUSTOM WP", "ELEMENTOR", "UI/UX DESIGN"];
     return categories[idx % categories.length];
   };
 
-  // Limit layout strictly to 3 cards to match Cruip layout perfectly
+  // Limit to 3 items as requested
   const displayItems = items.slice(0, 3);
 
   return (
@@ -31,8 +31,8 @@ const Services = ({ items }: ServicesProps) => {
           </div>
           <h2 className="section-title">Solusi WordPress Modern</h2>
           <p className="section-subtitle">
-            Menggabungkan kebebasan manajemen konten WordPress dengan performa
-            dan kecepatan Next.js untuk hasil bisnis yang maksimal.
+            Layanan pengembangan website WordPress kustom dengan performa loading cepat,
+            desain modern, struktur aman, serta pengelolaan konten yang sangat mudah.
           </p>
         </div>
 
@@ -77,7 +77,12 @@ const Services = ({ items }: ServicesProps) => {
           style={{ marginTop: "50px", textAlign: "center" }}
           data-aos="fade-up"
         >
-          <a href="#contact" className="btn btn-primary">
+          <a
+            href="https://www.linkedin.com/in/malfaridzi/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+          >
             Konsultasi Sekarang
           </a>
         </div>

@@ -17,13 +17,13 @@ export async function generateMetadata({
 
   if (!post) {
     return {
-      title: "Artikel Tidak Ditemukan | WP.dev",
+      title: "Artikel Tidak Ditemukan | Malfa",
       description: "Artikel yang Anda cari tidak ditemukan.",
     };
   }
 
   return {
-    title: `${post.title} | WP.dev Blog`,
+    title: `${post.title} | Malfa Blog`,
     description: post.description,
   };
 }
