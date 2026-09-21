@@ -57,6 +57,9 @@ const Navbar = () => {
             <Link href="/#projects" className={styles.navLink}>
               Portfolio
             </Link>
+            <Link href="/#proses" className={styles.navLink}>
+              Proses Kerja
+            </Link>
             <Link href="/tentang-saya" className={styles.navLink}>
               Tentang Saya
             </Link>
@@ -67,24 +70,13 @@ const Navbar = () => {
 
           <div className={styles.navActions}>
             <a
-              href="#contact"
-              className={`${styles.navLink} btn-desktop`}
-              style={{
-                marginRight: "10px",
-                fontSize: "0.9rem",
-                fontWeight: 600,
-              }}
-            >
-              Konsultasi
-            </a>
-            <a
-              href="https://wa.me/62895334155259"
+              href="https://wa.me/62895334155259?text=Halo%20Malfa,%20saya%20ingin%20konsultasi%20pembuatan%20website"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary btn-desktop"
               style={{ padding: "8px 20px", fontSize: "0.85rem" }}
             >
-              Hubungi Kami
+              Konsultasi Gratis
             </a>
 
             {/* Hamburger Menu Button */}
@@ -126,6 +118,13 @@ const Navbar = () => {
             Portfolio
           </Link>
           <Link
+            href="/#proses"
+            className={styles.mobileNavLink}
+            onClick={() => setMenuOpen(false)}
+          >
+            Proses Kerja
+          </Link>
+          <Link
             href="/tentang-saya"
             className={styles.mobileNavLink}
             onClick={() => setMenuOpen(false)}
@@ -148,22 +147,14 @@ const Navbar = () => {
             }}
           >
             <a
-              href="#contact"
-              className={`${styles.mobileNavLink}`}
-              style={{ textAlign: "center", fontSize: "1.1rem" }}
-              onClick={() => setMenuOpen(false)}
-            >
-              Konsultasi
-            </a>
-            <a
-              href="https://wa.me/62895334155259"
+              href="https://wa.me/62895334155259?text=Halo%20Malfa,%20saya%20ingin%20konsultasi%20pembuatan%20website"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"
               style={{ width: "100%", textAlign: "center" }}
               onClick={() => setMenuOpen(false)}
             >
-              Hubungi Kami
+              Konsultasi Gratis
             </a>
           </div>
         </div>

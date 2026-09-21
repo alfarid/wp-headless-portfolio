@@ -38,8 +38,7 @@ const Footer = () => {
                 lineHeight: "1.6",
               }}
             >
-              Layanan profesional jasa pembuatan website modern, cepat, aman,
-              responsif, dan berkonversi tinggi untuk bisnis Anda.
+              Jasa pembuatan website profesional oleh Muhammad Al Faridzi. Berfokus pada kecepatan, keamanan, dan kemudahan pengelolaan.
             </p>
           </div>
           <div>
@@ -68,23 +67,28 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/tentang-saya" className="footer-link">
-                  Tentang Saya
-                </Link>
-              </li>
-              <li>
                 <Link href="/#services" className="footer-link">
                   Layanan
                 </Link>
               </li>
               <li>
                 <Link href="/#projects" className="footer-link">
-                  Portfolio Proyek
+                  Portfolio
+                </Link>
+              </li>
+              <li>
+                <Link href="/#proses" className="footer-link">
+                  Proses Kerja
+                </Link>
+              </li>
+              <li>
+                <Link href="/tentang-saya" className="footer-link">
+                  Tentang Saya
                 </Link>
               </li>
               <li>
                 <Link href="/blog" className="footer-link">
-                  Blog & Catatan
+                  Blog
                 </Link>
               </li>
             </ul>
@@ -110,9 +114,9 @@ const Footer = () => {
               }}
             >
               <li>Website Profil Perusahaan</li>
-              <li>Toko Online / E-Commerce</li>
+              <li>Landing Page Penjualan</li>
               <li>Web E-Learning (LMS)</li>
-              <li>Web Berita & Media</li>
+              <li>Toko Online / E-Commerce</li>
               <li>Headless WP & Next.js</li>
             </ul>
           </div>
@@ -136,11 +140,15 @@ const Footer = () => {
             >
               Jakarta, Indonesia
               <br />
-              hello@devstudio.com
+              <a href="mailto:alfaridzim7@gmail.com" style={{ color: "var(--primary)", textDecoration: "underline" }}>
+                alfaridzim7@gmail.com
+              </a>
             </p>
             <div style={{ display: "flex", gap: "15px" }}>
               <a
-                href="#"
+                href="https://github.com/alfarid"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   color: "var(--primary)",
                   fontSize: "1.1rem",
@@ -150,7 +158,9 @@ const Footer = () => {
                 GitHub
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/malfaridzi/"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   color: "var(--primary)",
                   fontSize: "1.1rem",
@@ -175,9 +185,6 @@ const Footer = () => {
         >
           <p style={{ color: "var(--gray-medium)", fontSize: "0.8rem" }}>
             Copyright © malfa 2026. All rights reserved.
-          </p>
-          <p style={{ color: "var(--gray-medium)", fontSize: "0.8rem" }}>
-            Built with WordPress
           </p>
         </div>
       </div>

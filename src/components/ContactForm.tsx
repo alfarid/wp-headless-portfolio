@@ -6,7 +6,6 @@ import styles from "./ContactForm.module.css";
 interface FormState {
   name: string;
   email: string;
-  service: string;
   message: string;
 }
 
@@ -14,7 +13,6 @@ const ContactForm = () => {
   const [formData, setFormData] = useState<FormState>({
     name: "",
     email: "",
-    service: "headless",
     message: "",
   });
 
@@ -27,11 +25,9 @@ const ContactForm = () => {
     const newErrors: { [key: string]: string } = {};
     if (!formData.name.trim()) newErrors.name = "Nama lengkap wajib diisi";
     if (!formData.email.trim()) {
-      newErrors.email = "Email wajib diisi";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Format email tidak valid";
+      newErrors.email = "Email atau nomor WhatsApp wajib diisi";
     }
-    if (!formData.message.trim()) newErrors.message = "Pesan wajib diisi";
+    if (!formData.message.trim()) newErrors.message = "Pesan/Detail kebutuhan wajib diisi";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -39,12 +35,11 @@ const ContactForm = () => {
 
   const handleChange = (
     e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+      HTMLInputElement | HTMLTextAreaElement
     >,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear validation error when typing
     if (errors[name]) {
       setErrors((prev) => {
         const next = { ...prev };
@@ -79,7 +74,6 @@ const ContactForm = () => {
         setFormData({
           name: "",
           email: "",
-          service: "",
           message: "",
         });
       } else {
@@ -106,8 +100,7 @@ const ContactForm = () => {
           </div>
           <h3 className={styles.successTitle}>Pesan Terkirim!</h3>
           <p className={styles.successText}>
-            Terima kasih telah menghubungi saya. Saya akan segera membalas email
-            Anda dalam waktu 1x24 jam.
+            Terima kasih telah menghubungi saya. Saya akan membalas pesan Anda beserta rincian estimasi harga & waktu pengerjaan dalam waktu 1x24 jam.
           </p>
           <button
             type="button"
@@ -115,7 +108,7 @@ const ContactForm = () => {
             onClick={() => setStatus("idle")}
             style={{ marginTop: "10px" }}
           >
-            Kirim Pesan Baru
+            Kirim Pesan Lain
           </button>
         </div>
       ) : (
@@ -142,16 +135,16 @@ const ContactForm = () => {
 
             <div className={styles.inputGroup}>
               <label htmlFor="email" className={styles.label}>
-                Alamat Email
+                Email / Nomor WhatsApp
               </label>
               <input
-                type="email"
+                type="text"
                 id="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 className={`${styles.input} ${errors.email ? styles.inputError : ""}`}
-                placeholder="email@example.com"
+                placeholder="email@example.com atau 0812xxxx"
                 disabled={status === "loading"}
               />
               {errors.email && (
@@ -162,7 +155,7 @@ const ContactForm = () => {
 
           <div className={styles.inputGroup}>
             <label htmlFor="message" className={styles.label}>
-              Detail Project / Pesan
+              Detail Kebutuhan Website
             </label>
             <textarea
               id="message"
@@ -171,7 +164,7 @@ const ContactForm = () => {
               onChange={handleChange}
               rows={5}
               className={`${styles.textarea} ${errors.message ? styles.inputError : ""}`}
-              placeholder="Ceritakan singkat tentang proyek Anda..."
+              placeholder="Contoh: Saya butuh website Company Profile untuk konsultan keuangan, butuh fitur blog, galeri, dan integrasi WhatsApp. Target selesai dalam [X] minggu."
               disabled={status === "loading"}
             ></textarea>
             {errors.message && (
@@ -201,7 +194,7 @@ const ContactForm = () => {
             {status === "loading" ? (
               <span className={styles.spinner}></span>
             ) : (
-              "Kirim Penawaran"
+              "Minta Estimasi Harga"
             )}
           </button>
         </form>

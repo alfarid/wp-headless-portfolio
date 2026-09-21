@@ -1,25 +1,18 @@
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import Menu from "@/components/Menu"; // Showcase Projects
-import News from "@/components/News"; // Blog
-import { getBlogPosts, getTestimonials, MOCK_PROJECTS } from "@/lib/wordpress";
+import Menu from "@/components/Menu"; // Portfolio Showcase
+import { MOCK_PROJECTS } from "@/lib/wordpress";
 
 export const metadata = {
-  title: "Jasa Pembuatan Website Profesional & Modern",
-  description: "Jasa pembuatan website profil perusahaan, toko online (e-commerce), web e-learning LMS, portal berita/news, dan arsitektur Headless WordPress + Next.js.",
+  title: "Jasa Pembuatan Website Jakarta - Web Developer Freelance | malfa.",
+  description: "Jasa pembuatan website profesional di Jakarta oleh Muhammad Al Faridzi. Spesialis profil perusahaan, landing page, dan web e-learning LMS tanpa perantara.",
 };
 
 export default async function Home() {
-  const [blogPosts, testimonials] = await Promise.all([
-    getBlogPosts(),
-    getTestimonials(),
-  ]);
-
   const projects = MOCK_PROJECTS;
   const WA_NUMBER = "62895334155259";
+  const WA_URL = `https://wa.me/${WA_NUMBER}?text=Halo%20Malfa,%20saya%20ingin%20konsultasi%20pembuatan%20website`;
 
   return (
     <main
@@ -34,12 +27,11 @@ export default async function Home() {
       <section
         style={{
           position: "relative",
-          padding: "160px 0 100px",
+          padding: "160px 0 90px",
           overflow: "hidden",
           background: "radial-gradient(ellipse at top, rgba(120, 92, 255, 0.08) 0%, transparent 70%)",
         }}
       >
-        {/* Glow Background */}
         <div
           className="blur-blob blur-purple"
           style={{ top: "-10%", left: "20%", width: "600px", height: "600px" }}
@@ -52,29 +44,28 @@ export default async function Home() {
         ></div>
 
         <div className="container" style={{ position: "relative", zIndex: 10 }}>
-          <div style={{ textAlign: "center", maxWidth: "900px", margin: "0 auto" }}>
+          <div style={{ textAlign: "center", maxWidth: "880px", margin: "0 auto" }}>
             <span
               className="badge-glow"
               data-aos="fade-up"
               style={{ marginBottom: "20px", display: "inline-block" }}
             >
-              AGENCY WEB DEVELOPMENT PROFESIONAL
+              DEVELOPER WEB FREELANCE JAKARTA
             </span>
 
             <h1
               data-aos="fade-up"
               data-aos-delay="100"
               style={{
-                fontSize: "clamp(2.5rem, 5vw, 4rem)",
+                fontSize: "clamp(2.3rem, 5vw, 3.8rem)",
                 fontWeight: "800",
-                lineHeight: "1.15",
+                lineHeight: "1.2",
                 color: "var(--gray-dark)",
                 marginBottom: "24px",
                 letterSpacing: "-0.5px",
               }}
             >
-              Jasa Pembuatan Website <br />
-              <span className="gradient-text">Kencang, Modern & Berkonversi Tinggi</span>
+              Website Bisnis Anda Nggak Boleh Cuma Jadi Pajangan.
             </h1>
 
             <p
@@ -89,8 +80,7 @@ export default async function Home() {
                 margin: "0 auto 40px",
               }}
             >
-              Kami membantu bisnis, sekolah, kreator, dan portal media membangun website impian
-              mulai dari Company Profile, Toko Online, Web E-Learning (LMS), Portal Berita, hingga Headless Next.js.
+              Saya membantu pemilik bisnis, UMKM, dan kreator membangun website yang tidak hanya terlihat profesional, tapi juga menghasilkan calon pembeli. Tanpa biaya tersembunyi, tanpa agen perantara, dikerjakan langsung oleh developernya.
             </p>
 
             <div
@@ -101,77 +91,194 @@ export default async function Home() {
                 gap: "16px",
                 justifyContent: "center",
                 flexWrap: "wrap",
+                marginBottom: "36px",
               }}
             >
               <a
-                href={`https://wa.me/${WA_NUMBER}?text=Halo,%20saya%20ingin%20konsultasi%20pembuatan%20website`}
+                href={WA_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary"
                 style={{ padding: "14px 32px", fontSize: "1rem" }}
               >
-                Konsultasi Gratis via WA
+                Konsultasi Gratis via WhatsApp
               </a>
               <a
-                href="#pricing"
+                href="#projects"
                 className="btn btn-outline"
                 style={{ padding: "14px 32px", fontSize: "1rem" }}
               >
-                Lihat Paket Servis
+                Lihat Hasil Kerja Saya
               </a>
+            </div>
+
+            {/* 3 Bukti Kecil di bawah tombol Hero */}
+            <div
+              data-aos="fade-up"
+              data-aos-delay="400"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "20px 30px",
+                flexWrap: "wrap",
+                fontSize: "0.9rem",
+                color: "var(--gray-medium)",
+              }}
+            >
+              <span>✓ Dikerjakan langsung tanpa perantara</span>
+              <span>✓ Gratis perbaikan bug 30 hari</span>
+              <span>✓ Rincian harga & jadwal jelas di awal</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Trust Stats Bar */}
+      {/* Strip Bukti (4 Poin) */}
       <section
         style={{
           borderTop: "1px solid rgba(0, 0, 0, 0.06)",
           borderBottom: "1px solid rgba(0, 0, 0, 0.06)",
           backgroundColor: "#ffffff",
-          padding: "40px 0",
+          padding: "36px 0",
         }}
       >
         <div className="container">
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-              gap: "30px",
+              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gap: "24px",
               textAlign: "center",
             }}
           >
             <div>
-              <h3 style={{ fontSize: "2.5rem", fontWeight: "800", color: "var(--primary)" }}>500+</h3>
-              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem" }}>Website Terbit & Aktif</p>
+              <h3 style={{ fontSize: "1.2rem", fontWeight: "700", color: "var(--primary)", marginBottom: "4px" }}>
+                100% Langsung Developer
+              </h3>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.9rem" }}>Komunikasi Tanpa Perantara Sales</p>
             </div>
             <div>
-              <h3 style={{ fontSize: "2.5rem", fontWeight: "800", color: "var(--primary)" }}>99.8%</h3>
-              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem" }}>Uptime & Keandalan Server</p>
+              <h3 style={{ fontSize: "1.2rem", fontWeight: "700", color: "var(--primary)", marginBottom: "4px" }}>
+                Garansi 30 Hari
+              </h3>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.9rem" }}>Gratis Perbaikan Bug Setelah Live</p>
             </div>
             <div>
-              <h3 style={{ fontSize: "2.5rem", fontWeight: "800", color: "var(--primary)" }}>95+</h3>
-              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem" }}>Google PageSpeed Score</p>
+              <h3 style={{ fontSize: "1.2rem", fontWeight: "700", color: "var(--primary)", marginBottom: "4px" }}>
+                **[X]** Proyek Selesai
+              </h3>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.9rem" }}>Hasil Kerja Terbukti Dituntaskan</p>
             </div>
             <div>
-              <h3 style={{ fontSize: "2.5rem", fontWeight: "800", color: "var(--primary)" }}>100%</h3>
-              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem" }}>Garansi Kepuasan Klien</p>
+              <h3 style={{ fontSize: "1.2rem", fontWeight: "700", color: "var(--primary)", marginBottom: "4px" }}>
+                **[X]%** Uptime Server
+              </h3>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.9rem" }}>Keandalan Akses Website Anda</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section (Layanan Pembuatan Website) */}
+      {/* Section Masalah: Pernah Kapok Bikin Website? */}
+      <section className="section" style={{ backgroundColor: "rgba(120, 92, 255, 0.02)" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", maxWidth: "780px", margin: "0 auto 50px" }} data-aos="fade-up">
+            <span className="badge-glow">KENDALA UMUM CLIENT</span>
+            <h2 className="section-title" style={{ marginTop: "16px" }}>
+              Pernah Kapok Bikin Website?
+            </h2>
+            <p className="section-subtitle">
+              Banyak pemilik bisnis merasa kecewa setelah memesan website karena masalah-masalah yang sering terjadi di lapangan:
+            </p>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "24px",
+              marginBottom: "50px",
+            }}
+          >
+            <div data-aos="fade-up" style={{ padding: "28px", backgroundColor: "#ffffff", borderRadius: "var(--radius-md)", border: "1px solid rgba(0,0,0,0.06)" }}>
+              <h4 style={{ color: "#d9534f", fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px" }}>
+                ❌ Biaya Membengkak di Tengah Jalan
+              </h4>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+                Harga awal terlihat murah, tetapi tiba-tiba ada biaya tambahan untuk fitur dasar, domain, atau konfigurasi yang tidak dijelaskan di awal.
+              </p>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="100" style={{ padding: "28px", backgroundColor: "#ffffff", borderRadius: "var(--radius-md)", border: "1px solid rgba(0,0,0,0.06)" }}>
+              <h4 style={{ color: "#d9534f", fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px" }}>
+                ❌ Pengerjaan Molor Tanpa Kejelasan
+              </h4>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+                Janji selesai dalam seminggu, tapi berminggu-minggu tanpa kabar progres yang pasti.
+              </p>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="200" style={{ padding: "28px", backgroundColor: "#ffffff", borderRadius: "var(--radius-md)", border: "1px solid rgba(0,0,0,0.06)" }}>
+              <h4 style={{ color: "#d9534f", fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px" }}>
+                ❌ Developer Susah Dihubungi Pasca Bayar
+              </h4>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+                Setelah pelunasan dilakukan, pesan slow respon dan perbaikan kendala teknis diabaikan.
+              </p>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="300" style={{ padding: "28px", backgroundColor: "#ffffff", borderRadius: "var(--radius-md)", border: "1px solid rgba(0,0,0,0.06)" }}>
+              <h4 style={{ color: "#d9534f", fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px" }}>
+                ❌ Hasil Kaku Mirip Template Pasaran
+              </h4>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+                Tampilan kaku dan kurang mencerminkan nilai profesionalitas bisnis Anda.
+              </p>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="400" style={{ padding: "28px", backgroundColor: "#ffffff", borderRadius: "var(--radius-md)", border: "1px solid rgba(0,0,0,0.06)" }}>
+              <h4 style={{ color: "#d9534f", fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px" }}>
+                ❌ Bingung Mengedit Konten Sendiri
+              </h4>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+                Tidak diberi panduan cara memakai dashboard sehingga tergantung terus pada developer tiap kali ingin mengubah teks.
+              </p>
+            </div>
+          </div>
+
+          {/* Transisi */}
+          <div
+            data-aos="fade-up"
+            style={{
+              padding: "32px",
+              backgroundColor: "#ffffff",
+              borderRadius: "var(--radius-lg)",
+              border: "2px solid var(--primary)",
+              textAlign: "center",
+              maxWidth: "800px",
+              margin: "0 auto",
+            }}
+          >
+            <h3 style={{ fontSize: "1.3rem", fontWeight: "700", color: "var(--primary)", marginBottom: "8px" }}>
+              Saya Bekerja Secara Berbeda.
+            </h3>
+            <p style={{ color: "var(--gray-medium)", fontSize: "1rem", lineHeight: "1.6" }}>
+              Anda berkomunikasi langsung dengan saya dari awal konsultasi hingga peluncuran. Tanpa perantara, rincian biaya disepakati di awal, dan pengerjaan terpantau secara transparan.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Layanan Utama (3 Layanan Utama + Layanan Lainnya) */}
       <section id="services" className="section">
         <div className="container">
           <div style={{ textAlign: "center", maxWidth: "750px", margin: "0 auto 60px" }} data-aos="fade-up">
-            <span className="badge-glow">SOLUSI DIGITAL</span>
+            <span className="badge-glow">LAYANAN UTAMA</span>
             <h2 className="section-title" style={{ marginTop: "16px" }}>
-              Layanan Pembuatan Website Unggulan
+              Layanan Pembuatan Website
             </h2>
             <p className="section-subtitle">
-              Kami menghadirkan berbagai pilihan arsitektur web modern yang disesuaikan secara khusus dengan skala bisnis dan tujuan digital Anda.
+              Fokus pada kebutuhan bisnis Anda dengan solusi web yang siap pakai dan mudah dikelola.
             </p>
           </div>
 
@@ -180,17 +287,17 @@ export default async function Home() {
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
               gap: "30px",
+              marginBottom: "50px",
             }}
           >
-            {/* Service 1: Company Profile */}
+            {/* Layanan 1: Profil Perusahaan */}
             <div
               data-aos="fade-up"
-              data-aos-delay="100"
               style={{
                 backgroundColor: "#ffffff",
                 padding: "36px",
                 borderRadius: "var(--radius-lg)",
-                border: "1px solid rgba(0, 0, 0, 0.07)",
+                border: "1px solid rgba(0, 0, 0, 0.08)",
                 boxShadow: "0 10px 30px rgba(0,0,0,0.03)",
               }}
             >
@@ -199,11 +306,32 @@ export default async function Home() {
                 Website Profil Perusahaan (Company Profile)
               </h3>
               <p style={{ color: "var(--gray-medium)", lineHeight: "1.6", fontSize: "0.95rem" }}>
-                Desain profesional dan elegan untuk meningkatkan kredibilitas perusahaan, menampilkan layanan, portofolio, serta tim secara meyakinkan di mata klien.
+                Meningkatkan kepercayaan calon klien B2B dan menampilkan kredibilitas layanan, portofolio, serta informasi legalitas perusahaan Anda secara meyakinkan.
               </p>
             </div>
 
-            {/* Service 2: Toko Online / E-Commerce */}
+            {/* Layanan 2: Landing Page */}
+            <div
+              data-aos="fade-up"
+              data-aos-delay="100"
+              style={{
+                backgroundColor: "#ffffff",
+                padding: "36px",
+                borderRadius: "var(--radius-lg)",
+                border: "1px solid rgba(0, 0, 0, 0.08)",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.03)",
+              }}
+            >
+              <div style={{ fontSize: "2.5rem", marginBottom: "20px" }}>🎯</div>
+              <h3 style={{ fontSize: "1.3rem", fontWeight: "700", marginBottom: "12px", color: "var(--gray-dark)" }}>
+                Landing Page Penjualan & Promosi
+              </h3>
+              <p style={{ color: "var(--gray-medium)", lineHeight: "1.6", fontSize: "0.95rem" }}>
+                Halaman khusus penawaran produk/iklan yang dirancang dengan tata letak persuasif untuk memaksimalkan angka penjualan dan pemesanan via WhatsApp.
+              </p>
+            </div>
+
+            {/* Layanan 3: E-Learning / LMS */}
             <div
               data-aos="fade-up"
               data-aos-delay="200"
@@ -211,30 +339,8 @@ export default async function Home() {
                 backgroundColor: "#ffffff",
                 padding: "36px",
                 borderRadius: "var(--radius-lg)",
-                border: "1px solid rgba(0, 0, 0, 0.07)",
-                boxShadow: "0 10px 30px rgba(0,0,0,0.03)",
-              }}
-            >
-              <div style={{ fontSize: "2.5rem", marginBottom: "20px" }}>🛒</div>
-              <h3 style={{ fontSize: "1.3rem", fontWeight: "700", marginBottom: "12px", color: "var(--gray-dark)" }}>
-                Toko Online / E-Commerce
-              </h3>
-              <p style={{ color: "var(--gray-medium)", lineHeight: "1.6", fontSize: "0.95rem" }}>
-                Website penjualan dengan fitur keranjang belanja, manajemen stok otomatis, hitung ongkir otomatis, serta integrasi Payment Gateway (Midtrans/Xendit).
-              </p>
-            </div>
-
-            {/* Service 3: Web E-Learning / LMS */}
-            <div
-              data-aos="fade-up"
-              data-aos-delay="300"
-              style={{
-                backgroundColor: "#ffffff",
-                padding: "36px",
-                borderRadius: "var(--radius-lg)",
                 border: "1px solid rgba(120, 92, 255, 0.3)",
                 boxShadow: "0 10px 30px rgba(120, 92, 255, 0.08)",
-                background: "linear-gradient(180deg, #ffffff 0%, rgba(120, 92, 255, 0.02) 100%)",
               }}
             >
               <div style={{ fontSize: "2.5rem", marginBottom: "20px" }}>🎓</div>
@@ -242,78 +348,35 @@ export default async function Home() {
                 Web E-Learning / Platform Kursus (LMS)
               </h3>
               <p style={{ color: "var(--gray-medium)", lineHeight: "1.6", fontSize: "0.95rem" }}>
-                Platform akademik & kursus online lengkap: proteksi materi video, kuis interaktif, progres siswa, integrasi transaksi otomatis, dan penerbitan sertifikat.
+                Solusi pengajaran digital untuk kreator & lembaga: proteksi materi video, kuis interaktif, progres belajar siswa, dan penerbitan sertifikat otomatis.
               </p>
             </div>
+          </div>
 
-            {/* Service 4: Web Berita / News Media */}
-            <div
-              data-aos="fade-up"
-              data-aos-delay="400"
-              style={{
-                backgroundColor: "#ffffff",
-                padding: "36px",
-                borderRadius: "var(--radius-lg)",
-                border: "1px solid rgba(120, 92, 255, 0.3)",
-                boxShadow: "0 10px 30px rgba(120, 92, 255, 0.08)",
-                background: "linear-gradient(180deg, #ffffff 0%, rgba(120, 92, 255, 0.02) 100%)",
-              }}
-            >
-              <div style={{ fontSize: "2.5rem", marginBottom: "20px" }}>📰</div>
-              <h3 style={{ fontSize: "1.3rem", fontWeight: "700", marginBottom: "12px", color: "var(--primary)" }}>
-                Web Berita / Portal News & Media
-              </h3>
-              <p style={{ color: "var(--gray-medium)", lineHeight: "1.6", fontSize: "0.95rem" }}>
-                Portal berita berkapasitas tinggi yang dirancang menampung ribuan artikel & trafik masif, optimasi Google News, struktur iklan AdSense, serta sistem jurnalis internal.
-              </p>
-            </div>
-
-            {/* Service 5: Headless WP & Next.js */}
-            <div
-              data-aos="fade-up"
-              data-aos-delay="500"
-              style={{
-                backgroundColor: "#ffffff",
-                padding: "36px",
-                borderRadius: "var(--radius-lg)",
-                border: "1px solid rgba(0, 0, 0, 0.07)",
-                boxShadow: "0 10px 30px rgba(0,0,0,0.03)",
-              }}
-            >
-              <div style={{ fontSize: "2.5rem", marginBottom: "20px" }}>⚡</div>
-              <h3 style={{ fontSize: "1.3rem", fontWeight: "700", marginBottom: "12px", color: "var(--gray-dark)" }}>
-                Headless WordPress & Next.js
-              </h3>
-              <p style={{ color: "var(--gray-medium)", lineHeight: "1.6", fontSize: "0.95rem" }}>
-                Kombinasi terbaik backend WordPress yang mudah dikelola dengan frontend Next.js yang super kencang, aman dari serangan siber, dan nilai SEO sempurna.
-              </p>
-            </div>
-
-            {/* Service 6: Landing Page Conversion */}
-            <div
-              data-aos="fade-up"
-              data-aos-delay="600"
-              style={{
-                backgroundColor: "#ffffff",
-                padding: "36px",
-                borderRadius: "var(--radius-lg)",
-                border: "1px solid rgba(0, 0, 0, 0.07)",
-                boxShadow: "0 10px 30px rgba(0,0,0,0.03)",
-              }}
-            >
-              <div style={{ fontSize: "2.5rem", marginBottom: "20px" }}>🎯</div>
-              <h3 style={{ fontSize: "1.3rem", fontWeight: "700", marginBottom: "12px", color: "var(--gray-dark)" }}>
-                Landing Page High Conversion
-              </h3>
-              <p style={{ color: "var(--gray-medium)", lineHeight: "1.6", fontSize: "0.95rem" }}>
-                Halaman penawaran khusus iklan (FB Ads, Google Ads, TikTok Ads) yang didesain secara psikologis untuk memaksimalkan angka penjualan dan lead produk Anda.
-              </p>
-            </div>
+          {/* Layanan Lainnya */}
+          <div
+            data-aos="fade-up"
+            style={{
+              padding: "28px 32px",
+              backgroundColor: "#ffffff",
+              borderRadius: "var(--radius-md)",
+              border: "1px solid rgba(0,0,0,0.06)",
+              textAlign: "center",
+            }}
+          >
+            <h4 style={{ fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px", color: "var(--gray-dark)" }}>
+              Layanan Lainnya yang Bisa Dikerjakan:
+            </h4>
+            <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem" }}>
+              • <strong>Toko Online / E-Commerce</strong> (Keranjang & Payment Gateway) &nbsp;|&nbsp;
+              • <strong>Web Berita & Portal Media</strong> &nbsp;|&nbsp;
+              • <strong>Headless WordPress + Next.js Custom App</strong>
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
+      {/* Kenapa Pilih Saya (6 Poin) */}
       <section
         className="section"
         style={{
@@ -324,65 +387,152 @@ export default async function Home() {
       >
         <div className="container">
           <div style={{ textAlign: "center", maxWidth: "750px", margin: "0 auto 60px" }} data-aos="fade-up">
-            <span className="badge-glow">KEUNGGULAN KAMI</span>
+            <span className="badge-glow">ALASAN KERJA SAMA</span>
             <h2 className="section-title" style={{ marginTop: "16px" }}>
-              Mengapa Mempercayakan Web Anda Kepada Kami?
+              Kenapa Memilih Bekerja Sama dengan Saya?
             </h2>
             <p className="section-subtitle">
-              Kami tidak sekadar membuat website tampilan cantik, tetapi membangun aset digital yang berkinerja tinggi dan menghasilkan dampak bisnis nyata.
+              Memberikan kepastian, transparansi, dan rasa aman bagi bisnis Anda.
             </p>
           </div>
 
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: "40px",
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gap: "30px",
             }}
           >
-            <div data-aos="fade-up" data-aos-delay="100">
-              <div style={{ fontSize: "1.8rem", color: "var(--primary)", marginBottom: "12px" }}>🎨</div>
+            <div data-aos="fade-up">
               <h4 style={{ fontSize: "1.15rem", fontWeight: "700", marginBottom: "8px", color: "var(--gray-dark)" }}>
-                Desain Custom & Exclusive
+                1. Langsung Berkomunikasi dengan Developer
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Bukan sekadar mengunduh template gratisan. Setiap tata letak dirancang sesuai dengan identitas dan warna brand unik bisnis Anda.
+                Anda berbicara langsung dengan saya sebagai pembuat kode, bukan melalui perantara perantara sales yang berbelit-belit.
+              </p>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="100">
+              <h4 style={{ fontSize: "1.15rem", fontWeight: "700", marginBottom: "8px", color: "var(--gray-dark)" }}>
+                2. Rincian Biaya Transparan Sejak Awal
+              </h4>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+                Semua rincian biaya disepakati di awal penawaran tanpa ada tagihan tersembunyi di tengah jalan.
               </p>
             </div>
 
             <div data-aos="fade-up" data-aos-delay="200">
-              <div style={{ fontSize: "1.8rem", color: "var(--primary)", marginBottom: "12px" }}>🚀</div>
               <h4 style={{ fontSize: "1.15rem", fontWeight: "700", marginBottom: "8px", color: "var(--gray-dark)" }}>
-                Kecepatan Kilat & SEO Optimized
+                3. Jadwal Pengerjaan yang Ditepati
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Dioptimasi dengan standar Google Web Vitals agar halaman terbuka instan dan mudah bersaing di halaman pertama Google.
+                Tahapan pengerjaan disusun rapi dengan komitmen waktu penyelesaian yang jelas.
               </p>
             </div>
 
             <div data-aos="fade-up" data-aos-delay="300">
-              <div style={{ fontSize: "1.8rem", color: "var(--primary)", marginBottom: "12px" }}>📱</div>
               <h4 style={{ fontSize: "1.15rem", fontWeight: "700", marginBottom: "8px", color: "var(--gray-dark)" }}>
-                100% Mobile Responsive
+                4. Desain Kustom Sesuai Identitas Brand
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Tampilan menyesuaikan secara sempurna saat dibuka dari smartphone, tablet, maupun layar desktop resolusi tinggi.
+                Tata letak dirancang khusus menyesuaikan warna dan karakter bisnis Anda agar tidak terlihat pasaran.
+              </p>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="400">
+              <h4 style={{ fontSize: "1.15rem", fontWeight: "700", marginBottom: "8px", color: "var(--gray-dark)" }}>
+                5. Cepat & Dioptimasi SEO Dasar
+              </h4>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+                Struktur website dibuat ringan agar nyaman dibuka pengunjung dan mudah diindeks oleh mesin pencari Google.
+              </p>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="500">
+              <h4 style={{ fontSize: "1.15rem", fontWeight: "700", marginBottom: "8px", color: "var(--gray-dark)" }}>
+                6. Mudah Dikelola Sendiri
+              </h4>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+                Dilengkapi dengan panduan penggunaan agar Anda bisa mengubah teks dan mengunggah gambar secara mandiri.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Pricing / PAKET SERVIS Section - Beautiful, High Converting, No Prices */}
-      <section id="pricing" className="section" style={{ position: "relative", backgroundColor: "#ffffff" }}>
+      {/* Proses Kerja (4 Langkah) */}
+      <section id="proses" className="section" style={{ backgroundColor: "#ffffff" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", maxWidth: "750px", margin: "0 auto 60px" }} data-aos="fade-up">
+            <span className="badge-glow">TAHAPAN KARYA</span>
+            <h2 className="section-title" style={{ marginTop: "16px" }}>
+              4 Langkah Proses Kerja
+            </h2>
+            <p className="section-subtitle">
+              Alur kerja yang jelas dan terstruktur agar Anda merasa tenang dari awal hingga website siap dipakai.
+            </p>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: "24px",
+            }}
+          >
+            <div data-aos="fade-up" style={{ padding: "32px", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "var(--radius-lg)" }}>
+              <span style={{ fontSize: "2rem", fontWeight: "800", color: "var(--primary)" }}>01</span>
+              <h4 style={{ fontSize: "1.2rem", fontWeight: "700", marginTop: "12px", marginBottom: "8px", color: "var(--gray-dark)" }}>
+                Konsultasi Gratis
+              </h4>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+                Diskusi awal mengenai kebutuhan website, tujuan bisnis, serta referensi tampilan yang Anda sukai.
+              </p>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="100" style={{ padding: "32px", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "var(--radius-lg)" }}>
+              <span style={{ fontSize: "2rem", fontWeight: "800", color: "var(--primary)" }}>02</span>
+              <h4 style={{ fontSize: "1.2rem", fontWeight: "700", marginTop: "12px", marginBottom: "8px", color: "var(--gray-dark)" }}>
+                Penawaran & Kesepakatan DP **[X]%**
+              </h4>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+                Penyampaian rincian harga, estimasi waktu pengerjaan, dan pembayaran DP sebesar **[X]%** sebelum dimulai.
+              </p>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="200" style={{ padding: "32px", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "var(--radius-lg)" }}>
+              <span style={{ fontSize: "2rem", fontWeight: "800", color: "var(--primary)" }}>03</span>
+              <h4 style={{ fontSize: "1.2rem", fontWeight: "700", marginTop: "12px", marginBottom: "8px", color: "var(--gray-dark)" }}>
+                Desain & Pengembangan
+              </h4>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+                Proses pengkodean dan penyusunan tata letak website dengan laporan perkembangan secara berkala.
+              </p>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="300" style={{ padding: "32px", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "var(--radius-lg)" }}>
+              <span style={{ fontSize: "2rem", fontWeight: "800", color: "var(--primary)" }}>04</span>
+              <h4 style={{ fontSize: "1.2rem", fontWeight: "700", marginTop: "12px", marginBottom: "8px", color: "var(--gray-dark)" }}>
+                Revisi, Peluncuran & Serah Terima
+              </h4>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+                Pengecekan bersama, perbaikan revisi, pengaktifan ke domain Anda, dan penyerahan panduan pengelolaan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Paket & Harga Section */}
+      <section id="pricing" className="section" style={{ backgroundColor: "#ffffff" }}>
         <div className="container">
           <div style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto 60px" }} data-aos="fade-up">
-            <span className="badge-glow">PAKET SERVIS & SOLUSI WEB</span>
+            <span className="badge-glow">PAKET & RINCIAN</span>
             <h2 className="section-title" style={{ marginTop: "16px", fontSize: "clamp(2.2rem, 4vw, 3rem)" }}>
-              Pilihan Paket Pembuatan Website
+              Pilihan Paket Layanan Website
             </h2>
             <p className="section-subtitle" style={{ fontSize: "1.1rem" }}>
-              Dirancang secara presisi untuk membantu pertumbuhan bisnis Anda. Konsultasikan kebutuhan Anda bersama kami tanpa dipungut biaya.
+              Rincian paket transparan disesuaikan dengan skala kebutuhan Anda. Semua paket sudah termasuk gratis perbaikan bug 30 hari setelah peluncuran.
             </p>
           </div>
 
@@ -394,7 +544,7 @@ export default async function Home() {
               alignItems: "stretch",
             }}
           >
-            {/* Starter Package Card */}
+            {/* Paket Starter */}
             <div
               data-aos="fade-up"
               data-aos-delay="100"
@@ -407,84 +557,50 @@ export default async function Home() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
-                position: "relative",
-                transition: "all 0.3s ease",
               }}
             >
               <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "20px" }}>
-                  <div
-                    style={{
-                      width: "52px",
-                      height: "52px",
-                      borderRadius: "14px",
-                      background: "rgba(120, 92, 255, 0.08)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: "1.8rem",
-                    }}
-                  >
-                    🚀
-                  </div>
-                  <div>
-                    <span style={{ fontSize: "0.75rem", fontWeight: "700", color: "var(--primary)", textTransform: "uppercase", letterSpacing: "1px" }}>
-                      STARTER TIER
-                    </span>
-                    <h3 style={{ fontSize: "1.35rem", fontWeight: "700", color: "var(--gray-dark)", margin: "2px 0 0" }}>
-                      Paket Landing Page / Starter
-                    </h3>
-                  </div>
+                <span style={{ fontSize: "0.75rem", fontWeight: "700", color: "var(--primary)", textTransform: "uppercase", letterSpacing: "1px" }}>
+                  STARTER TIER
+                </span>
+                <h3 style={{ fontSize: "1.35rem", fontWeight: "700", color: "var(--gray-dark)", marginTop: "4px", marginBottom: "6px" }}>
+                  Paket Landing Page / Starter
+                </h3>
+                <p style={{ color: "var(--gray-medium)", fontSize: "0.9rem", marginBottom: "16px" }}>
+                  Cocok untuk campaign promosi produk, halaman iklan sales, atau UMKM.
+                </p>
+                <div style={{ marginBottom: "20px", background: "rgba(120,92,255,0.05)", padding: "12px", borderRadius: "10px" }}>
+                  <p style={{ fontSize: "1.2rem", fontWeight: "800", color: "var(--gray-dark)", margin: 0 }}>
+                    Mulai dari Rp **[X]**
+                  </p>
+                  <p style={{ fontSize: "0.85rem", color: "var(--gray-medium)", margin: "4px 0 0" }}>
+                    Estimasi pengerjaan: **[X]** hari kerja
+                  </p>
                 </div>
 
-                <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6", marginBottom: "28px" }}>
-                  Pilihan terbaik untuk campaign promosi produk, halaman iklan sales, atau memperkuat identitas brand UMKM.
-                </p>
-
-                <div style={{ borderTop: "1px dashed rgba(0, 0, 0, 0.1)", paddingTop: "24px", marginBottom: "28px" }}>
-                  <p style={{ fontWeight: "700", fontSize: "0.85rem", color: "var(--gray-dark)", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "16px" }}>
-                    FITUR & CAKUPAN SERVIS:
-                  </p>
-                  <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "14px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
-                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> 1 Halaman Landing Page High Conversion
-                    </li>
-                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Free Domain & Cloud Hosting 1 Tahun
-                    </li>
-                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Integrasi Tombol WhatsApp Direct Chat
-                    </li>
-                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Desain Mobile Friendly & Ultra Fast Loading
-                    </li>
-                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Panduan Ringkas Kelola Konten
-                    </li>
+                <div style={{ borderTop: "1px dashed rgba(0, 0, 0, 0.1)", paddingTop: "20px", marginBottom: "24px" }}>
+                  <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "12px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
+                    <li>✓ 1 Halaman Landing Page Sales</li>
+                    <li>✓ Free Domain & Cloud Hosting 1 Tahun</li>
+                    <li>✓ Integrasi Tombol WhatsApp Direct</li>
+                    <li>✓ Desain Mobile Friendly & Fast Loading</li>
+                    <li>✓ Kesempatan revisi: **[X]**x kesempatan</li>
                   </ul>
                 </div>
               </div>
 
               <a
-                href={`https://wa.me/${WA_NUMBER}?text=Halo,%20saya%20tertarik%20konsultasi%20Paket%20Starter`}
+                href={`https://wa.me/${WA_NUMBER}?text=Halo%20Malfa,%20saya%20tertarik%20konsultasi%20Paket%20Starter`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline"
-                style={{
-                  width: "100%",
-                  padding: "14px 20px",
-                  borderRadius: "12px",
-                  fontSize: "0.95rem",
-                  fontWeight: "600",
-                  textAlign: "center",
-                  justifyContent: "center",
-                }}
+                style={{ width: "100%", padding: "14px 20px", borderRadius: "12px", fontSize: "0.95rem", textAlign: "center", justifyContent: "center" }}
               >
-                Diskusi Paket Starter →
+                Pilih Paket Starter →
               </a>
             </div>
 
-            {/* Business Package Card (Featured) */}
+            {/* Paket Business */}
             <div
               data-aos="fade-up"
               data-aos-delay="200"
@@ -498,7 +614,6 @@ export default async function Home() {
                 flexDirection: "column",
                 justifyContent: "space-between",
                 position: "relative",
-                background: "linear-gradient(180deg, #ffffff 0%, rgba(120, 92, 255, 0.02) 100%)",
               }}
             >
               <div
@@ -512,88 +627,54 @@ export default async function Home() {
                   borderRadius: "20px",
                   fontSize: "0.75rem",
                   fontWeight: "700",
-                  letterSpacing: "1px",
-                  boxShadow: "0 4px 15px rgba(120, 92, 255, 0.3)",
                 }}
               >
                 PALING FAVORIT
               </div>
 
               <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "20px" }}>
-                  <div
-                    style={{
-                      width: "52px",
-                      height: "52px",
-                      borderRadius: "14px",
-                      background: "rgba(120, 92, 255, 0.12)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: "1.8rem",
-                    }}
-                  >
-                    🏢
-                  </div>
-                  <div>
-                    <span style={{ fontSize: "0.75rem", fontWeight: "700", color: "var(--primary)", textTransform: "uppercase", letterSpacing: "1px" }}>
-                      BUSINESS TIER
-                    </span>
-                    <h3 style={{ fontSize: "1.35rem", fontWeight: "700", color: "var(--gray-dark)", margin: "2px 0 0" }}>
-                      Paket Business (Company Profile)
-                    </h3>
-                  </div>
+                <span style={{ fontSize: "0.75rem", fontWeight: "700", color: "var(--primary)", textTransform: "uppercase", letterSpacing: "1px" }}>
+                  BUSINESS TIER
+                </span>
+                <h3 style={{ fontSize: "1.35rem", fontWeight: "700", color: "var(--gray-dark)", marginTop: "4px", marginBottom: "6px" }}>
+                  Paket Business (Company Profile)
+                </h3>
+                <p style={{ color: "var(--gray-medium)", fontSize: "0.9rem", marginBottom: "16px" }}>
+                  Pilihan ideal untuk profil bisnis perusahaan & lembaga resmi.
+                </p>
+                <div style={{ marginBottom: "20px", background: "rgba(120,92,255,0.08)", padding: "12px", borderRadius: "10px" }}>
+                  <p style={{ fontSize: "1.2rem", fontWeight: "800", color: "var(--primary)", margin: 0 }}>
+                    Mulai dari Rp **[X]**
+                  </p>
+                  <p style={{ fontSize: "0.85rem", color: "var(--gray-medium)", margin: "4px 0 0" }}>
+                    Estimasi pengerjaan: **[X]** hari kerja
+                  </p>
                 </div>
 
-                <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6", marginBottom: "28px" }}>
-                  Solusi ideal dan paling diminati untuk profil bisnis perusahaan, profil lembaga resmi, serta ekspansi pasar digital.
-                </p>
-
-                <div style={{ borderTop: "1px dashed rgba(120, 92, 255, 0.2)", paddingTop: "24px", marginBottom: "28px" }}>
-                  <p style={{ fontWeight: "700", fontSize: "0.85rem", color: "var(--primary)", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "16px" }}>
-                    FITUR & CAKUPAN SERVIS:
-                  </p>
-                  <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "14px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
-                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Hingga 7 Halaman Struktur Utama Custom
-                    </li>
-                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Free Domain .COM & Cloud Hosting Premium
-                    </li>
-                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Email Profesional Perusahaan (@namabisnis.com)
-                    </li>
-                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Modul Blog Berita & Galeri Portfolio
-                    </li>
-                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Optimasi SEO Dasar & Integrasi Google Maps
-                    </li>
+                <div style={{ borderTop: "1px dashed rgba(120, 92, 255, 0.2)", paddingTop: "20px", marginBottom: "24px" }}>
+                  <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "12px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
+                    <li>✓ Struktur Utama Hingga **[X]** Halaman</li>
+                    <li>✓ Free Domain .COM & Hosting Premium</li>
+                    <li>✓ Email Domain Perusahaan (@namabisnis.com)</li>
+                    <li>✓ Modul Blog & Galeri Portfolio</li>
+                    <li>✓ Optimasi SEO Dasar & Google Maps</li>
+                    <li>✓ Kesempatan revisi: **[X]**x kesempatan</li>
                   </ul>
                 </div>
               </div>
 
               <a
-                href={`https://wa.me/${WA_NUMBER}?text=Halo,%20saya%20tertarik%20konsultasi%20Paket%20Business`}
+                href={`https://wa.me/${WA_NUMBER}?text=Halo%20Malfa,%20saya%20tertarik%20konsultasi%20Paket%20Business`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary"
-                style={{
-                  width: "100%",
-                  padding: "14px 20px",
-                  borderRadius: "12px",
-                  fontSize: "0.95rem",
-                  fontWeight: "600",
-                  textAlign: "center",
-                  justifyContent: "center",
-                  boxShadow: "0 8px 20px rgba(120, 92, 255, 0.25)",
-                }}
+                style={{ width: "100%", padding: "14px 20px", borderRadius: "12px", fontSize: "0.95rem", textAlign: "center", justifyContent: "center" }}
               >
-                Diskusi Paket Business →
+                Pilih Paket Business →
               </a>
             </div>
 
-            {/* Custom / Enterprise Package Card */}
+            {/* Paket Enterprise */}
             <div
               data-aos="fade-up"
               data-aos-delay="300"
@@ -606,80 +687,47 @@ export default async function Home() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
-                position: "relative",
-                transition: "all 0.3s ease",
               }}
             >
               <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "20px" }}>
-                  <div
-                    style={{
-                      width: "52px",
-                      height: "52px",
-                      borderRadius: "14px",
-                      background: "rgba(120, 92, 255, 0.08)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: "1.8rem",
-                    }}
-                  >
-                    ⚡
-                  </div>
-                  <div>
-                    <span style={{ fontSize: "0.75rem", fontWeight: "700", color: "var(--primary)", textTransform: "uppercase", letterSpacing: "1px" }}>
-                      ENTERPRISE TIER
-                    </span>
-                    <h3 style={{ fontSize: "1.35rem", fontWeight: "700", color: "var(--gray-dark)", margin: "2px 0 0" }}>
-                      Paket Custom / Enterprise
-                    </h3>
-                  </div>
+                <span style={{ fontSize: "0.75rem", fontWeight: "700", color: "var(--primary)", textTransform: "uppercase", letterSpacing: "1px" }}>
+                  ENTERPRISE TIER
+                </span>
+                <h3 style={{ fontSize: "1.35rem", fontWeight: "700", color: "var(--gray-dark)", marginTop: "4px", marginBottom: "6px" }}>
+                  Paket Custom / Enterprise
+                </h3>
+                <p style={{ color: "var(--gray-medium)", fontSize: "0.9rem", marginBottom: "16px" }}>
+                  Untuk Toko Online, Web LMS E-Learning, Portal Berita & Headless.
+                </p>
+                <div style={{ marginBottom: "20px", background: "rgba(120,92,255,0.05)", padding: "12px", borderRadius: "10px" }}>
+                  <p style={{ fontSize: "1.2rem", fontWeight: "800", color: "var(--gray-dark)", margin: 0 }}>
+                    Mulai dari Rp **[X]**
+                  </p>
+                  <p style={{ fontSize: "0.85rem", color: "var(--gray-medium)", margin: "4px 0 0" }}>
+                    Estimasi pengerjaan: **[X]** minggu
+                  </p>
                 </div>
 
-                <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6", marginBottom: "28px" }}>
-                  Pengembangan web skala besar: Toko Online, Web LMS E-Learning, Portal Berita/Media, dan Headless Next.js.
-                </p>
-
-                <div style={{ borderTop: "1px dashed rgba(0, 0, 0, 0.1)", paddingTop: "24px", marginBottom: "28px" }}>
-                  <p style={{ fontWeight: "700", fontSize: "0.85rem", color: "var(--gray-dark)", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "16px" }}>
-                    FITUR & CAKUPAN SERVIS:
-                  </p>
-                  <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "14px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
-                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Sistem E-Commerce / LMS / Portal Berita
-                    </li>
-                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Arsitektur Headless WP + Next.js (Opsional)
-                    </li>
-                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Integrasi Payment Gateway & Auto Certificate
-                    </li>
-                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Server Kapasitas Tinggi / CDN Integration
-                    </li>
-                    <li style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                      <span style={{ color: "var(--primary)", fontWeight: "bold" }}>✓</span> Training Admin & Priority Support
-                    </li>
+                <div style={{ borderTop: "1px dashed rgba(0, 0, 0, 0.1)", paddingTop: "20px", marginBottom: "24px" }}>
+                  <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "12px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
+                    <li>✓ Sistem E-Commerce / LMS / Portal Berita</li>
+                    <li>✓ Headless WP + Next.js (Opsional)</li>
+                    <li>✓ Integrasi Payment Gateway & Auto Certificate</li>
+                    <li>✓ Server Kapasitas Tinggi / CDN</li>
+                    <li>✓ Training Admin & Panduan Penggunaan</li>
+                    <li>✓ Kesempatan revisi: **[X]**x kesempatan</li>
                   </ul>
                 </div>
               </div>
 
               <a
-                href={`https://wa.me/${WA_NUMBER}?text=Halo,%20saya%20tertarik%20konsultasi%20Paket%20Custom%20Enterprise`}
+                href={`https://wa.me/${WA_NUMBER}?text=Halo%20Malfa,%20saya%20tertarik%20konsultasi%20Paket%20Custom%20Enterprise`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline"
-                style={{
-                  width: "100%",
-                  padding: "14px 20px",
-                  borderRadius: "12px",
-                  fontSize: "0.95rem",
-                  fontWeight: "600",
-                  textAlign: "center",
-                  justifyContent: "center",
-                }}
+                style={{ width: "100%", padding: "14px 20px", borderRadius: "12px", fontSize: "0.95rem", textAlign: "center", justifyContent: "center" }}
               >
-                Diskusi Custom Project →
+                Konsultasi Custom Project →
               </a>
             </div>
           </div>
@@ -689,13 +737,7 @@ export default async function Home() {
       {/* Portfolio Showcase Section */}
       <Menu items={projects} />
 
-      {/* Testimonials Section */}
-      <TestimonialsSection testimonials={testimonials} />
-
-      {/* Blog Section */}
-      <News items={blogPosts} />
-
-      {/* FAQ Section */}
+      {/* FAQ Section (7 Pertanyaan) */}
       <section
         className="section"
         style={{
@@ -719,30 +761,73 @@ export default async function Home() {
               gap: "20px",
             }}
           >
+            {/* FAQ 1 */}
             <div data-aos="fade-up" style={{ padding: "24px", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "var(--radius-md)" }}>
               <h4 style={{ fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px", color: "var(--gray-dark)" }}>
-                Berapa lama estimasi pengerjaan website?
+                1. Berapa kisaran biaya pembuatan website?
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Estimasi pengerjaan Landing Page sekitar 3-5 hari kerja. Untuk Company Profile 7-14 hari kerja, sedangkan untuk platform kompleks seperti E-Learning LMS, Portal Berita, atau Headless Next.js berkisar 2-4 minggu.
+                Biaya pembuatan website bervariasi mulai dari Rp **[X]** tergantung pada fitur dan skala halaman yang dibutuhkan. Rincian penawaran akan disepakati transparan di awal tanpa biaya tersembunyi.
               </p>
             </div>
 
+            {/* FAQ 2 */}
             <div data-aos="fade-up" style={{ padding: "24px", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "var(--radius-md)" }}>
               <h4 style={{ fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px", color: "var(--gray-dark)" }}>
-                Apakah saya bisa mengedit konten sendiri setelah website selesai?
+                2. Berapa lama estimasi waktu pengerjaan?
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Tentu saja! Kami menyediakan dashboard Content Management System (CMS) yang sangat ramah pengguna (user-friendly). Anda dapat dengan mudah mengubah teks, mengunggah gambar, maupun memposting berita/produk baru.
+                Estimasi waktu pengerjaan Landing Page sekitar **[X]** hari kerja, Company Profile **[X]** hari kerja, dan sistem custom (LMS/Toko Online) berkisar **[X]** minggu.
               </p>
             </div>
 
+            {/* FAQ 3 */}
             <div data-aos="fade-up" style={{ padding: "24px", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "var(--radius-md)" }}>
               <h4 style={{ fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px", color: "var(--gray-dark)" }}>
-                Apakah ada garansi jika terjadi error?
+                3. Bagaimana sistem pembayarannya?
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Ya, setiap layanan pembuatan website dilengkapi dengan pemeliharaan teknis untuk memastikan website Anda selalu berjalan stabil dan aman dari kendala teknis.
+                Sistem pembayaran dilakukan dengan DP sebesar **[X]%** di awal saat kesepakatan penawaran, dan pelunasan sebesar **[X]%** dilakukan setelah website selesai diuji dan siap diluncurkan.
+              </p>
+            </div>
+
+            {/* FAQ 4 */}
+            <div data-aos="fade-up" style={{ padding: "24px", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "var(--radius-md)" }}>
+              <h4 style={{ fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px", color: "var(--gray-dark)" }}>
+                4. Apakah saya bisa mengedit konten sendiri setelah website live?
+              </h4>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+                Tentu saja. Anda akan mendapatkan akses penuh ke dashboard pengelolaan konten (CMS) beserta panduan kelola ringkas sehingga Anda dapat mengedit teks dan gambar kapan saja.
+              </p>
+            </div>
+
+            {/* FAQ 5 */}
+            <div data-aos="fade-up" style={{ padding: "24px", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "var(--radius-md)" }}>
+              <h4 style={{ fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px", color: "var(--gray-dark)" }}>
+                5. Atas nama siapa pendaftaran domain & hosting?
+              </h4>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+                Pendaftaran domain dan hosting didaftarkan sepenuhnya atas nama dan kepemilikan Anda sendiri, sehingga Anda memiliki kendali penuh atas aset digital Anda.
+              </p>
+            </div>
+
+            {/* FAQ 6 */}
+            <div data-aos="fade-up" style={{ padding: "24px", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "var(--radius-md)" }}>
+              <h4 style={{ fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px", color: "var(--gray-dark)" }}>
+                6. Bagaimana ketentuan garansi dan perbaikan bug?
+              </h4>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+                Setiap pembuatan website mencakup garansi gratis perbaikan bug selama 30 hari setelah live. Setelah masa garansi berakhir, Anda dapat mengambil paket pemeliharaan (maintenance) berkala mulai dari Rp **[X]**/bulan.
+              </p>
+            </div>
+
+            {/* FAQ 7 */}
+            <div data-aos="fade-up" style={{ padding: "24px", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "var(--radius-md)" }}>
+              <h4 style={{ fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px", color: "var(--gray-dark)" }}>
+                7. Berapa kali kesempatan revisi yang didapatkan?
+              </h4>
+              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
+                Jumlah kesempatan revisi disesuaikan dengan paket yang dipilih (umumnya **[X]**x kesempatan revisi pada tahap desain dan pengembangan sebelum website resmi diluncurkan).
               </p>
             </div>
           </div>
@@ -767,26 +852,14 @@ export default async function Home() {
             data-aos-delay="100"
             style={{
               color: "var(--gray-dark)",
-              fontSize: "clamp(2rem, 4vw, 3rem)",
+              fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
               marginTop: "20px",
               marginBottom: "20px",
               fontWeight: "700",
             }}
           >
-            Siap Membangun Website Impian Bisnis Anda?
+            Punya Ide Website? Ceritakan, Saya Balas dengan Estimasi Harga & Waktu Pengerjaan.
           </h2>
-          <p
-            data-aos="fade-up"
-            data-aos-delay="200"
-            style={{
-              color: "var(--gray-medium)",
-              fontSize: "1.1rem",
-              maxWidth: "600px",
-              margin: "0 auto 40px",
-            }}
-          >
-            Diskusikan kebutuhan ide website Anda bersama tim konsultan kami tanpa dipungut biaya.
-          </p>
 
           <ContactForm />
 
@@ -799,7 +872,7 @@ export default async function Home() {
               marginTop: "30px",
             }}
           >
-            Atau hubungi tim kami langsung melalui:
+            Atau hubungi saya langsung melalui:
             <a
               href="mailto:alfaridzim7@gmail.com"
               style={{
@@ -813,7 +886,7 @@ export default async function Home() {
             </a>
             atau
             <a
-              href={`https://wa.me/${WA_NUMBER}`}
+              href={WA_URL}
               target="_blank"
               rel="noopener noreferrer"
               style={{

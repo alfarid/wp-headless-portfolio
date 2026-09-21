@@ -127,63 +127,63 @@ export const MOCK_TESTIMONIALS: Testimonial[] = [
 export const MOCK_PROJECTS: Project[] = [
   {
     id: "mock-1",
-    name: "Adsfa Elementor Template Kit",
-    description:
-      "Template kit Elementor premium untuk agensi pemasaran sosial media di ThemeForest.",
-    techStack: "Elementor, Figma, WordPress",
-    image: "/AdsFa.jpg",
-    category: "Template Elementor",
-    url: "https://themeforest.net/item/adsfa-social-media-marketing-agency-elementor-template-kit/59016792",
-  },
-  {
-    id: "mock-2",
     name: "Sagas Security",
     description:
-      "Website profil perusahaan (company profile) penyedia layanan keamanan fisik & cyber.",
+      "Website profil perusahaan penyedia layanan keamanan fisik & siber. Membantu meningkatkan kepercayaan calon klien korporat.\n\nHasil: [Hasil terukur, contoh: Kredibilitas bisnis meningkat di mata klien B2B]",
     techStack: "WordPress, Custom Theme, Responsive CSS",
     image: "/sagas.png",
     category: "Company Profile",
     url: "https://www.sagassecurity.com/id/",
   },
   {
-    id: "mock-3",
+    id: "mock-2",
     name: "Akademi Inspiradzi",
     description:
-      "Platform e-learning berbasis LMS (Learning Management System) untuk kursus online & sertifikasi.",
+      "Platform e-learning LMS untuk menjual kursus online, mengunggah materi video, kuis, dan menerbitkan sertifikat otomatis.\n\nHasil: [Hasil terukur, contoh: Otomatisasi pendaftaran & ujian kelas online]",
     techStack: "WordPress, LearnDash LMS, WooCommerce",
     image: "/AI.png",
-    category: "E-Learning",
+    category: "E-Learning LMS",
     url: "https://akademiinspiradzi.com/",
   },
   {
-    id: "mock-4",
+    id: "mock-3",
     name: "DigitalBrain - Share Konten",
     description:
-      "Landing page campaign program rujukan digital untuk mengubah konten rekomendasi menjadi penghasilan.",
-    techStack: "Elementor, Mobile Friendly, Opt-in Form",
+      "Landing page promosi program rujukan digital untuk mengkonversi pembaca menjadi pendaftar campaign.\n\nHasil: [Hasil terukur, contoh: Konversi penawaran meningkat [X]%]",
+    techStack: "Elementor, Mobile Friendly, Form Opt-in",
     image: "/share-konten.png",
     category: "Landing Page",
     url: "https://digitalbrain.co.id/share-konten-rekomendasi-jadi-penghasilan/",
   },
   {
-    id: "mock-5",
+    id: "mock-4",
     name: "DigitalBrain - Hewan Ternak",
     description:
-      "Landing page edukatif nutrisi hewan ternak untuk kesuburan dan hasil panen melimpah (non-CTA version).",
-    techStack: "Elementor, Custom Layout, Web Design",
+      "Landing page edukatif produk nutrisi hewan ternak dengan penyusunan informasi produk yang mudah dipahami.\n\nHasil: [Hasil terukur, contoh: Pemahaman calon pembeli terhadap produk meningkat]",
+    techStack: "Elementor, Custom Layout, Responsive",
     image: "/hewan-ternak.png",
     category: "Landing Page",
     url: "https://digitalbrain.co.id/hewan-ternak-lebih-subur-hasil-makin-makmur-non-cta/",
   },
   {
-    id: "mock-6",
+    id: "mock-5",
     name: "DigitalBrain - Urban Farming",
     description:
-      "Landing page edukasi teknik bertani perkotaan (urban farming) modern bagi ibu rumah tangga.",
-    techStack: "Elementor, Custom Graphic Design",
+      "Landing page edukasi teknik bertani perkotaan yang menyajikan konten penawaran secara ringkas dan menarik.\n\nHasil: [Hasil terukur, contoh: Informasi campaign tersampaikan dengan efektif]",
+    techStack: "Elementor, Custom Layout, Web Design",
     image: "/urban-farming.png",
     category: "Landing Page",
     url: "https://digitalbrain.co.id/urban-farming-di-balik-full-senyum-mommy-non-cta/",
+  },
+  {
+    id: "mock-6",
+    name: "Adsfa Elementor Template Kit",
+    description:
+      "Desain template kit Elementor komersial yang dipublikasikan dan dijual untuk agensi di marketplace ThemeForest.\n\nCatatan: Produk template kit ThemeForest",
+    techStack: "Elementor, Figma, ThemeForest",
+    image: "/AdsFa.jpg",
+    category: "Template Kit (ThemeForest)",
+    url: "https://themeforest.net/item/adsfa-social-media-marketing-agency-elementor-template-kit/59016792",
   },
 ];
 
