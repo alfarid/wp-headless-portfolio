@@ -749,14 +749,6 @@ export default async function Home() {
                 <p style={{ color: "var(--gray-medium)", fontSize: "0.9rem", marginBottom: "16px" }}>
                   Cocok untuk campaign promosi produk, halaman iklan sales, atau UMKM.
                 </p>
-                <div style={{ marginBottom: "20px", background: "rgba(120,92,255,0.05)", padding: "12px", borderRadius: "10px" }}>
-                  <p style={{ fontSize: "1.2rem", fontWeight: "800", color: "var(--gray-dark)", margin: 0 }}>
-                    Mulai dari Rp **[X]**
-                  </p>
-                  <p style={{ fontSize: "0.85rem", color: "var(--gray-medium)", margin: "4px 0 0" }}>
-                    Estimasi pengerjaan: 3 hari kerja
-                  </p>
-                </div>
 
                 <div style={{ borderTop: "1px dashed rgba(0, 0, 0, 0.1)", paddingTop: "20px", marginBottom: "24px" }}>
                   <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "12px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
@@ -822,15 +814,6 @@ export default async function Home() {
                 <p style={{ color: "var(--gray-medium)", fontSize: "0.9rem", marginBottom: "16px" }}>
                   Pilihan ideal untuk profil bisnis perusahaan & lembaga resmi.
                 </p>
-                <div style={{ marginBottom: "20px", background: "rgba(120,92,255,0.08)", padding: "12px", borderRadius: "10px" }}>
-                  <p style={{ fontSize: "1.2rem", fontWeight: "800", color: "var(--primary)", margin: 0 }}>
-                    Mulai dari Rp **[X]**
-                  </p>
-                  <p style={{ fontSize: "0.85rem", color: "var(--gray-medium)", margin: "4px 0 0" }}>
-                    Estimasi pengerjaan: 7 hari kerja
-                  </p>
-                </div>
-
                 <div style={{ borderTop: "1px dashed rgba(120, 92, 255, 0.2)", paddingTop: "20px", marginBottom: "24px" }}>
                   <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "12px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
                     <li>✓ Struktur Utama Hingga 7 Halaman</li>
@@ -879,14 +862,6 @@ export default async function Home() {
                 <p style={{ color: "var(--gray-medium)", fontSize: "0.9rem", marginBottom: "16px" }}>
                   Untuk Toko Online, Web LMS E-Learning, Portal Berita & Headless.
                 </p>
-                <div style={{ marginBottom: "20px", background: "rgba(120,92,255,0.05)", padding: "12px", borderRadius: "10px" }}>
-                  <p style={{ fontSize: "1.2rem", fontWeight: "800", color: "var(--gray-dark)", margin: 0 }}>
-                    Mulai dari Rp **[X]**
-                  </p>
-                  <p style={{ fontSize: "0.85rem", color: "var(--gray-medium)", margin: "4px 0 0" }}>
-                    Estimasi pengerjaan: 2 minggu
-                  </p>
-                </div>
 
                 <div style={{ borderTop: "1px dashed rgba(0, 0, 0, 0.1)", paddingTop: "20px", marginBottom: "24px" }}>
                   <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "12px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
@@ -947,7 +922,7 @@ export default async function Home() {
                 1. Berapa kisaran biaya pembuatan website?
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Biaya pembuatan website bervariasi mulai dari Rp **[X]** tergantung pada fitur dan skala halaman yang dibutuhkan. Rincian penawaran akan disepakati transparan di awal tanpa biaya tersembunyi.
+                Biaya pembuatan website bervariasi tergantung pada fitur dan skala halaman yang dibutuhkan. Rincian penawaran akan disepakati transparan di awal tanpa biaya tersembunyi.
               </p>
             </div>
 
@@ -997,7 +972,7 @@ export default async function Home() {
                 6. Bagaimana ketentuan garansi dan perbaikan bug?
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Setiap pembuatan website mencakup garansi gratis perbaikan bug selama 30 hari setelah live. Setelah masa garansi berakhir, Anda dapat mengambil paket pemeliharaan (maintenance) berkala mulai dari Rp **[X]**/bulan.
+                Setiap pembuatan website mencakup garansi gratis perbaikan bug selama 30 hari setelah live. Setelah masa garansi berakhir, Anda dapat mengambil paket pemeliharaan (maintenance).
               </p>
             </div>
 
