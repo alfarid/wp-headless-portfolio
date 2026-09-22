@@ -579,3 +579,42 @@ img {
     gap: 40px;
   }
 }
+
+/* Kendala Cards Responsive Grid */
+.kendala-grid-top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.kendala-grid-bottom {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  .kendala-grid-top {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .kendala-grid-bottom {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Proses Kerja 2x2 Grid */
+.proses-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+@media (min-width: 768px) {
+  .proses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+

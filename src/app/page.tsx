@@ -194,14 +194,7 @@ export default async function Home() {
             </p>
           </div>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: "24px",
-              marginBottom: "50px",
-            }}
-          >
+          <div className="kendala-grid-top">
             {/* Card 1 */}
             <div
               data-aos="fade-up"
@@ -264,7 +257,9 @@ export default async function Home() {
                 Setelah pelunasan dilakukan, pesan slow respon dan perbaikan kendala teknis diabaikan.
               </p>
             </div>
+          </div>
 
+          <div className="kendala-grid-bottom">
             {/* Card 4 */}
             <div
               data-aos="fade-up"
@@ -538,13 +533,7 @@ export default async function Home() {
             </p>
           </div>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: "28px",
-            }}
-          >
+          <div className="proses-grid">
             {/* Step 1 */}
             <div
               data-aos="fade-up"
@@ -1014,7 +1003,7 @@ export default async function Home() {
               lineHeight: "1.4",
             }}
           >
-            Punya Ide Website? Ceritakan, Saya Balas dengan Estimasi Harga & Waktu Pengerjaan.
+            Punya Ide Website? Ceritakan Sekarang!
           </h2>
 
           <ContactForm />
