@@ -38,7 +38,7 @@ const Footer = () => {
                 lineHeight: "1.6",
               }}
             >
-              Jasa pembuatan website profesional oleh Muhammad Al Faridzi. Berfokus pada kecepatan, keamanan, dan kemudahan pengelolaan.
+              Jasa pembuatan website profesional oleh Muhammad Alfaridzi. Berfokus pada kecepatan, keamanan, dan kemudahan pengelolaan.
             </p>
           </div>
           <div>
@@ -145,18 +145,6 @@ const Footer = () => {
               </a>
             </p>
             <div style={{ display: "flex", gap: "15px" }}>
-              <a
-                href="https://github.com/alfarid"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: "var(--primary)",
-                  fontSize: "1.1rem",
-                  fontWeight: 600,
-                }}
-              >
-                GitHub
-              </a>
               <a
                 href="https://www.linkedin.com/in/malfaridzi/"
                 target="_blank"

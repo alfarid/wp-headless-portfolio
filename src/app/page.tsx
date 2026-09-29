@@ -11,7 +11,7 @@ export const metadata = {
 
 export default async function Home() {
   const projects = MOCK_PROJECTS;
-  const WA_NUMBER = "62895334155259";
+  const WA_NUMBER = "6285775354310";
   const WA_URL = `https://wa.me/${WA_NUMBER}?text=Halo%20Malfa,%20saya%20ingin%20konsultasi%20pembuatan%20website`;
 
   return (
@@ -808,7 +808,6 @@ export default async function Home() {
                     <li>✓ Struktur Utama Hingga 7 Halaman</li>
                     <li>✓ Free Domain .COM & Hosting Premium</li>
                     <li>✓ Email Domain Perusahaan (@namabisnis.com)</li>
-                    <li>✓ Modul Blog & Galeri Portfolio</li>
                     <li>✓ Optimasi SEO Dasar & Google Maps</li>
                     <li>✓ Kesempatan revisi: 5x kesempatan</li>
                   </ul>
@@ -855,7 +854,6 @@ export default async function Home() {
                 <div style={{ borderTop: "1px dashed rgba(0, 0, 0, 0.1)", paddingTop: "20px", marginBottom: "24px" }}>
                   <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: "12px", color: "var(--gray-medium)", fontSize: "0.95rem" }}>
                     <li>✓ Sistem E-Commerce / LMS / Portal Berita</li>
-                    <li>✓ Headless WP + Next.js (Opsional)</li>
                     <li>✓ Integrasi Payment Gateway & Auto Certificate</li>
                     <li>✓ Server Kapasitas Tinggi / CDN</li>
                     <li>✓ Training Admin & Panduan Penggunaan</li>
@@ -948,30 +946,20 @@ export default async function Home() {
             {/* FAQ 5 */}
             <div data-aos="fade-up" style={{ padding: "24px", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "var(--radius-md)" }}>
               <h4 style={{ fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px", color: "var(--gray-dark)" }}>
-                5. Atas nama siapa pendaftaran domain & hosting?
-              </h4>
-              <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Pendaftaran domain dan hosting didaftarkan sepenuhnya atas nama dan kepemilikan Anda sendiri, sehingga Anda memiliki kendali penuh atas aset digital Anda.
-              </p>
-            </div>
-
-            {/* FAQ 6 */}
-            <div data-aos="fade-up" style={{ padding: "24px", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "var(--radius-md)" }}>
-              <h4 style={{ fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px", color: "var(--gray-dark)" }}>
-                6. Bagaimana ketentuan garansi dan perbaikan bug?
+                5. Bagaimana ketentuan garansi dan perbaikan bug?
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
                 Setiap pembuatan website mencakup garansi gratis perbaikan bug selama 30 hari setelah live. Setelah masa garansi berakhir, Anda dapat mengambil paket pemeliharaan (maintenance).
               </p>
             </div>
 
-            {/* FAQ 7 */}
+            {/* FAQ 6 */}
             <div data-aos="fade-up" style={{ padding: "24px", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "var(--radius-md)" }}>
               <h4 style={{ fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px", color: "var(--gray-dark)" }}>
-                7. Berapa kali kesempatan revisi yang didapatkan?
+                6. Berapa kali kesempatan revisi yang didapatkan?
               </h4>
               <p style={{ color: "var(--gray-medium)", fontSize: "0.95rem", lineHeight: "1.6" }}>
-                Jumlah kesempatan revisi disesuaikan dengan paket yang dipilih (3x kesempatan revisi pada Paket Starter dan 5x kesempatan revisi pada Paket Business/Enterprise).
+                Jumlah kesempatan revisi disesuaikan dengan paket yang dipilih (3x sampai dengan 5x kesempatan revisi tergantung pada paket yang dipilih).
               </p>
             </div>
           </div>
@@ -1040,7 +1028,7 @@ export default async function Home() {
                 textDecoration: "underline",
               }}
             >
-              WhatsApp Direct (+62895334155259)
+              WhatsApp Direct (+6285775354310)
             </a>
           </p>
         </div>

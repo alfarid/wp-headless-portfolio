@@ -23,7 +23,7 @@ export default function CheckoutPage() {
   const handleWhatsAppCheckout = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const adminPhoneNumber = "6281112345678"; // Ganti nomor WA Admin Client
+    const adminPhoneNumber = "6285775354310"; // Ganti nomor WA Admin Client
     const orderDetails = cartItems
       .map((item) => `- ${item.name} (${item.qty}x) = ${item.price}`)
       .join("\n");

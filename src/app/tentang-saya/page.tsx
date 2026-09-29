@@ -637,7 +637,7 @@ export default async function TentangSayaPage() {
             </a>
             atau
             <a
-              href="https://wa.me/62895334155259"
+              href="https://wa.me/6285775354310"
               target="_blank"
               rel="noopener noreferrer"
               style={{

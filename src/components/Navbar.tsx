@@ -70,7 +70,7 @@ const Navbar = () => {
 
           <div className={styles.navActions}>
             <a
-              href="https://wa.me/62895334155259?text=Halo%20Malfa,%20saya%20ingin%20konsultasi%20pembuatan%20website"
+              href="https://wa.me/6285775354310?text=Halo%20Malfa,%20saya%20ingin%20konsultasi%20pembuatan%20website"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary btn-desktop"
@@ -147,7 +147,7 @@ const Navbar = () => {
             }}
           >
             <a
-              href="https://wa.me/62895334155259?text=Halo%20Malfa,%20saya%20ingin%20konsultasi%20pembuatan%20website"
+              href="https://wa.me/6285775354310?text=Halo%20Malfa,%20saya%20ingin%20konsultasi%20pembuatan%20website"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"
