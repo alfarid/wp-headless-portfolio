@@ -1,206 +1,130 @@
-"use client";
-
-import { useState } from "react";
 import styles from "./ContactForm.module.css";
 
-interface FormState {
-  name: string;
-  email: string;
-  message: string;
-}
+const WA_NUMBER = "6285775354310";
+const WA_URL = `https://wa.me/${WA_NUMBER}?text=Halo%20Malfa,%20saya%20ingin%20konsultasi%20pembuatan%20website`;
 
-const ContactForm = () => {
-  const [formData, setFormData] = useState<FormState>({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
-
-  const validate = () => {
-    const newErrors: { [key: string]: string } = {};
-    if (!formData.name.trim()) newErrors.name = "Nama lengkap wajib diisi";
-    if (!formData.email.trim()) {
-      newErrors.email = "Email atau nomor WhatsApp wajib diisi";
-    }
-    if (!formData.message.trim()) newErrors.message = "Pesan/Detail kebutuhan wajib diisi";
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement
-    >,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-    if (errors[name]) {
-      setErrors((prev) => {
-        const next = { ...prev };
-        delete next[name];
-        return next;
-      });
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validate()) return;
-
-    setStatus("loading");
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        }),
-      });
-
-      const data = await res.json();
-      if (res.ok && data.success) {
-        setStatus("success");
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
-        });
-      } else {
-        setStatus("error");
-      }
-    } catch (err) {
-      setStatus("error");
-    }
-  };
-
+export default function ContactForm() {
   return (
-    <div className={styles.formContainer} data-aos="fade-up">
-      {status === "success" ? (
-        <div className={styles.successWrapper}>
-          <div className={styles.successIcon}>
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="3"
+    <div className={styles.bannerWrapper} data-aos="fade-up">
+      <div className={styles.bannerCard}>
+        {/* Kolom Konten (Kiri) */}
+        <div className={styles.contentCol}>
+          <span className={styles.tagline}>
+            KONSULTASI GRATIS & ESTIMASI BIAYA
+          </span>
+          <h3 className={styles.title}>
+            Punya Ide Website? Konsultasi Langsung dengan Developer via WhatsApp
+          </h3>
+
+          <div className={styles.ctaWrapper}>
+            <a
+              href={WA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.ctaButton}
             >
-              <polyline points="20 6 9 17 4 12" />
-            </svg>
+              {/* Icon WhatsApp */}
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              </svg>
+              <span>Konsultasi via WhatsApp</span>
+              <span className={styles.ctaArrow}>→</span>
+            </a>
           </div>
-          <h3 className={styles.successTitle}>Pesan Terkirim!</h3>
-          <p className={styles.successText}>
-            Terima kasih telah menghubungi saya. Saya akan membalas pesan Anda beserta rincian estimasi harga & waktu pengerjaan dalam waktu 1x24 jam.
-          </p>
-          <button
-            type="button"
-            className="btn btn-outline"
-            onClick={() => setStatus("idle")}
-            style={{ marginTop: "10px" }}
-          >
-            Kirim Pesan Lain
-          </button>
         </div>
-      ) : (
-        <form onSubmit={handleSubmit} className={styles.form}>
-          <div className={styles.row}>
-            <div className={styles.inputGroup}>
-              <label htmlFor="name" className={styles.label}>
-                Nama Lengkap
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className={`${styles.input} ${errors.name ? styles.inputError : ""}`}
-                placeholder="Nama Anda"
-                disabled={status === "loading"}
-              />
-              {errors.name && (
-                <span className={styles.errorMsg}>{errors.name}</span>
-              )}
-            </div>
 
-            <div className={styles.inputGroup}>
-              <label htmlFor="email" className={styles.label}>
-                Email / Nomor WhatsApp
-              </label>
-              <input
-                type="text"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className={`${styles.input} ${errors.email ? styles.inputError : ""}`}
-                placeholder="email@example.com atau 0812xxxx"
-                disabled={status === "loading"}
-              />
-              {errors.email && (
-                <span className={styles.errorMsg}>{errors.email}</span>
-              )}
-            </div>
-          </div>
-
-          <div className={styles.inputGroup}>
-            <label htmlFor="message" className={styles.label}>
-              Detail Kebutuhan Website
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows={5}
-              className={`${styles.textarea} ${errors.message ? styles.inputError : ""}`}
-              placeholder="Contoh: Saya butuh website Company Profile untuk konsultan keuangan, butuh fitur blog, galeri, dan integrasi WhatsApp. Target selesai dalam [X] minggu."
-              disabled={status === "loading"}
-            ></textarea>
-            {errors.message && (
-              <span className={styles.errorMsg}>{errors.message}</span>
-            )}
-          </div>
-
-          {status === "error" && (
-            <div className={styles.errorContainer}>
-              Terjadi kesalahan. Silakan coba lagi atau kirim email langsung ke{" "}
-              <a href="mailto:alfaridzim7@gmail.com" style={{ color: "var(--primary)", textDecoration: "underline" }}>
-                alfaridzim7@gmail.com
-              </a>.
-            </div>
-          )}
-
-          <button
-            type="submit"
-            className="btn btn-primary"
-            style={{
-              width: "100%",
-              justifyContent: "center",
-              marginTop: "10px",
-            }}
-            disabled={status === "loading"}
+        {/* Kolom Ilustrasi / Graphic (Kanan) */}
+        <div className={styles.graphicCol}>
+          <svg
+            className={styles.illustrationSvg}
+            viewBox="0 0 250 180"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            {status === "loading" ? (
-              <span className={styles.spinner}></span>
-            ) : (
-              "Minta Estimasi Harga"
-            )}
-          </button>
-        </form>
-      )}
+            <defs>
+              <linearGradient id="hillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#785cff" stopOpacity="0.18" />
+                <stop offset="100%" stopColor="#00f5a0" stopOpacity="0.25" />
+              </linearGradient>
+              <linearGradient id="laptopGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#ffffff" />
+                <stop offset="100%" stopColor="#f1f5f9" />
+              </linearGradient>
+              <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#1e293b" />
+                <stop offset="100%" stopColor="#0f172a" />
+              </linearGradient>
+              <linearGradient id="waBubbleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#25D366" />
+                <stop offset="100%" stopColor="#128C7E" />
+              </linearGradient>
+              <filter id="shadowFilter" x="-10%" y="-10%" width="130%" height="130%">
+                <feDropShadow dx="0" dy="6" stdDeviation="5" floodColor="#785cff" floodOpacity="0.12" />
+              </filter>
+              <filter id="waShadow" x="-10%" y="-10%" width="130%" height="130%">
+                <feDropShadow dx="0" dy="5" stdDeviation="4" floodColor="#25D366" floodOpacity="0.25" />
+              </filter>
+            </defs>
+
+            {/* Bukit Kurva Referensi Quizlet */}
+            <path
+              d="M-20 180C30 130 110 120 250 160V180H-20Z"
+              fill="url(#hillGrad)"
+            />
+            <path
+              d="M40 180C100 110 190 100 270 140V180H40Z"
+              fill="rgba(120, 92, 255, 0.08)"
+            />
+
+            {/* Laptop Vector Graphic */}
+            <g filter="url(#shadowFilter)">
+              {/* Alas Laptop */}
+              <rect x="45" y="142" width="130" height="8" rx="4" fill="#cbd5e1" />
+              <path d="M95 142H125V144C125 145.1 124.1 146 123 146H97C95.9 146 95 145.1 95 144V142Z" fill="#94a3b8" />
+              
+              {/* Layar Laptop */}
+              <rect x="57" y="60" width="106" height="84" rx="8" fill="url(#laptopGrad)" stroke="#cbd5e1" strokeWidth="2" />
+              <rect x="62" y="65" width="96" height="70" rx="5" fill="url(#screenGrad)" />
+              
+              {/* Window Controls & Lines */}
+              <circle cx="68" cy="70" r="1.5" fill="#ef4444" />
+              <circle cx="72" cy="70" r="1.5" fill="#f59e0b" />
+              <circle cx="76" cy="70" r="1.5" fill="#10b981" />
+
+              <rect x="70" y="78" width="30" height="4" rx="2" fill="#785cff" />
+              <rect x="104" y="78" width="20" height="4" rx="2" fill="#38bdf8" />
+              <rect x="70" y="87" width="45" height="4" rx="2" fill="#475569" />
+              <rect x="70" y="96" width="60" height="4" rx="2" fill="#334155" />
+              <rect x="70" y="105" width="25" height="4" rx="2" fill="#00f5a0" />
+            </g>
+
+            {/* WhatsApp Chat Bubble Floating Overlay */}
+            <g filter="url(#waShadow)">
+              <rect x="120" y="28" width="112" height="48" rx="12" fill="url(#waBubbleGrad)" />
+              <path d="M130 76L122 81V71L130 76Z" fill="#128C7E" />
+
+              <text x="132" y="47" fill="#ffffff" fontSize="9.5" fontWeight="bold" fontFamily="sans-serif">Halo Malfa! 👋</text>
+              <text x="132" y="61" fill="rgba(255,255,255,0.95)" fontSize="8" fontFamily="sans-serif">Mau buat website?</text>
+            </g>
+
+            {/* Decorative Badges */}
+            <g>
+              <circle cx="40" cy="45" r="14" fill="#ffffff" stroke="rgba(120, 92, 255, 0.25)" strokeWidth="1.5" />
+              <text x="34" y="49" fill="#785cff" fontSize="11" fontWeight="bold" fontFamily="monospace">{"</>"}</text>
+              <path d="M220 95L222 100L227 102L222 104L220 109L218 104L213 102L218 100L220 95Z" fill="#f59e0b" />
+            </g>
+          </svg>
+        </div>
+      </div>
     </div>
   );
-};
-
-export default ContactForm;
+}

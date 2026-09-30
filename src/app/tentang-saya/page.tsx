@@ -594,24 +594,7 @@ export default async function TentangSayaPage() {
           borderTop: "1px solid rgba(0, 0, 0, 0.05)",
         }}
       >
-        <div className="container" style={{ textAlign: "center" }}>
-          <span className="badge-glow" data-aos="fade-up">
-            KONSULTASI GRATIS
-          </span>
-          <h2
-            data-aos="fade-up"
-            data-aos-delay="100"
-            style={{
-              color: "var(--gray-dark)",
-              fontSize: "3rem",
-              marginTop: "20px",
-              marginBottom: "20px",
-              fontWeight: "700",
-            }}
-          >
-            Siap Membangun Website Impian Anda?
-          </h2>
-
+        <div className="container">
           <ContactForm />
 
           <p
@@ -620,7 +603,8 @@ export default async function TentangSayaPage() {
             style={{
               color: "var(--gray-medium)",
               fontSize: "0.9rem",
-              marginTop: "30px",
+              marginTop: "24px",
+              textAlign: "center",
             }}
           >
             Atau hubungi langsung melalui:

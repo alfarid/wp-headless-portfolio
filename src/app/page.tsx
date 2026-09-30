@@ -975,25 +975,7 @@ export default async function Home() {
           borderTop: "1px solid rgba(0, 0, 0, 0.05)",
         }}
       >
-        <div className="container" style={{ textAlign: "center" }}>
-          <span className="badge-glow" data-aos="fade-up">
-            KONSULTASI GRATIS
-          </span>
-          <h2
-            data-aos="fade-up"
-            data-aos-delay="100"
-            style={{
-              color: "var(--gray-dark)",
-              fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)",
-              marginTop: "16px",
-              marginBottom: "20px",
-              fontWeight: "700",
-              lineHeight: "1.4",
-            }}
-          >
-            Punya Ide Website? Ceritakan Sekarang!
-          </h2>
-
+        <div className="container">
           <ContactForm />
 
           <p
@@ -1002,7 +984,8 @@ export default async function Home() {
             style={{
               color: "var(--gray-medium)",
               fontSize: "0.9rem",
-              marginTop: "30px",
+              marginTop: "24px",
+              textAlign: "center",
             }}
           >
             Atau hubungi saya langsung melalui:
